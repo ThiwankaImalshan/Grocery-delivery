@@ -37,7 +37,7 @@
 .navbar-items h3{
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
     font-variation-settings: "slnt" 0;
     font-size: 15px;
@@ -177,7 +177,7 @@
 .main-subcontainer-txt h1{
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     font-variation-settings: "slnt" 0;
     font-size: 60px;
@@ -212,6 +212,9 @@
 }
 
 /* Middle-Bar */
+.middle-bar{
+    margin-top: 8%;
+}
 .middle-bar ul{
     display: flex;
     flex-direction: row;
@@ -340,7 +343,7 @@
 .row-txt{
     z-index: 2;
     margin-top: 210px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 .row-txt h3{
     font-family: "Inter", sans-serif;
@@ -373,7 +376,7 @@
     border: 1px solid #51ac37;
     color: #fff;
     margin-top: 30px;
-    margin-left: 25%;
+    margin-left: 22%;
     margin-right: auto;
 }
 
@@ -390,6 +393,7 @@
     color: #fff;
     width: 40%;
     height: 350px;
+    border-radius: 10px;
 }
 .bottom-card1{
     background-color: #65A945;
@@ -412,7 +416,7 @@
     margin-top: 50px;
 }
 .bottom-cards p{
-    margin-top: 100px;
+    margin-top: 70px;
     font-family: "Krub", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -420,7 +424,7 @@
 }
 .bottom-cards span{
     font-weight: 300;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 /* footer */
@@ -430,4 +434,46 @@
 }
 .footer-container{
     position: relative;
+}
+.footer-content{
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    width: 100%;
+    justify-content: space-between;
+    color: #fff;
+}
+.footer-content h3{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 20px;
+}
+.footer-content p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+.footer-content-sec2{
+    display: flex;
+    flex-direction: row;
+    margin-right: 15%;
+}
+.footer-sec2, .footer-sec3{
+    margin-left: 60px;
+}
+.footer-content-sec1 h3{
+    font-size: 30px;
+}
+.footer-content-sec1 p{
+    font-size: 12px;
+    font-weight: 400;
 }
