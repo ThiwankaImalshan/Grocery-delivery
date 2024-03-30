@@ -555,6 +555,12 @@
     width: 500px;
     height: 95.5%;
 }
+.checkout-order-summery h4{
+    margin-bottom: 30px;
+}
+.checkout-customer-info h4, .checkout-shipping h4, .checkout-payment h4{
+    margin-bottom: 30px;
+}
 
 /* Customer Information Form */
 .checkout-customer-info form {
@@ -583,6 +589,7 @@
     margin-left: 0;
 }
 
+/* Checkout */
 .checkout-selection-bar{
     margin-top: 15px;
     border: 1px solid #888888;
@@ -601,4 +608,124 @@
     font-weight: 600;
     color: #1C570A;
     float: right;
+    font-size: 13px;
+}
+
+/* Order Details */
+.order-details{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.order-details-img img{
+    border: 1px solid #888888;
+    padding: 5px;
+    width: 60px;
+    height: 60px;
+}
+.order-details-texts{
+    width: 75%;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.order-details-texts p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 13px;
+    color: #4C4441;
+}
+.order-details-texts span{
+    float:right;
+}
+.order-detail-icons{
+    width: 100%;
+    margin-top: 10px;
+}
+.order-detail-icons i{
+    float: right;
+    color: #000;
+}
+
+/* Order Add Items */
+.order-add-items {
+    border-color: #000000;
+}
+.order-add-items input{
+    width: 50px;
+    text-align: center;
+}
+.items-btn{
+    width: 20px;
+}
+
+/* checkout-order-summery */
+.checkout-order-summery h5{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 12px;
+}
+.checkout-order-summery h5 span{
+    color: #1C570A;
+}
+
+/* order-price-calculations */
+.order-price-calculations{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #C4C4C4;
+    border-bottom: 1px solid #C4C4C4;
+}
+.order-price-calculations p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 13px;
+    margin: 5px;
+    color: #4C4441;
+}
+.order-price-calculations p span{
+    float: right;
+}
+.checkout-order-summery h6{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+.checkout-order-summery h6 span{
+    float: right;
+}
+.btn-place-your-order{
+    margin-top: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-place-your-order button{
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #1C570A;
+    color: white;
+    background-color: #1C570A;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 20px;
 }
