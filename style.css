@@ -5,6 +5,9 @@
     margin: 0;
     padding: 0;
 }
+
+/* HOME PAGE */
+
 /* Header */
 .header-navbar{
     width: 100%;
@@ -13,6 +16,15 @@
     color: #fff;
     background: #0b2f00;
     height: 110px;
+}
+.header-navbar-checkout{
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    color: #fff;
+    background: #0b2f00;
+    height: 95px;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.6);
 }
 .navbar-row{
     margin: 30px;
@@ -476,4 +488,117 @@
 .footer-content-sec1 p{
     font-size: 12px;
     font-weight: 400;
+}
+
+/* CHECKOUT PAGE */
+
+/* Body */
+.checkout-body{
+    background-color: #EBE9E5;
+}
+
+/* Checkout Container */
+.checkout-container{
+    padding-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.checkout-container h3{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 25px;
+}
+.checkout-container-sections{
+    margin: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+}
+.checkout-container-section1{
+    margin-right: 20px;
+}
+.checkout-container-section2{
+    margin-left: 20px;
+}
+.checkout-container-section1 h4{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 20px;
+}
+.checkout-container-section2 h4{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 20px;
+}
+.checkout-customer-info, .checkout-shipping, .checkout-payment{
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 500px;
+}
+.checkout-order-summery{
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 20px;
+    height: auto;
+    width: 500px;
+    height: 95.5%;
+}
+
+/* Customer Information Form */
+.checkout-customer-info form {
+    margin: 20px auto;
+    width: 90%;
+}
+.checkout-customer-info input{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #888888;
+}
+.form-field-wrapper input {
+    width: 100%;
+}
+.form-field-wrapper {
+    margin-bottom: 10px;
+}
+.form-field-wrapper.flex {
+    display: flex;
+}
+.form-field-wrapper.flex>div {
+    flex: 1;
+    margin-left: 10px;
+}
+.form-field-wrapper.flex>div:first-child {
+    margin-left: 0;
+}
+
+.checkout-selection-bar{
+    margin-top: 15px;
+    border: 1px solid #888888;
+    padding: 5px 10px;
+}
+.checkout-selection-bar label{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.checkout-selection-bar span{
+    font-weight: 600;
+    color: #1C570A;
+    float: right;
 }

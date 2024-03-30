@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="checkout-body">
+
+        <!-- Navigation Bar/Header -->
+        <header>
+            <div class="header-navbar-checkout">
+                <div class="navbar-row">
+                    <div class="navbar-logo">
+                        <h2>GrocGo</h2>
+                    </div>
+                    <div class="navbar-items">
+                        <ul>
+                            <h3>Home</h3>
+                            <h3>Products</h3>
+                            <h3>Services</h3>
+                            <h3>About Us</h3>
+                            <div class="navbar-cart">
+                                <small>Add to Cart</small>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </div>
+                            <div class="navbar-signin">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Checkout Container -->
+        <div class="checkout-container">
+            <h3>Checkout</h3>
+            <div class="checkout-container-sections">
+                <div class="checkout-container-section1">
+                    <div class="checkout-customer-info">
+                        <h4>Customer Information</h4>
+                        <form>
+                            <div class="form-field-wrapper">
+                              <input type="text" id="email" placeholder="Email*"/>
+                            </div>
+                            <div class="form-field-wrapper">
+                                <input type="text" id="tel" placeholder="Phone*" />
+                            </div>
+                            <div class="form-field-wrapper flex">
+                              <div class="form-field-wrapper">
+                                <input type="text" id="fname" placeholder="First Name*"/>
+                              </div>
+                              <div class="form-field-wrapper">
+                                <input type="text" id="lname" placeholder="Last Name*"/>
+                              </div>
+                            </div>
+                            <div class="form-field-wrapper">
+                              <input type="text" id="address" placeholder="Street Address*" />
+                            </div>
+                            <div class="form-field-wrapper flex">
+                                <div class="form-field-wrapper">
+                                  <input type="text" id="city" placeholder="City*"/>
+                                </div>
+                                <div class="form-field-wrapper">
+                                  <input type="text" id="postal-code" placeholder="Postal Code"/>
+                                </div>
+                              </div>
+                            
+                          </form>
+                    </div>
+                    <div class="checkout-shipping">
+                        <h4>Shipping Information</h4>
+                            <div class="checkout-selection-bar">
+                                <input type="radio" name="radio-cat1" id="radio1">
+                                <label for="radio1">Pickup from nearby outlet: <span>Dehiwala</span></label>
+                            </div>
+                            <div class="checkout-selection-bar">
+                                <input type="radio" name="radio-cat1" id="radio2">
+                                <label for="radio2">Delivary through courier service: <span>Rs.500.00</span></label>
+                            </div>
+                    </div>
+                    <div class="checkout-payment">
+                        <h4>Payment Information</h4>
+                        <div class="checkout-selection-bar">
+                            <input type="radio" name="radio-cat2" id="radio3">
+                            <label for="radio3">Cash on Delivary</label>
+                        </div>
+                        <div class="checkout-selection-bar">
+                            <input type="radio" name="radio-cat2" id="radio4">
+                            <label for="radio4">QR Payment</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout-container-section2">
+                    <div class="checkout-order-summery">
+                        <h4>Order Summary</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-container">
+                <img src="img/footer-bg.png" alt="Footer Background">
+                <div class="footer-content">
+                    <div class="footer-content-sec1">
+                        <div class="footer-sec footer-sec1">
+                            <h3>GrocGo</h3><br>
+                            <p>Copyright © 2024 GrocGo  LK (PVT) Ltd. </p>
+                            <p>All Rights Reserved</p>
+                            <p>Designed & Developed by .......................</p>
+                        </div>
+                    </div>
+                    <div class="footer-content-sec2">
+                        <div class="footer-sec footer-sec2">
+                            <h3>Customer Care</h3><br>
+                            <p>About US</p>
+                            <p>Returns & Refunds</p>
+                            <p>Privacy Policy</p>
+                        </div>
+                        <div class="footer-sec footer-sec3">
+                            <h3>Contact Us</h3><br>
+                            <p><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+9471234567</p>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Waidya Road, Dehiwala</p>
+                            <p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;grocco@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer> 
+
+</body>
+</html>
