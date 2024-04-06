@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "name":" Almond",
+        "price": 200,
+        "image": "img/Almond.jpg"
+    },
+    {
+        "id": 2,
+        "name":" Apple",
+        "price": 250,
+        "image": "img/apple.jpg"
+    },
+    {
+        "id": 3,
+        "name":" Rice",
+        "price": 290,
+        "image": "img/Rice.jpg"
+    },
+    {
+        "id": 4,
+        "name":" Juices",
+        "price": 200,
+        "image": "img/Juices.jpg"
+    },
+    {
+        "id": 5,
+        "name":" Vegitable",
+        "price": 300,
+        "image": "img/Vegitable.jpg"
+    }
+
+]

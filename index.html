@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-
+<body >
     <!-- Navigation Bar/Header -->
     <header>
             <div class="header-navbar">
@@ -18,13 +17,15 @@
                     </div>
                     <div class="navbar-items">
                         <ul>
-                            <h3>Home</h3>
-                            <h3>Products</h3>
-                            <h3>Services</h3>
-                            <h3>About Us</h3>
+                            <h3><a href="/index.html">Home</a></h3>
+                            <h3><a href="/product.html">Products</a></h3>
+                            <h3><a href="/services.html">Services</a></h3>
+                            <h3><a href="/about.html">About Us</a></h3>
                             <div class="navbar-cart">
                                 <small>Add to Cart</small>
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <i class="fa fa-shopping-cart" aria-hidden="true">
+                                    <span id="smart-checkout-count" class="badge">0</span>
+                                </i>
                             </div>
                             <div class="navbar-signin">
                                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -46,6 +47,138 @@
                             <i class="fa fa-search" style="padding-left: 0.625rem;"></i>
                         </button>
                     </div>
+
+                    <!-- Drop Down Menu -->
+                    <!-- <div class="category-drop-down-menu" id="category_menu_default_header" style="display: block;">
+                        <img src="img/close Button.png" alt="menu-close_btn" class="category-menu-default-header-close-btn">
+                        <div class="category-menu-default-header-container">
+                            <ul class="category_menu_default_header-area">
+                                <li id="dep_id_16">Vegetables 
+                                    <span>
+                                        <i class="fa fa-angle-right"></i>
+                                    </span>
+                                </li>
+                                <ul id="sub_dep_id_16" style="display: none;">
+                                    <a>
+                                        <li class="cat_item_" data-cat-id="all">
+                                            <strong>All Vegetables</strong>
+                                        </li>
+                                    </a>
+                                    <a>
+                                        <li>Pola</li>
+                                    </a>
+                                    <a>
+                                        <li>Organic</li>
+                                    </a>
+                                    <a>
+                                        <li>Packets &amp; Units</li>
+                                    </a>
+                                    <a>
+                                        <li>Exotic</li>
+                                    </a>
+                                    <a>
+                                        <li>Low Country Vegetables</li>
+                                    </a>
+                                    <a>
+                                        <li>Up Country Vegetables</li>
+                                    </a>
+                                </ul>
+                                <li id="dep_id_6">Fruits 
+                                    <span>
+                                        <i class="fa fa-angle-right"></i>
+                                    </span></li>
+                                    <ul id="sub_dep_id_6" style="display: none;">
+                                        <a>
+                                            <li class="cat_item_" data-cat-id="all">
+                                                <strong>All Fruits</strong>
+                                            </li>
+                                        </a>
+                                        <a>
+                                            <li>Organic</li>
+                                        </a>
+                                        <a>
+                                            <li>Inorganic</li>
+                                        </a>
+                                    </ul>
+                                    <li id="dep_id_12">Meat 
+                                        <span>
+                                            <i class="fa fa-angle-right"></i>
+                                        </span>
+                                    </li>
+                                    <ul id="sub_dep_id_12" style="display: none;">
+                                        <a>
+                                            <li class="cat_item_" data-cat-id="all">
+                                                <strong>All Meat</strong>
+                                            </li>
+                                        </a>
+                                        <a>
+                                            <li>Fresh Meat</li>
+                                        </a>
+                                        <a>
+                                            <li>Processed Meat Serve Over</li>
+                                        </a>
+                                        <a>
+                                            <li>Frozen Chicken</li>
+                                        </a>
+                                    </ul>
+                                    <li id="dep_id_4">Fish 
+                                        <span>
+                                            <i class="fa fa-angle-right"></i>
+                                        </span>
+                                    </li>
+                                    <ul id="sub_dep_id_4" style="display: none;">
+                                        <a>
+                                            <li class="cat_item_" data-cat-id="all">
+                                                <strong>All Fish</strong>
+                                            </li>
+                                        </a>
+                                        <a>
+                                            <li>Fresh Sea Food</li>
+                                        </a>
+                                    </ul>
+                                    <li id="dep_id_2">Beverages 
+                                        <span>
+                                            <i class="fa fa-angle-right"></i>
+                                        </span>
+                                    </li>
+                                    <ul id="sub_dep_id_2" style="display: none;">
+                                        <a>
+                                            <li class="cat_item_" data-cat-id="all">
+                                                <strong>All Beverages</strong>
+                                            </li>
+                                        </a>
+                                        <a>
+                                            <li>Juices &amp; Carbonates</li>
+                                        </a>
+                                        <a>
+                                            <li>Malt Drink</li>
+                                        </a>
+                                        <a>
+                                            <li>Sports &amp; Energy Drinks</li>
+                                        </a>
+                                        <a>
+                                            <li>Milk &amp; Creamers</li>
+                                        </a>
+                                        <a>
+                                            <li>RTD Beverages</li>
+                                        </a>
+                                        <a>
+                                            <li>Water</li>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+
+            <!-- Cart-Tab -->
+            <div class="cartTab">
+                <h1>Shopping Cart</h1>
+                <div class="listCart">
+                    
+                </div>
+                <div class="cartTab-btn">
+                    <button class="cartTab-close">Close</button>
+                    <button class="cartTab-checkOut" onclick="document.location='checkout.html'">Check Out</button>
                 </div>
             </div>
     </header>
@@ -59,7 +192,7 @@
                     <h1>Order groceries <br> to your <br><span>Door Step</span></h1>
                     <br><br>
                     <p>Whatever you want from local stores, brought right to your door.</p>
-                    <button class="btn-shopnow">Shop Now</button>
+                    <button class="btn-shopnow" onclick="document.location='product.html'">Shop Now</button>
                 </div>
                 <div class="main-subcontainer-img">
                     <img src="img/SuperMarket.png" alt="SuperMarket Cart">
@@ -109,7 +242,7 @@
     </div>
 
     <!-- Card Row -->
-    <div class="row-body">
+    <!-- <div class="row-body">
         <ul>
             <div class="row-card">
                 <div class="row-card-img">
@@ -160,7 +293,7 @@
                 </div>
             </div>
         </ul>
-    </div>
+    </div> -->
 
     <!-- Bottom Cards -->
     <div class="bottom-cards">
@@ -190,20 +323,21 @@
                 <div class="footer-content-sec2">
                     <div class="footer-sec footer-sec2">
                         <h3>Customer Care</h3><br>
-                        <p>About US</p>
-                        <p>Returns & Refunds</p>
-                        <p>Privacy Policy</p>
+                        <p><a href="/aboutus.html">About US</a></p>
+                        <p><a href="/services.html">Services</a></p>
+                        <p><a href="">Privacy Policy</a></p>
                     </div>
                     <div class="footer-sec footer-sec3">
                         <h3>Contact Us</h3><br>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+9471234567</p>
-                        <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Waidya Road, Dehiwala</p>
-                        <p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;grocco@gmail.com</p>
+                        <p><a href="tel:+9471234567"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+9471234567</a></p>
+                        <p><a href="https://maps.app.goo.gl/iZKTKozdvHXE7WxQ9"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Waidya Road, Dehiwala</a></p>
+                        <p><a href="mailto: grocgo@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;grocgo@gmail.com</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
