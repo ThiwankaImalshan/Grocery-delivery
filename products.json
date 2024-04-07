@@ -22,12 +22,5 @@
         "name":" Juices",
         "price": 200,
         "image": "img/Juices.jpg"
-    },
-    {
-        "id": 5,
-        "name":" Vegitable",
-        "price": 300,
-        "image": "img/Vegitable.jpg"
     }
-
 ]
