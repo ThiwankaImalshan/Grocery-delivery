@@ -939,7 +939,7 @@
 /* cart Tab */
 .cartTab{
     width: 400px;
-    /* height: var(--win-height); */
+    height: var(--win-height);
     background-color: #fff;
     color: #eee;
     position: fixed;
@@ -953,6 +953,7 @@
     z-index: 99;
 }
 body.showCart .cartTab{
+    inset: 0 0px 0 auto;
     right: 0;
 }
 body.showCart {

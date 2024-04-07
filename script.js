@@ -1,4 +1,4 @@
-let rowbodyHTML = document.querySelector('.row-body');
+let rowbodyHTML = document.querySelector('.row-body-ul');
 let listCartHTML = document.querySelector('.listCart');
 let navbarCart = document.querySelector('.navbar-cart');
 let navbarCartSpan = document.querySelector('.navbar-cart span');
@@ -7,14 +7,21 @@ let closeCart = document.querySelector('.cartTab-close');
 let products = [];
 let cart = [];
 
-    //Adjust screen height according to device screen height
-    var s = document.createElement("style");
-    document.body.append(s);
-    window.onresize = function() {
-    s.innerHTML = ":root{--win-height:" + window.innerHeight + "px}";
-    }
-    s.innerHTML = ":root{--win-height:" + window.innerHeight + "px}";
 
+
+//----------Screen Height----------
+
+//Adjust screen height according to device screen height
+var s = document.createElement("style");
+document.body.append(s);
+window.onresize = function() {
+s.innerHTML = ":root{--win-height:" + window.innerHeight + "px}";
+}
+s.innerHTML = ":root{--win-height:" + window.innerHeight + "px}";
+
+
+
+//----------Category Drop Down----------
 
 //default category menu display none
 document.getElementById("category_menu_default_header").style.display = "none"
@@ -25,6 +32,8 @@ document.getElementById( 'btn-categories' ).addEventListener( 'click', function(
 });
 
 
+
+//----------Cart----------
 
 // hide when click close button
 document.getElementById( 'close-category-menu' ).addEventListener( 'click', function() {
@@ -41,22 +50,34 @@ closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
 
-    const addDataToHTML = () => {
-    // remove datas default from HTML
 
-        // add new datas
-        if(products.length > 0) // if has data
-        {
-            products.forEach(product => {
-                let newProduct = document.createElement('div');
-                newProduct.dataset.id = product.id;
-                newProduct.classList.add('item');
-                newProduct.innerHTML = 
-                `<img src="${product.image}" alt="">
-                <h2>${product.name}</h2>
-                <div class="price">$${product.price}</div>
-                <button class="addCart">Add To Cart</button>`;
-                listProductHTML.appendChild(newProduct);
-            });
-        }
+
+//----------Products----------
+
+//fetch data from json file
+fetch('./products.json')
+    .then((response) => response.json())
+    .then(productsArray=>renderAllProducts(productsArray));
+
+    function renderAllProducts (productsArray){
+        productsArray.forEach(product => renderOneProduct(product));
+    }
+
+    const findDiv=document.querySelector("#rowBody")
+    function renderOneProduct(product){
+        const newElement=document.createElement("div")
+        newElement.className="row-card"
+        newElement.innerHTML=`
+        <div class="row-card-img">
+            <img src="${product.image}" alt="Product 1">
+        </div>
+        <div class="row-txt">
+            <h3>${product.name}</h3>
+            <h4>Rs.${product.price}/=</h4>
+            <button class="btn-addtocart">
+                Add to Cart
+            </button>
+        </div>
+        `
+        findDiv.append(newElement)
     }

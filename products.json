@@ -2,25 +2,25 @@
     {
         "id": 1,
         "name":" Almond",
-        "price": 200,
+        "price": 200.00,
         "image": "img/Almond.jpg"
     },
     {
         "id": 2,
         "name":" Apple",
-        "price": 250,
+        "price": 250.00,
         "image": "img/apple.jpg"
     },
     {
         "id": 3,
         "name":" Rice",
-        "price": 290,
+        "price": 290.00,
         "image": "img/Rice.jpg"
     },
     {
         "id": 4,
         "name":" Juices",
-        "price": 200,
+        "price": 200.00,
         "image": "img/Juices.jpg"
     }
 ]
