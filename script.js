@@ -7,13 +7,29 @@ let closeCart = document.querySelector('.cartTab-close');
 let products = [];
 let cart = [];
 
-    // //Adjust screen height according to device screen height
-    // var s = document.createElement("style");
-    // document.body.append(s);
-    // window.onresize = function() {
-    // s.innerHTML = ":root{--win-height:" + window.innerHeight + "px}";
-    // }
-    // s.innerHTML = ":root{--win-height:" + window.innerHeight + "px}";
+    //Adjust screen height according to device screen height
+    var s = document.createElement("style");
+    document.body.append(s);
+    window.onresize = function() {
+    s.innerHTML = ":root{--win-height:" + window.innerHeight + "px}";
+    }
+    s.innerHTML = ":root{--win-height:" + window.innerHeight + "px}";
+
+
+//default category menu display none
+document.getElementById("category_menu_default_header").style.display = "none"
+// Display Category menu when click btn-categories.
+document.getElementById( 'btn-categories' ).addEventListener( 'click', function( event ) {
+    document.getElementById( 'category_menu_default_header' ).style.display = 'inline';
+    event.stopPropagation();
+});
+
+
+
+// hide when click close button
+document.getElementById( 'close-category-menu' ).addEventListener( 'click', function() {
+    document.getElementById('category_menu_default_header').style.display = 'none';
+});
 
 // Show Cart
 navbarCart.addEventListener('click', () => {

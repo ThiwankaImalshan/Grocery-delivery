@@ -93,6 +93,8 @@
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
+/* Drop down menu */
 .category-drop-down-menu{
     width: 80%;
     height: 60%;
@@ -116,7 +118,7 @@
 }
 .category-menu-default-header-container {
     top: 2%;
-    height: 95%;
+    height: 300px;
     width: 98%;
     overflow-y: scroll;
     position: relative;
@@ -134,7 +136,7 @@
     padding: 0;
     width: 100%;
     color: #000;
-    position: relative;
+    position: absolute;
     list-style-type: none;
     background-color: transparent;
 }

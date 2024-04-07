@@ -35,7 +35,7 @@
                 </div>
                 <div class="header-searchbar">
                     <div class="product-search">
-                        <div class="category_menu_btn_product_search">
+                        <div class="category_menu_btn_product_search" id="btn-categories">
                             <span>Categories </span>
                             <i class="fa fa-angle-down" style="padding-left: 0.9375rem;"></i>
                         </div>
@@ -49,10 +49,11 @@
                     </div>
 
                     <!-- Drop Down Menu -->
-                    <!-- <div class="category-drop-down-menu" id="category_menu_default_header" style="display: block;">
-                        <img src="img/close Button.png" alt="menu-close_btn" class="category-menu-default-header-close-btn">
+                    <div class="category-drop-down-menu" id="category_menu_default_header" style="display: block;">
+                        <img src="img/close Button.png" alt="menu-close_btn" class="category-menu-default-header-close-btn" id="close-category-menu">
                         <div class="category-menu-default-header-container">
                             <ul class="category_menu_default_header-area">
+
                                 <li id="dep_id_16">Vegetables 
                                     <span>
                                         <i class="fa fa-angle-right"></i>
@@ -83,6 +84,7 @@
                                         <li>Up Country Vegetables</li>
                                     </a>
                                 </ul>
+                                
                                 <li id="dep_id_6">Fruits 
                                     <span>
                                         <i class="fa fa-angle-right"></i>
@@ -100,6 +102,7 @@
                                             <li>Inorganic</li>
                                         </a>
                                     </ul>
+
                                     <li id="dep_id_12">Meat 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
@@ -121,6 +124,7 @@
                                             <li>Frozen Chicken</li>
                                         </a>
                                     </ul>
+
                                     <li id="dep_id_4">Fish 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
@@ -136,6 +140,7 @@
                                             <li>Fresh Sea Food</li>
                                         </a>
                                     </ul>
+                                    
                                     <li id="dep_id_2">Beverages 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
@@ -164,24 +169,59 @@
                                         </a>
                                         <a>
                                             <li>Water</li>
+                                        </a>
+                                    </ul>
+
+                                    <li id="dep_id_4">Fish 
+                                        <span>
+                                            <i class="fa fa-angle-right"></i>
+                                        </span>
+                                    </li>
+                                    <ul id="sub_dep_id_4" style="display: none;">
+                                        <a>
+                                            <li class="cat_item_" data-cat-id="all">
+                                                <strong>All Fish</strong>
+                                            </li>
+                                        </a>
+                                        <a>
+                                            <li>Fresh Sea Food</li>
+                                        </a>
+                                    </ul>
+
+                                    <li id="dep_id_4">Fish 
+                                        <span>
+                                            <i class="fa fa-angle-right"></i>
+                                        </span>
+                                    </li>
+                                    <ul id="sub_dep_id_4" style="display: none;">
+                                        <a>
+                                            <li class="cat_item_" data-cat-id="all">
+                                                <strong>All Fish</strong>
+                                            </li>
+                                        </a>
+                                        <a>
+                                            <li>Fresh Sea Food</li>
+                                        </a>
+                                    </ul>
                         </div>
-                    </div> -->
+                    </div>
 
                 </div>
             </div>
 
-            <!-- Cart-Tab -->
-            <div class="cartTab">
-                <h1>Shopping Cart</h1>
-                <div class="listCart">
-                    
-                </div>
-                <div class="cartTab-btn">
-                    <button class="cartTab-close">Close</button>
-                    <button class="cartTab-checkOut" onclick="document.location='checkout.html'">Check Out</button>
-                </div>
-            </div>
     </header>
+
+    <!-- Cart-Tab -->
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            
+        </div>
+        <div class="cartTab-btn">
+            <button class="cartTab-close">Close</button>
+            <button class="cartTab-checkOut" onclick="document.location='checkout.html'">Check Out</button>
+        </div>
+    </div>
 
     <!-- Main container -->
     <main>
@@ -242,7 +282,7 @@
     </div>
 
     <!-- Card Row -->
-    <!-- <div class="row-body">
+    <div class="row-body">
         <ul>
             <div class="row-card">
                 <div class="row-card-img">
@@ -256,7 +296,7 @@
                     </button>
                 </div>
             </div>
-            <div class="row-card">
+            <!-- <div class="row-card">
                 <div class="row-card-img">
                     <img src="img/snickers.jpg" alt="Product 2">
                 </div>
@@ -291,9 +331,9 @@
                         Add to Cart
                     </button>
                 </div>
-            </div>
+            </div> -->
         </ul>
-    </div> -->
+    </div>
 
     <!-- Bottom Cards -->
     <div class="bottom-cards">
