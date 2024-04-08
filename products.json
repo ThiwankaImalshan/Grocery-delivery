@@ -3,24 +3,24 @@
         "id": 1,
         "name":" Almond",
         "price": 200.00,
-        "image": "img/Almond.jpg"
+        "image": "product img/Almond.jpg"
     },
     {
         "id": 2,
         "name":" Apple",
         "price": 250.00,
-        "image": "img/apple.jpg"
+        "image": "product img/apple.jpg"
     },
     {
         "id": 3,
-        "name":" Rice",
+        "name":" Snicker",
         "price": 290.00,
-        "image": "img/Rice.jpg"
+        "image": "product img/snickers.jpg"
     },
     {
         "id": 4,
-        "name":" Juices",
+        "name":" Orange Juice",
         "price": 200.00,
-        "image": "img/Juices.jpg"
+        "image": "product img/Orange juice.jpg"
     }
 ]

@@ -67,11 +67,12 @@ fetch('./products.json')
     function renderOneProduct(product){
         const newElement=document.createElement("div")
         newElement.className="row-card"
+        newElement.dataset.id=product.id; //product id
         newElement.innerHTML=`
         <div class="row-card-img">
             <img src="${product.image}" alt="Product 1">
         </div>
-        <div class="row-txt">
+        <div class="row-txt" data-id="${product.id}">
             <h3>${product.name}</h3>
             <h4>Rs.${product.price}/=</h4>
             <button class="btn-addtocart">
@@ -81,3 +82,58 @@ fetch('./products.json')
         `
         findDiv.append(newElement)
     }
+
+    //---------Add to cart product id event listener--------
+    rowbodyHTML.addEventListener('click',(event)=>{
+        let positionClick =event.target;
+        if(positionClick.classList.contains('btn-addtocart')){
+            let product_id = positionClick.parentNode.dataset.id;
+            addToCart(product_id);
+        }
+    })
+
+    const addToCart=(product_id)=>{
+        let positionThisProductInCart=cart.findIndex((value)=>value.product_id==product_id);
+        if(cart.length<=0){
+            cart=[{
+                product_id:product_id,
+                quantity:1
+            }]
+        }else if(positionThisProductInCart<0){
+            cart.push({
+                product_id:product_id,
+                quantity:1
+            })
+        }else{
+            cart(positionThisProductInCart).quantity=cart(positionThisProductInCart).quantity+1;
+        }
+        addCartToHTML();
+    }
+
+    const addCartToHTML=()=>{
+        listCartHTML.innerHTML='';
+        if(cart.length>0){
+            cart.forEach(carts=>{
+                let newCart=document.createElement('div');
+                newCart.classList.add('listCart-items');
+                let positionProduct=products.findIndex((value)=>value.id==carts.product_id);
+                let info=products[positionProduct];
+                newCart.innerHTML=`
+                <div class="listCart-image">
+                    <img src="product img/Almond.jpg">
+                </div>
+                <div class="listCart-name">
+                Almond Seeds
+                </div>
+                <div class="listCart-totalPrice">Rs.250.00</div>
+                <div class="listCart-quantity">
+                    <span class="listCart-minus"><</span>
+                    <span>1</span>
+                    <span class="listCart-plus">></span>
+                </div>
+                `;
+                listCartHTML.appendChild(newCart);
+            })
+        }
+    }
+    
