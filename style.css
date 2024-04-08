@@ -106,6 +106,25 @@
     border-radius: 1.875rem;
     box-shadow: 0 0.25rem 0.5rem 0 rgba(0,0,0,.2), 0 0.375rem 1.25rem 0 rgba(0,0,0,.19);
 }
+.category-drop-down-menu ::-webkit-scrollbar {
+    width: 15px;
+}
+.category-drop-down-menu ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+    margin-block: 25px;
+} 
+/* Handle */
+.category-drop-down-menu ::-webkit-scrollbar-thumb {
+    background: #65A945; 
+    border-radius: 10px;
+}
+  
+/* Handle on hover */
+.category-drop-down-menu ::-webkit-scrollbar-thumb:hover {
+    background: #1C570A; 
+}
+
 .category-menu-default-header-close-btn {
     z-index: 1;
     top: .3125rem;
@@ -119,10 +138,12 @@
 .category-menu-default-header-container {
     top: 2%;
     height: 300px;
-    width: 98%;
+    width: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
     position: relative;
     padding: .75rem 3.125rem 1.875rem .9375rem;
+    padding-left: 10px;
     background-color: #fff;
     border-radius: 1.875rem;
 }
@@ -149,10 +170,18 @@
     background-color: transparent;
     border-bottom: .0625rem solid #d3d3d3;
 }
+.category-menu-default-header-container ul li:hover{
+    background-color: #eee;
+}
+.category-menu-default-header-container ul li:active{
+    background-color: #51ac37;
+    color: white;
+    border-radius: 15px;
+}
 .category-menu-default-header-container ul ul {
     top: 0;
     left: 41%;
-    width: 40%;
+    width: 100%;
     position: absolute;
 }
 .category-menu-default-header-container ul li span {
@@ -442,7 +471,7 @@
     height: 340px;
     box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.10);
     border-radius: 20px;
-    cursor: pointer;
+    cursor: auto;
 }
 .row-card:hover{
     transform: scale(1.05);
@@ -494,6 +523,7 @@
     margin-top: 30px;
     margin-left: 22%;
     margin-right: auto;
+    cursor: pointer;
 }
 
 /* Bottom-Cards */
@@ -754,6 +784,7 @@
     margin-top: 10px;
 }
 .order-detail-icons i{
+    padding-left: 80%;
     float: right;
     color: #000;
 }
@@ -761,8 +792,10 @@
 /* Order Add Items */
 .order-add-items {
     border-color: #000000;
+    display: flex;
+    flex-direction: row;
 }
-.order-add-items input{
+.order-add-items span{
     width: 50px;
     text-align: center;
 }

@@ -63,6 +63,7 @@ fetch('./products.json')
         productsArray.forEach(product => renderOneProduct(product));
     }
 
+    //add products to row-body
     const findDiv=document.querySelector("#rowBody")
     function renderOneProduct(product){
         const newElement=document.createElement("div")
@@ -83,6 +84,10 @@ fetch('./products.json')
         findDiv.append(newElement)
     }
 
+
+
+    //---------Cart---------
+
     //---------Add to cart product id event listener--------
     rowbodyHTML.addEventListener('click',(event)=>{
         let positionClick =event.target;
@@ -92,6 +97,7 @@ fetch('./products.json')
         }
     })
 
+    //product id add to cart
     const addToCart=(product_id)=>{
         let positionThisProductInCart=cart.findIndex((value)=>value.product_id==product_id);
         if(cart.length<=0){
@@ -110,6 +116,7 @@ fetch('./products.json')
         addCartToHTML();
     }
 
+    //add cart to html file
     const addCartToHTML=()=>{
         listCartHTML.innerHTML='';
         if(cart.length>0){
@@ -136,4 +143,6 @@ fetch('./products.json')
             })
         }
     }
+
+    console.log(products);
     
