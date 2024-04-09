@@ -1,4 +1,4 @@
-let rowbodyHTML = document.querySelector('.row-body-ul');
+let rowbodyHTML = document.querySelector('.carousel');
 let listCartHTML = document.querySelector('.listCart');
 let navbarCart = document.querySelector('.navbar-cart');
 let navbarCartSpan = document.querySelector('.navbar-cart span');
@@ -6,6 +6,90 @@ let body = document.querySelector('body');
 let closeCart = document.querySelector('.cartTab-close');
 let products = [];
 let cart = [];
+
+
+
+//----------Page Loader---------------
+
+var loading;
+function loadingFunction() {
+  loading = setTimeout(showPage, 0);
+}
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("container").style.display = "block";
+}
+
+
+
+//-----------Drop Down Menu each sub category visibility------------
+    const depIds = document.querySelectorAll('[id^="dep_id_"]');
+    const subDepIds = document.querySelectorAll('[id^="sub_dep_id_"]');
+
+    depIds.forEach((dep, index) => {
+        dep.addEventListener('click', function() {
+            subDepIds.forEach(subDep => {
+                subDep.style.display = 'none';
+            });
+            depIds.forEach(dep => {
+                dep.classList.remove('clicked');
+                dep.style.backgroundColor = ''; 
+            });
+            subDepIds[index].style.display = 'block';
+            dep.classList.add('clicked');
+            dep.style.backgroundColor = '#65A945'; 
+        });
+    });
+
+
+
+//----------Product carousel--------
+
+const carousel = document.querySelector('.carousel');
+let index = 0;
+const cardWidth=254;
+const cardMarginRight=40;
+// const cardWidth = document.querySelector('.row-card').offsetWidth;
+// const cardMarginRight = parseInt(window.getComputedStyle(document.querySelector('.row-card')).marginRight);
+
+function nextCard() {
+  index++;
+  carousel.style.transition = 'transform 0.5s ease';
+  carousel.style.transform = `translateX(-${(cardWidth + cardMarginRight) * index}px)`;
+}
+
+function prevCard() {
+  if (index > 0) {
+    index--;
+    carousel.style.transition = 'transform 0.5s ease';
+    carousel.style.transform = `translateX(-${(cardWidth + cardMarginRight) * index}px)`;
+  }
+}
+
+function autoLoop() {
+  setInterval(() => {
+    if (index < carousel.children.length - 5) { //no of card length
+      nextCard();
+    } else {
+      index = 0;
+    //carousel.style.transition = 'none';
+      carousel.style.transition = 'transform 0.5s ease';
+      carousel.style.transform = 'translateX(0)';
+    }
+  }, 2000); //time interva;
+}
+autoLoop();
+
+function prevCard() {
+if (index > 0) {
+  index--;
+  const translateDistance = (cardWidth + cardMarginRight) * index;
+  carousel.style.transition = 'transform 0.5s ease';
+  carousel.style.transform = `translateX(-${translateDistance}px)`;
+}
+}
+//   document.querySelector('.btn-prev').addEventListener('click', prevCard);
+//   document.querySelector('.btn-next').addEventListener('click', nextCard);
 
 
 
@@ -54,14 +138,27 @@ closeCart.addEventListener('click', () => {
 
 //----------Products----------
 
-//fetch data from json file
-fetch('./products.json')
-    .then((response) => response.json())
-    .then(productsArray=>renderAllProducts(productsArray));
+    //fetch data from json file
+    fetch('./products.json')
+        .then((response) => response.json())
+        .then(productsArray=>renderAllProducts(productsArray));
 
-    function renderAllProducts (productsArray){
-        productsArray.forEach(product => renderOneProduct(product));
-    }
+        function renderAllProducts (productsArray){
+            productsArray.forEach(product => renderOneProduct(product));
+        }
+
+    //add data from json file to products array
+    fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(product => {
+            products.push(product);
+        });
+        return products;
+    })
+    .catch(error => {
+        console.error('Error fetching products:', error);
+    });
 
     //add products to row-body
     const findDiv=document.querySelector("#rowBody")
@@ -83,6 +180,29 @@ fetch('./products.json')
         `
         findDiv.append(newElement)
     }
+
+    // const addDataToHTML = () =>{
+    //     rowbodyHTML.innerHTML='';
+    //     if(products.length>0){
+    //         products.forEach(product=>{
+    //             let newProduct=document.createElement('div');
+    //             newProduct.classList.add('row-card');
+    //             newProduct.innerHTML=`
+    //             <div class="row-card-img">
+    //            <img src="${product.image}" alt="Product 1">
+    //        </div>
+    //        <div class="row-txt" data-id="${product.id}">
+    //            <h3>${product.name}</h3>
+    //            <h4>Rs.${product.price}/=</h4>
+    //            <button class="btn-addtocart">
+    //                Add to Cart
+    //            </button>
+    //        </div>
+    //             `;
+    //             rowbodyHTML.appendChild(newProduct);
+    //         })
+    //     }
+    // }
 
 
 
@@ -119,30 +239,43 @@ fetch('./products.json')
     //add cart to html file
     const addCartToHTML=()=>{
         listCartHTML.innerHTML='';
+        let totalQuantity=0;
         if(cart.length>0){
             cart.forEach(carts=>{
+                totalQuantity=totalQuantity+carts.quantity;
                 let newCart=document.createElement('div');
                 newCart.classList.add('listCart-items');
                 let positionProduct=products.findIndex((value)=>value.id==carts.product_id);
                 let info=products[positionProduct];
                 newCart.innerHTML=`
                 <div class="listCart-image">
-                    <img src="product img/Almond.jpg">
+                    <img src="${info.image}">
                 </div>
                 <div class="listCart-name">
-                Almond Seeds
+                ${info.name}
                 </div>
-                <div class="listCart-totalPrice">Rs.250.00</div>
+                <div class="listCart-totalPrice">Rs.${info.price*carts.quantity}</div>
                 <div class="listCart-quantity">
                     <span class="listCart-minus"><</span>
-                    <span>1</span>
+                    <span>${carts.quantity}</span>
                     <span class="listCart-plus">></span>
                 </div>
                 `;
                 listCartHTML.appendChild(newCart);
             })
         }
+        navbarCartSpan.innerText=totalQuantity;
     }
 
-    console.log(products);
+    //add data from json file to products array
+    // const initApp=()=>{
+    //     fetch('products.json')
+    //     .then(response=>response.json())
+    //     .then(data=>{
+    //         products=data;
+    //     })
+    // }
+    // initApp();
+
+
     

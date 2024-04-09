@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Carousel</title>
+  <style>
+    .carousel-container {
+      /* margin-left: 20px; */
+      width: 100%;
+      overflow: hidden;
+    }
+    .carousel {
+      display: flex;
+      width: fit-content; /* Change to fit-content for automatic looping */
+      transition: transform 0.5s ease;
+      padding-bottom: 10px;
+    }
+    .row-card {
+      width: 254px;
+      height: 340px;
+      margin-right: 40px;
+      box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.10);
+      border-radius: 20px;
+      cursor: auto;
+    }
+    .row-card:hover {
+      transform: scale(1.05);
+      transition: all 0.5s;
+      transition-timing-function: ease-out;
+    }
+    .row-card img {
+      width: 254px;
+      height: 191px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    .row-txt {
+      z-index: 2;
+      margin-top: 210px;
+      margin-left: 20px;
+    }
+    .row-txt h3 {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .row-txt h4 {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: #1C570A;
+      padding-top: 10px;
+    }
+    .btn-addtocart {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      background-color: #51ac37;
+      padding: 4px 15px;
+      border-radius: 6px;
+      border: 1px solid #51ac37;
+      color: #fff;
+      margin-top: 30px;
+      margin-left: 22%;
+      cursor: pointer;
+    }
+    .btn-addtocart:active {
+      transform: scale(1.05);
+      transition-timing-function: ease-out;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="carousel-container">
+    <div class="carousel">
+      <!-- Your row-card content -->
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In a</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In b</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In c</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In d</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In e</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In e</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In f</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In g</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In h</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In i</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="row-card">
+        <div class="row-card-img">
+          <img src="product img/Orange juice.jpg" alt="Product 1">
+        </div>
+        <div class="row-txt">
+          <h3>Fresh Orange juice</h3>
+          <h4>In j</h4>
+          <button class="btn-addtocart">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Repeat your row-card content for each item -->
+    </div>
+  </div>
+
+  <button class="btn-prev">Previous</button>
+  <button class="btn-next">Next</button>
+
+
+<!-- --------Script for product Carousel-------- -->
+<script>
+    const carousel = document.querySelector('.carousel');
+    let index = 0;
+    const cardWidth = document.querySelector('.row-card').offsetWidth;
+    const cardMarginRight = parseInt(window.getComputedStyle(document.querySelector('.row-card')).marginRight);
+    
+    function nextCard() {
+      index++;
+      carousel.style.transition = 'transform 0.5s ease';
+      carousel.style.transform = `translateX(-${(cardWidth + cardMarginRight) * index}px)`;
+    }
+    
+    function prevCard() {
+      if (index > 0) {
+        index--;
+        carousel.style.transition = 'transform 0.5s ease';
+        carousel.style.transform = `translateX(-${(cardWidth + cardMarginRight) * index}px)`;
+      }
+    }
+    
+    function autoLoop() {
+      setInterval(() => {
+        if (index < carousel.children.length - 7) { //no of card length
+          nextCard();
+        } else {
+          index = 0;
+          carousel.style.transition = 'none';
+          carousel.style.transform = 'translateX(0)';
+        }
+      }, 2000); //time interva;
+    }
+    autoLoop();
+    
+    function prevCard() {
+    if (index > 0) {
+      index--;
+      const translateDistance = (cardWidth + cardMarginRight) * index;
+      carousel.style.transition = 'transform 0.5s ease';
+      carousel.style.transform = `translateX(-${translateDistance}px)`;
+    }
+    }
+      document.querySelector('.btn-prev').addEventListener('click', prevCard);
+      document.querySelector('.btn-next').addEventListener('click', nextCard);
+</script>
+    
+
+ <script src="script.js"></script>
+</body>
+</html>

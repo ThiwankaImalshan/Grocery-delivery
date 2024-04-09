@@ -22,5 +22,29 @@
         "name":" Orange Juice",
         "price": 200.00,
         "image": "product img/Orange juice.jpg"
+    },
+    {
+        "id": 5,
+        "name":" Orange Juice",
+        "price": 200.00,
+        "image": "product img/Orange juice.jpg"
+    },
+    {
+        "id": 6,
+        "name":" Almond",
+        "price": 200.00,
+        "image": "product img/Almond.jpg"
+    },
+    {
+        "id": 7,
+        "name":" Apple",
+        "price": 250.00,
+        "image": "product img/apple.jpg"
+    },
+    {
+        "id": 8,
+        "name":" Apple",
+        "price": 250.00,
+        "image": "product img/apple.jpg"
     }
 ]

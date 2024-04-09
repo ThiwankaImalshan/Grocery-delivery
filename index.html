@@ -5,10 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .carousel-container {
+        margin-left: 20px;
+        width: 97%;
+        overflow: hidden;
+        }
+        .carousel {
+        display: flex;
+        width: fit-content; /* Change to fit-content for automatic looping */
+        transition: transform 0.5s ease;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        }
+        .row-card {
+        width: 254px;
+        height: 340px;
+        margin-right: 40px;
+        box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.10);
+        border-radius: 20px;
+        cursor: auto;
+        }
+        .row-card:hover {
+        transform: scale(1.05);
+        transition: all 0.5s;
+        transition-timing-function: ease-out;
+        }
+        .row-card img {
+        width: 254px;
+        height: 191px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        }
+        .row-txt {
+        z-index: 2;
+        margin-top: 210px;
+        margin-left: 20px;
+        }
+        .row-txt h3 {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        }
+        .row-txt h4 {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: #1C570A;
+        padding-top: 10px;
+        }
+        .btn-addtocart {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        background-color: #51ac37;
+        padding: 4px 15px;
+        border-radius: 6px;
+        border: 1px solid #51ac37;
+        color: #fff;
+        margin-top: 30px;
+        margin-left: 22%;
+        cursor: pointer;
+        }
+        .btn-addtocart:active {
+        transform: scale(1.05);
+        transition-timing-function: ease-out;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
-<body >
+<body onload="loadingFunction()">
     
+    <div id="loader">
+        <img src="img/G icon.gif" alt="">
+    </div>
+
+    <div id="container" style="display:none;">
     <!-- Navigation Bar/Header -->
     <header>
             <div class="header-navbar">
@@ -55,12 +129,12 @@
                         <div class="category-menu-default-header-container">
                             <ul class="category_menu_default_header-area">
 
-                                <li id="dep_id_16">Vegetables 
+                                <li id="dep_id_1">Vegetables 
                                     <span>
                                         <i class="fa fa-angle-right"></i>
                                     </span>
                                 </li>
-                                <ul id="sub_dep_id_16" style="display: none;">
+                                <ul id="sub_dep_id_1" style="display: none;">
                                     <a>
                                         <li class="cat_item_" data-cat-id="all">
                                             <strong>All Vegetables</strong>
@@ -86,12 +160,12 @@
                                     </a>
                                 </ul>
                                 
-                                <li id="dep_id_6">Fruits 
+                                <li id="dep_id_2">Fruits 
                                     <span>
                                         <i class="fa fa-angle-right"></i>
                                     </span>
                                 </li>
-                                    <ul id="sub_dep_id_6" style="display: none;">
+                                    <ul id="sub_dep_id_2" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Fruits</strong>
@@ -105,12 +179,12 @@
                                         </a>
                                     </ul>
 
-                                    <li id="dep_id_12">Meat 
+                                    <li id="dep_id_3">Meat 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
-                                    <ul id="sub_dep_id_12" style="display: none;">
+                                    <ul id="sub_dep_id_3" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Meat</strong>
@@ -143,12 +217,12 @@
                                         </a>
                                     </ul>
                                     
-                                    <li id="dep_id_2">Beverages 
+                                    <li id="dep_id_5">Beverages 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
-                                    <ul id="sub_dep_id_2" style="display: none;">
+                                    <ul id="sub_dep_id_5" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Beverages</strong>
@@ -174,12 +248,12 @@
                                         </a>
                                     </ul>
 
-                                    <li id="dep_id_4">Fish 
+                                    <li id="dep_id_6">Fish 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
-                                    <ul id="sub_dep_id_4" style="display: none;">
+                                    <ul id="sub_dep_id_6" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Fish</strong>
@@ -190,12 +264,12 @@
                                         </a>
                                     </ul>
 
-                                    <li id="dep_id_4">Fish 
+                                    <li id="dep_id_7">Fish 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
-                                    <ul id="sub_dep_id_4" style="display: none;">
+                                    <ul id="sub_dep_id_7" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Fish</strong>
@@ -284,8 +358,14 @@
     </div>
 
     <!-- Card Row -->
-    <div class="row-body" >
-        <ul class="row-body-ul" id="rowBody">
+    <div class="carousel-container">
+        <div class="carousel" id="rowBody">
+        </div>
+    </div>
+    <!-- <div class="row-body" >
+        <ul class="row-body-ul" id="rowBody"> -->
+
+
             <!-- <div class="row-card">
                 <div class="row-card-img">
                     <img src="img/apple.jpg" alt="Product 1">
@@ -298,44 +378,10 @@
                     </button>
                 </div>
             </div> -->
-            <!-- <div class="row-card">
-                <div class="row-card-img">
-                    <img src="img/snickers.jpg" alt="Product 2">
-                </div>
-                <div class="row-txt">
-                    <h3>Snickers</h3>
-                    <h4>In Stock</h4>
-                    <button class="btn-addtocart">
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="row-card">
-                <div class="row-card-img">
-                    <img src="img/Almond.jpg" alt="Product 3">
-                </div>
-                <div class="row-txt">
-                    <h3>Almonds</h3>
-                    <h4>In Stock</h4>
-                    <button class="btn-addtocart">
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
-            <div class="row-card">
-                <div class="row-card-img">
-                    <img src="img/Orange juice.jpg" alt="Product 4">
-                </div>
-                <div class="row-txt">
-                    <h3>Fresh Orange juice</h3>
-                    <h4>In Stock</h4>
-                    <button class="btn-addtocart">
-                        Add to Cart
-                    </button>
-                </div>
-            </div> -->
+
+    <!-- 
         </ul>
-    </div>
+    </div> -->
 
     <!-- Bottom Cards -->
     <div class="bottom-cards">
@@ -379,7 +425,9 @@
             </div>
         </div>
     </footer>
+    </div>
 
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
