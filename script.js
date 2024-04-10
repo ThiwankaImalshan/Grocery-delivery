@@ -105,7 +105,7 @@ s.innerHTML = ":root{--win-height:" + window.innerHeight + "px}";
 
 
 
-//----------Category Drop Down----------
+//----------Category Drop Down Menu----------
 
 //default category menu display none
 document.getElementById("category_menu_default_header").style.display = "none"
@@ -117,7 +117,7 @@ document.getElementById( 'btn-categories' ).addEventListener( 'click', function(
 
 
 
-//----------Cart----------
+//----------Add to Cart Buttons----------
 
 // hide when click close button
 document.getElementById( 'close-category-menu' ).addEventListener( 'click', function() {
@@ -234,7 +234,14 @@ closeCart.addEventListener('click', () => {
             cart(positionThisProductInCart).quantity=cart(positionThisProductInCart).quantity+1;
         }
         addCartToHTML();
+        addCartToMemory();
     }
+
+    //save cart data in memory
+    const addCartToMemory=()=>{
+        localStorage.setItem('carts',JSON.stringify(cart));
+    }
+
 
     //add cart to html file
     const addCartToHTML=()=>{
@@ -245,6 +252,7 @@ closeCart.addEventListener('click', () => {
                 totalQuantity=totalQuantity+carts.quantity;
                 let newCart=document.createElement('div');
                 newCart.classList.add('listCart-items');
+                newCart.dataset.id=carts.product_id;
                 let positionProduct=products.findIndex((value)=>value.id==carts.product_id);
                 let info=products[positionProduct];
                 newCart.innerHTML=`
@@ -267,15 +275,61 @@ closeCart.addEventListener('click', () => {
         navbarCartSpan.innerText=totalQuantity;
     }
 
-    //add data from json file to products array
-    // const initApp=()=>{
-    //     fetch('products.json')
-    //     .then(response=>response.json())
-    //     .then(data=>{
-    //         products=data;
-    //     })
-    // }
-    // initApp();
+    //capture the product position click in cart and minus or plus click
+    listCartHTML.addEventListener('click',(event)=>{
+        let positionClick=event.target;
+        if(positionClick.classList.contains('listCart-minus')||positionClick.classList.contains('listCart-plus')){
+            let product_id =positionClick.parentElement.parentElement.dataset.id;
+            let type='listCart-minus';
+            if(positionClick.classList.contains('listCart-plus')){
+                type='listCart-plus';
+            }
+            changeQuantity(product_id,type);
+        }
+    })
+
+    //adjust quantity and price when plus or minus click
+    const changeQuantity=(product_id,type)=>{
+        let positionItemInCart=cart.findIndex((value)=>value.product_id==product_id);
+        if(positionItemInCart>=0){
+            switch (type) {
+                case 'listCart-plus':
+                     cart[positionItemInCart].quantity=cart[positionItemInCart].quantity+1;
+                    break;
+            
+                default:
+                    let valueChange=cart[positionItemInCart].quantity-1;
+                    if(valueChange>0){
+                        cart[positionItemInCart].quantity=valueChange;
+                    }else{
+                        cart.splice(positionItemInCart,1);
+                    }
+                    break;
+            }
+        }
+        addCartToMemory();
+        addCartToHTML();
+    }
+
+        
+        //add data from json file to products array
+        // const initApp=()=>{
+        // fetch('products.json')
+        // .then(response=>response.json())
+        // .then(data=>{
+        //     products=data;
+
+        //     //get cart from memory
+        //     if(localStorage.getItem('carts')){
+        //         carts=JSON.parse(localStorage.getItem('carts'));
+        //         addCartToHTML();
+        //     }
+        // })
+        // }
+        // initApp();
+
+
+
 
 
     
