@@ -46,5 +46,17 @@
         "name":" Apple",
         "price": 250.00,
         "image": "product img/apple.jpg"
+    },
+    {
+        "id": 9,
+        "name":" Apple",
+        "price": 250.00,
+        "image": "product img/apple.jpg"
+    },
+    {
+        "id": 10,
+        "name":" Apple",
+        "price": 250.00,
+        "image": "product img/apple.jpg"
     }
 ]
