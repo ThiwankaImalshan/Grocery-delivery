@@ -13,7 +13,7 @@ let cart = [];
 
 var loading;
 function loadingFunction() {
-  loading = setTimeout(showPage, 5000);
+  loading = setTimeout(showPage, 0);
 }
 function showPage() {
   document.getElementById("loader").style.display = "none";
@@ -117,7 +117,7 @@ document.getElementById( 'btn-categories' ).addEventListener( 'click', function(
 
 
 
-//----------Add to Cart Buttons----------
+//----------Add to Cart Open Close Buttons----------
 
 // hide when click close button
 document.getElementById( 'close-category-menu' ).addEventListener( 'click', function() {
@@ -145,20 +145,25 @@ closeCart.addEventListener('click', () => {
 
         function renderAllProducts (productsArray){
             productsArray.forEach(product => renderOneProduct(product));
+            if(localStorage.getItem('carts')){
+                carts=JSON.parse(localStorage.getItem('carts'));
+                addCartToHTML();
+            }
         }
 
+
     //add data from json file to products array
-    fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(product => {
-            products.push(product);
-        });
-        return products;
-    })
-    .catch(error => {
-        console.error('Error fetching products:', error);
-    });
+    // fetch('products.json')
+    // .then(response => response.json())
+    // .then(data => {
+    //     data.forEach(product => {
+
+    //     });
+    //     return products;
+    // })
+    // .catch(error => {
+    //     console.error('Error fetching products:', error);
+    // });
 
     //add products to row-body
     const findDiv=document.querySelector("#rowBody")
@@ -180,30 +185,6 @@ closeCart.addEventListener('click', () => {
         `
         findDiv.append(newElement)
     }
-
-    // const addDataToHTML = () =>{
-    //     rowbodyHTML.innerHTML='';
-    //     if(products.length>0){
-    //         products.forEach(product=>{
-    //             let newProduct=document.createElement('div');
-    //             newProduct.classList.add('row-card');
-    //             newProduct.innerHTML=`
-    //             <div class="row-card-img">
-    //            <img src="${product.image}" alt="Product 1">
-    //        </div>
-    //        <div class="row-txt" data-id="${product.id}">
-    //            <h3>${product.name}</h3>
-    //            <h4>Rs.${product.price}/=</h4>
-    //            <button class="btn-addtocart">
-    //                Add to Cart
-    //            </button>
-    //        </div>
-    //             `;
-    //             rowbodyHTML.appendChild(newProduct);
-    //         })
-    //     }
-    // }
-
 
 
     //---------Cart---------
@@ -241,6 +222,13 @@ closeCart.addEventListener('click', () => {
     const addCartToMemory=()=>{
         localStorage.setItem('carts',JSON.stringify(cart));
     }
+
+    // // Retrieve the stored carts data from localStorage
+    // let storedCarts = localStorage.getItem('carts');
+    // // Parse the JSON string back to an array of cart items
+    // let parsedCarts = JSON.parse(storedCarts);
+    // // Call addCartToHTML and pass the parsed cart data
+    // addCartToHTML(parsedCarts);
 
 
     //add cart to html file
@@ -313,20 +301,46 @@ closeCart.addEventListener('click', () => {
 
         
         //add data from json file to products array
-        // const initApp=()=>{
-        // fetch('products.json')
-        // .then(response=>response.json())
-        // .then(data=>{
-        //     products=data;
+        const initApp=()=>{
+        fetch('products.json')
+        .then(response=>response.json())
+        .then(data=>{
+            products=data;
 
-        //     //get cart from memory
-        //     if(localStorage.getItem('carts')){
-        //         carts=JSON.parse(localStorage.getItem('carts'));
-        //         addCartToHTML();
+            //get cart from memory
+            if(localStorage.getItem('carts')){
+                carts=JSON.parse(localStorage.getItem('carts'));
+                addCartToHTML();
+            }
+        })
+        }
+        initApp();
+
+        
+        // const addDataToHTML = () =>{
+        //     rowbodyHTML.innerHTML='';
+        //     if(products.length>0){
+        //         products.forEach(product=>{
+        //             let newProduct=document.createElement('div');
+        //             newProduct.classList.add('row-card');
+        //             newProduct.innerHTML=`
+        //             <div class="row-card-img">
+        //            <img src="${product.image}" alt="Product 1">
+        //        </div>
+        //        <div class="row-txt" data-id="${product.id}">
+        //            <h3>${product.name}</h3>
+        //            <h4>Rs.${product.price}/=</h4>
+        //            <button class="btn-addtocart">
+        //                Add to Cart
+        //            </button>
+        //        </div>
+        //             `;
+        //             rowbodyHTML.appendChild(newProduct);
+        //         })
         //     }
-        // })
         // }
-        // initApp();
+
+
 
 
 

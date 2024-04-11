@@ -46,10 +46,11 @@
             <div class="search-now">
                 <h3>Search Now</h3>
                 <div class="search-now-bar">
-                    <input type="text" name="" id="" placeholder="Search">
-                    <button class="search-now-btn">
+                    <input type="text" name="" id="searchInput" placeholder="Search">
+                    <button class="search-now-btn" onclick="searchProducts()">
                         <i class="fa fa-search"></i>
                     </button>
+                    <ul id="recommendations"></ul>
                 </div>
                 <div class="filter-bar">
                     <h3>Filter By</h3>
@@ -70,8 +71,10 @@
             <div class="searching-result">
 
             </div>
+            
+            <div class="row-body" id="results"></div>
             <!-- Card Row -->
-            <div class="row-body">
+            <!-- <div class="row-body">
                 <ul>
                     <div class="row-card">
                         <div class="row-card-img">
@@ -110,9 +113,10 @@
                         </div>
                     </div>
                 </ul>
-            </div>
+            </div> -->
+
             <!-- Card Row -->
-            <div class="row-body">
+            <!-- <div class="row-body">
                 <ul>
                     <div class="row-card">
                         <div class="row-card-img">
@@ -151,7 +155,7 @@
                         </div>
                     </div>
                 </ul>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -188,6 +192,202 @@
             </div>
         </div>
     </footer> 
+
+
+    <script>
+        function searchProducts() {
+            // Get the input text from the search box
+            var searchText = document.getElementById('searchInput').value.toLowerCase();
+
+            // Fetch the JSON data
+            fetch('category.json')
+            .then(response => response.json())
+            .then(data => {
+                var results = [];
+                // Loop through categories
+                data.categories.forEach(category => {
+                    // Loop through subcategories
+                    category.subcategories.forEach(subcategory => {
+                        // Loop through products
+                        subcategory.products.forEach(product => {
+                            // Check if the product name contains the search text
+                            if (product.name.toLowerCase().includes(searchText)) {
+                                // Add the matching product to results
+                                results.push(product);
+                            }
+                        });
+                    });
+                });
+
+                // Display search results
+                displayResults(results);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // function displayResults(results) {
+        //     var resultsContainer = document.getElementById('results');
+        //     // Clear previous results
+        //     resultsContainer.innerHTML = '';
+
+        //     let productCounter = 0;
+        //     var ul = document.createElement('ul');
+        //     resultsContainer.appendChild(ul);
+        //     // Display each result
+        //     results.forEach(product => {
+        //         // if (productCounter % 3 === 0) {
+                    
+        //         // }
+        //         var rowCard = document.createElement('div');
+        //         rowCard.classList.add('row-card');
+
+        //         var rowCardImg = document.createElement('div');
+        //         rowCardImg.classList.add('row-card-img');
+        //         rowCard.appendChild(rowCardImg);
+
+        //         var image = document.createElement('img');
+        //         image.src = product.image;
+        //         image.alt = product.name;
+        //         rowCardImg.appendChild(image);
+
+        //         var rowTxt = document.createElement('div');
+        //         rowTxt.classList.add('row-txt');
+        //         rowCard.appendChild(rowTxt);
+
+        //         var name = document.createElement('h3');
+        //         name.textContent = product.name;
+        //         rowTxt.appendChild(name);
+
+        //         var head4 = document.createElement('h4');
+        //         head4.textContent = product.name;
+        //         rowTxt.appendChild(head4);
+
+        //         ul.appendChild(rowCard);
+
+        //         productCounter++;
+
+        //     });
+
+        //     // If no results found
+        //     if (results.length === 0) {
+        //         var noResultsMessage = document.createElement('p');
+        //         noResultsMessage.textContent = 'No products found matching your search.';
+        //         resultsContainer.appendChild(noResultsMessage);
+        //     }
+        // }
+
+        
+        function displayResults(results) {
+        var resultsContainer = document.getElementById('results');
+        // Clear previous results
+        resultsContainer.innerHTML = '';
+
+        let productCounter = 0;
+        var ul = document.createElement('ul');
+        resultsContainer.appendChild(ul);
+        // Display each result
+        results.forEach(product => {
+            if (productCounter % 3 === 0) {
+                // Create a new row every 3 products
+                var newRow = document.createElement('div');
+                newRow.classList.add('search-row');
+                resultsContainer.appendChild(newRow);
+                var newUl = document.createElement('ul');
+                newRow.appendChild(newUl);
+                ul = newUl; // Update ul to the newly created ul
+            }
+
+            var rowCard = document.createElement('div');
+            rowCard.classList.add('row-card');
+
+            var rowCardImg = document.createElement('div');
+            rowCardImg.classList.add('row-card-img');
+            rowCard.appendChild(rowCardImg);
+
+            var image = document.createElement('img');
+            image.src = product.image;
+            image.alt = product.name;
+            rowCardImg.appendChild(image);
+
+            var rowTxt = document.createElement('div');
+            rowTxt.classList.add('row-txt');
+            rowCard.appendChild(rowTxt);
+
+            var name = document.createElement('h3');
+            name.textContent = product.name;
+            rowTxt.appendChild(name);
+
+            var head4 = document.createElement('h4');
+            head4.textContent = 'Rs.'+ product.price;
+            rowTxt.appendChild(head4);
+
+            var button = document.createElement('button');
+            button.classList.add('btn-addtocart');
+            button.textContent = 'Add to Cart';
+            rowTxt.appendChild(button);
+
+            ul.appendChild(rowCard);
+
+            productCounter++;
+        });
+
+            //If no results found
+            if (results.length === 0) {
+                var noResultsMessage = document.createElement('p');
+                noResultsMessage.textContent = 'No products found matching your search.';
+                resultsContainer.appendChild(noResultsMessage);
+            }
+}
+
+
+
+
+
+        // Load product names from product.json
+        fetch('category.json')
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Extract product names
+            const productNames = [];
+            data.categories.forEach(category => {
+            category.subcategories.forEach(subcategory => {
+                subcategory.products.forEach(product => {
+                productNames.push(product.name.toLowerCase());
+                });
+            });
+            });
+
+            // Get input element and recommendations list
+            const productNameInput = document.getElementById('searchInput');
+            const recommendationsList = document.getElementById('recommendations');
+
+            // Function to update recommendations based on user input
+            productNameInput.addEventListener('input', function() {
+            const inputText = this.value.toLowerCase();
+            const matchingNames = productNames.filter(name => name.includes(inputText));
+
+            // Clear previous recommendations
+            recommendationsList.innerHTML = '';
+
+            // Display up to 5 matching names as recommendations
+            matchingNames.slice(0, 5).forEach(name => {
+                const listItem = document.createElement('li');
+                listItem.textContent = name;
+                recommendationsList.appendChild(listItem);
+            });
+            });
+        })
+        .catch(error => {
+            // Error fetching or processing data
+            console.error('Error:', error);
+        });
+
+    </script>
     
 </body>
 </html>

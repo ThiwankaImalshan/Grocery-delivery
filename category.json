@@ -1,0 +1,187 @@
+{
+    "categories":[
+
+
+      {
+        "name": "vegetables",
+        "subcategories": [
+          {
+            "name": "Organic",
+            "products": [
+              {
+                "name": "Organic Carrot",
+                "price": 900.00,
+                "image": "product img/Organic Carrot.jpg",
+                "description": "Fresh organic carrot"
+              },
+              {
+                "name": "Organic Green Beans",
+                "price": 460.00,
+                "image": "product img/Organic Green Beans.jpg",
+                "description": "Fresh organic green beans"
+              },
+              {
+                "name": "Organic Sweet Potato",
+                "price": 570.00,
+                "image": "product img/Organic Sweet Potato.jpg",
+                "description": "Fresh organic sweet potato"
+              }
+            ]
+          },
+          {
+            "name": "Inorganic",
+            "products": [
+              {
+                "name": "Potato",
+                "price": 410.00,
+                "image": "product img/Potato.png",
+                "description": "Fresh potato"
+              },
+              {
+                "name": "Salad Leaves",
+                "price": 170.00,
+                "image": "product img/Salad Leaves.jpeg",
+                "description": "Fresh salad leaves"
+              },
+              {
+                "name": "Lime",
+                "price": 960.00,
+                "image": "product img/Lime.jpg",
+                "description": "Fresh lime"
+              },
+              {
+                "name": "Kekiri",
+                "price": 90.00,
+                "image": "product img/Kekiri.jpg",
+                "description": "Fresh kekiri"
+              },
+              {
+                "name": "Bringles",
+                "price": 320.00,
+                "image": "product img/Bringles.png",
+                "description": "Fresh bringles"
+              },
+              {
+                "name": "Cabbage",
+                "price": 230.00,
+                "image": "product img/Cabbage.jpg",
+                "description": "Fresh cabbage"
+              }
+            ]
+          },
+          {
+            "name": "Packets",
+            "products": [
+              {
+                "name": "Gotukola Packet",
+                "price": 130.00,
+                "image": "product img/Gotukola Packet.jpeg",
+                "description": "Fresh gotukola packet"
+              },
+              {
+                "name": "Kankun Packet",
+                "price": 130.00,
+                "image": "product img/Kankun Packet.jpg",
+                "description": "Fresh kankun packet"
+              },
+              {
+                "name": "Mukunuwenna Packet",
+                "price": 130.00,
+                "image": "product img/Mukunuwenna Packet.jpeg",
+                "description": "Fresh Mukunuwenna"
+              }
+            ]
+          }
+        ]
+      },
+
+
+
+      {
+        "name": "fruits",
+        "subcategories": [
+          {
+            "name": "organic",
+            "products": [
+              {
+                "name": "Organic Apple",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "name": "Organic Banana",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "name": "Organic Orange",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "inorganic",
+            "products": [
+              {
+                "name": "Apple",
+                "price": 0.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh apples"
+              },
+              {
+                "name": "Banana",
+                "price": 0.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh bananas"
+              },
+              {
+                "name": "Orange",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh oranges"
+              }
+            ]
+          }
+        ]
+      },
+
+
+      {
+        "name": "meats",
+        "subcategories": [
+          {
+            "name": "Fresh Meat",
+            "products": [
+              {
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          }
+        ]
+      }
+          
+
+
+    ]
+}
+
+  
