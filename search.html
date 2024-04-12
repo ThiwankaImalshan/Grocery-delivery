@@ -46,30 +46,35 @@
             <div class="search-now">
                 <h3>Search Now</h3>
                 <div class="search-now-bar">
-                    <input type="text" name="" id="searchInput" placeholder="Search">
+                    <input type="text" name="" id="searchInput" placeholder="Search products..." oninput="suggestProducts()">
                     <button class="search-now-btn" onclick="searchProducts()">
                         <i class="fa fa-search"></i>
                     </button>
-                    <ul id="recommendations"></ul>
+                    <ul id="searchResults"></ul>
                 </div>
                 <div class="filter-bar">
                     <h3>Filter By</h3>
                     <div class="filter-box">
-                        <input class="range-bar" type="range" id="vol" name="vol" min="20" max="">
-                        <p><span>LKR 1,000</span> - <span>LKR 30,000</span></p>
+                        <input class="range-bar" type="range" id="price" name="price" oninput="filterByPrice()" min="500" max="10000" step="1" value="500" onchange="updatePrice(this.value)">
+                        <p><span>Rs.100</span> - <span id="price-display"></span></p>
                     </div>
                 </div>
-                <div class="categories-bar">
+                <!-- <div class="categories-bar">
                     <h3>Categories</h3>
                     <div class="categories-box">
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="search-right-section">
             <div class="searching-result">
-
+                <!-- <select id="sortSelect" onchange="filterAndSort()">
+                    <option value="priceLowToHigh">Price Low to High</option>
+                    <option value="priceHighToLow">Price High to Low</option>
+                    <option value="nameAToZ">Name A to Z</option>
+                    <option value="nameZToA">Name Z to A</option>
+                </select> -->
             </div>
             
             <div class="row-body" id="results"></div>
@@ -193,100 +198,93 @@
         </div>
     </footer> 
 
+<script>
+    function updatePrice(val) {
+        document.getElementById('price-display').textContent = 'Rs.' + val;
+    }
 
-    <script>
-        function searchProducts() {
-            // Get the input text from the search box
-            var searchText = document.getElementById('searchInput').value.toLowerCase();
 
-            // Fetch the JSON data
-            fetch('category.json')
-            .then(response => response.json())
-            .then(data => {
-                var results = [];
-                // Loop through categories
-                data.categories.forEach(category => {
-                    // Loop through subcategories
-                    category.subcategories.forEach(subcategory => {
-                        // Loop through products
-                        subcategory.products.forEach(product => {
-                            // Check if the product name contains the search text
-                            if (product.name.toLowerCase().includes(searchText)) {
-                                // Add the matching product to results
-                                results.push(product);
-                            }
-                        });
-                    });
+
+
+
+
+
+
+    let searchData; // Variable to store fetched data
+
+        function fetchProducts() {
+            return fetch('category.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    searchData = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
                 });
-
-                // Display search results
-                displayResults(results);
-            })
-            .catch(error => console.error('Error fetching data:', error));
         }
 
-        // function displayResults(results) {
-        //     var resultsContainer = document.getElementById('results');
-        //     // Clear previous results
-        //     resultsContainer.innerHTML = '';
+        function searchProducts() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const filteredData = searchData.categories.flatMap(category =>
+                category.subcategories.flatMap(subcategory =>
+                    subcategory.products.filter(product =>
+                        product.name.toLowerCase().includes(searchInput)
+                    )
+                )
+            );
+            displayProducts(filteredData);
+        }
 
-        //     let productCounter = 0;
-        //     var ul = document.createElement('ul');
-        //     resultsContainer.appendChild(ul);
-        //     // Display each result
-        //     results.forEach(product => {
-        //         // if (productCounter % 3 === 0) {
-                    
-        //         // }
-        //         var rowCard = document.createElement('div');
-        //         rowCard.classList.add('row-card');
+        function filterByPrice() {
+            const maxPrice = document.getElementById('price').value;
+            const filteredData = searchData.categories.flatMap(category =>
+                category.subcategories.flatMap(subcategory =>
+                    subcategory.products.filter(product =>
+                        product.price <= maxPrice
+                    )
+                )
+            );
+            displayProducts(filteredData);
+        }
 
-        //         var rowCardImg = document.createElement('div');
-        //         rowCardImg.classList.add('row-card-img');
-        //         rowCard.appendChild(rowCardImg);
+        // function displayProducts(products) {
+        //     const searchResultsContainer = document.getElementById('results');
+        //     searchResultsContainer.innerHTML = ''; // Clear previous results
 
-        //         var image = document.createElement('img');
-        //         image.src = product.image;
-        //         image.alt = product.name;
-        //         rowCardImg.appendChild(image);
-
-        //         var rowTxt = document.createElement('div');
-        //         rowTxt.classList.add('row-txt');
-        //         rowCard.appendChild(rowTxt);
-
-        //         var name = document.createElement('h3');
-        //         name.textContent = product.name;
-        //         rowTxt.appendChild(name);
-
-        //         var head4 = document.createElement('h4');
-        //         head4.textContent = product.name;
-        //         rowTxt.appendChild(head4);
-
-        //         ul.appendChild(rowCard);
-
-        //         productCounter++;
-
+        //     products.forEach(product => {
+        //         const productDiv = document.createElement('div');
+        //         productDiv.classList.add('product');
+        //         productDiv.innerHTML = `
+        //             <img src="${product.image}" alt="${product.name}">
+        //             <h3>${product.name}</h3>
+        //             <p>${product.description}</p>
+        //             <p>Price: $${product.price.toFixed(2)}</p>
+        //         `;
+        //         searchResultsContainer.appendChild(productDiv);
         //     });
-
-        //     // If no results found
-        //     if (results.length === 0) {
-        //         var noResultsMessage = document.createElement('p');
-        //         noResultsMessage.textContent = 'No products found matching your search.';
-        //         resultsContainer.appendChild(noResultsMessage);
-        //     }
         // }
 
-        
-        function displayResults(results) {
+
+        function displayProducts(results) {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
         var resultsContainer = document.getElementById('results');
         // Clear previous results
         resultsContainer.innerHTML = '';
+
+        // Filter products based on search input
+        const filteredResults = results.filter(product => product.name.toLowerCase().includes(searchInput));
+
 
         let productCounter = 0;
         var ul = document.createElement('ul');
         resultsContainer.appendChild(ul);
         // Display each result
-        results.forEach(product => {
+        filteredResults.forEach(product => {
             if (productCounter % 3 === 0) {
                 // Create a new row every 3 products
                 var newRow = document.createElement('div');
@@ -318,7 +316,7 @@
             rowTxt.appendChild(name);
 
             var head4 = document.createElement('h4');
-            head4.textContent = 'Rs.'+ product.price;
+            head4.textContent = 'Rs.' + product.price;
             rowTxt.appendChild(head4);
 
             var button = document.createElement('button');
@@ -331,63 +329,118 @@
             productCounter++;
         });
 
-            //If no results found
-            if (results.length === 0) {
-                var noResultsMessage = document.createElement('p');
-                noResultsMessage.textContent = 'No products found matching your search.';
-                resultsContainer.appendChild(noResultsMessage);
-            }
-}
+        // If no results found
+        if (filteredResults.length === 0) {
+            var noResultsMessage = document.createElement('p');
+            noResultsMessage.textContent = 'No products found matching your search...';
+            noResultsMessage.classList.add('no-result-message');
+            resultsContainer.appendChild(noResultsMessage);
+        }
+    }
 
 
 
 
-
-        // Load product names from product.json
-        fetch('category.json')
-        .then(response => {
-            if (!response.ok) {
-            throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Extract product names
-            const productNames = [];
-            data.categories.forEach(category => {
-            category.subcategories.forEach(subcategory => {
-                subcategory.products.forEach(product => {
-                productNames.push(product.name.toLowerCase());
-                });
-            });
-            });
-
-            // Get input element and recommendations list
-            const productNameInput = document.getElementById('searchInput');
-            const recommendationsList = document.getElementById('recommendations');
-
-            // Function to update recommendations based on user input
-            productNameInput.addEventListener('input', function() {
-            const inputText = this.value.toLowerCase();
-            const matchingNames = productNames.filter(name => name.includes(inputText));
-
-            // Clear previous recommendations
-            recommendationsList.innerHTML = '';
-
-            // Display up to 5 matching names as recommendations
-            matchingNames.slice(0, 5).forEach(name => {
-                const listItem = document.createElement('li');
-                listItem.textContent = name;
-                recommendationsList.appendChild(listItem);
-            });
-            });
-        })
-        .catch(error => {
-            // Error fetching or processing data
-            console.error('Error:', error);
+        // Fetch products data when the page loads
+        fetchProducts().then(() => {
+            // Display all products initially
+            displayProducts(searchData.categories.flatMap(category =>
+                category.subcategories.flatMap(subcategory => subcategory.products)
+            ));
         });
 
-    </script>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+
+
+    //     function displayProducts(results) {
+    //     var resultsContainer = document.getElementById('results');
+    //     // Clear previous results
+    //     resultsContainer.innerHTML = '';
+
+    //     let productCounter = 0;
+    //     var ul = document.createElement('ul');
+    //     resultsContainer.appendChild(ul);
+    //     // Display each result
+    //     results.forEach(product => {
+    //         if (productCounter % 3 === 0) {
+    //             // Create a new row every 3 products
+    //             var newRow = document.createElement('div');
+    //             newRow.classList.add('search-row');
+    //             resultsContainer.appendChild(newRow);
+    //             var newUl = document.createElement('ul');
+    //             newRow.appendChild(newUl);
+    //             ul = newUl; // Update ul to the newly created ul
+    //         }
+
+    //         var rowCard = document.createElement('div');
+    //         rowCard.classList.add('row-card');
+
+    //         var rowCardImg = document.createElement('div');
+    //         rowCardImg.classList.add('row-card-img');
+    //         rowCard.appendChild(rowCardImg);
+
+    //         var image = document.createElement('img');
+    //         image.src = product.image;
+    //         image.alt = product.name;
+    //         rowCardImg.appendChild(image);
+
+    //         var rowTxt = document.createElement('div');
+    //         rowTxt.classList.add('row-txt');
+    //         rowCard.appendChild(rowTxt);
+
+    //         var name = document.createElement('h3');
+    //         name.textContent = product.name;
+    //         rowTxt.appendChild(name);
+
+    //         var head4 = document.createElement('h4');
+    //         head4.textContent = 'Rs.' + product.price;
+    //         rowTxt.appendChild(head4);
+
+    //         var button = document.createElement('button');
+    //         button.classList.add('btn-addtocart');
+    //         button.textContent = 'Add to Cart';
+    //         rowTxt.appendChild(button);
+
+    //         ul.appendChild(rowCard);
+
+    //         productCounter++;
+    //     });
+
+    //     // If no results found
+    //     if (results.length === 0) {
+    //         var noResultsMessage = document.createElement('p');
+    //         noResultsMessage.textContent = 'No products found matching your search...';
+    //         noResultsMessage.classList.add('no-result-message');
+    //         resultsContainer.appendChild(noResultsMessage);
+    //     }
+
+    // }
+
+
+
+
+
+
+
+
+
     
+
+</script>
+<script src="product.js"></script>
 </body>
 </html>

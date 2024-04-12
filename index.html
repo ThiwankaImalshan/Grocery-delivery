@@ -26,51 +26,6 @@
         border-radius: 20px;
         cursor: auto;
         }
-        .row-card:hover {
-        transform: scale(1.05);
-        transition: all 0.5s;
-        transition-timing-function: ease-out;
-        }
-        .row-card img {
-        width: 254px;
-        height: 191px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        }
-        .row-txt {
-        z-index: 2;
-        margin-top: 210px;
-        margin-left: 20px;
-        }
-        .row-txt h3 {
-        font-family: "Inter", sans-serif;
-        font-weight: 600;
-        font-size: 20px;
-        }
-        .row-txt h4 {
-        font-family: "Inter", sans-serif;
-        font-weight: 600;
-        font-size: 15px;
-        color: #1C570A;
-        padding-top: 10px;
-        }
-        .btn-addtocart {
-        font-family: "Inter", sans-serif;
-        font-weight: 500;
-        font-size: 13px;
-        background-color: #51ac37;
-        padding: 4px 15px;
-        border-radius: 6px;
-        border: 1px solid #51ac37;
-        color: #fff;
-        margin-top: 30px;
-        margin-left: 22%;
-        cursor: pointer;
-        }
-        .btn-addtocart:active {
-        transform: scale(1.05);
-        transition-timing-function: ease-out;
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -115,13 +70,15 @@
                             <i class="fa fa-angle-down" style="padding-left: 0.9375rem;"></i>
                         </div>
                         <div class="auto-complete-text">
-                            <input type="text" placeholder="Search for any product" value="">
+                            <input type="text" placeholder="Search for any product" value="" id="searchInput" oninput="suggestProducts()" >
+                            <ul id="searchResults" class="search-result"></ul>
                         </div>
-                        <button class="product-search-button"onclick="document.location='search.html'">
+                        <button class="product-search-button" onclick="document.location='search.html'" onclick="searchProducts()">
                             <span>SEARCH PRODUCTS </span>
                             <i class="fa fa-search" style="padding-left: 0.625rem;"></i>
                         </button>
                     </div>
+                    
 
                     <!-- Drop Down Menu -->
                     <div class="category-drop-down-menu" id="category_menu_default_header" style="display: block;">
@@ -517,5 +474,6 @@
 
 
 <script src="script.js"></script>
+<script src="product.js"></script>
 </body>
 </html>

@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GrocGo</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrocGo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styling for main content */
+    main {
+        padding: 20px;
+    }
+    </style>
 </head>
 <body>
 
-      <!-- Navigation Bar/Header -->
-      <header>
+    <!-- Navigation Bar/Header -->
+    <header>
         <div class="header-navbar-checkout">
             <div class="navbar-row">
                 <div class="navbar-logo">
                     <h2>GrocGo</h2>
                 </div>
-                <div class="navbar-items">
+                <!-- <div class="navbar-items">
                     <ul>
                         <h3><a href="/index.html">Home</a></h3>
                         <h3><a href="/product.html">Products</a></h3>
@@ -32,11 +37,26 @@
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                         </div>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </header>
 
+    <main>
+        <section class="productDetail-detail">
+            <div class="productDetail-image">
+                <!-- Product image -->
+                <img src="product img/apple.jpg" alt="Product Image">
+            </div>
+            <div class="productDetail-info">
+                <h1 class="productDetail-name">Product Name</h1>
+                <p class="productDetail-description">Product Description</p>
+                <p class="productDetail-price">Price: $XX.XX</p>
+                <button class="btn-addtocart" style="margin-left: 0;">Add to Cart</button>
+                <p class="productDetail-stores">Available Stores: <span>GrocGo</span></p>
+            </div>
+        </section>
+    </main>
 
 
     <!-- Footer Section -->
@@ -69,6 +89,7 @@
             </div>
         </div>
     </footer> 
-  
+    
+    
 </body>
 </html>

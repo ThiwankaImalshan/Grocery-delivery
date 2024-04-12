@@ -9,22 +9,28 @@
             "name": "Organic",
             "products": [
               {
+                "id":"veg001",
                 "name": "Organic Carrot",
                 "price": 900.00,
                 "image": "product img/Organic Carrot.jpg",
-                "description": "Fresh organic carrot"
+                "description": "Fresh organic carrot",
+                "availability": "out of stock"
               },
               {
+                "id":"veg002",
                 "name": "Organic Green Beans",
                 "price": 460.00,
                 "image": "product img/Organic Green Beans.jpg",
-                "description": "Fresh organic green beans"
+                "description": "Fresh organic green beans",
+                "availability": "out of stock"
               },
               {
+                "id":"veg003",
                 "name": "Organic Sweet Potato",
                 "price": 570.00,
                 "image": "product img/Organic Sweet Potato.jpg",
-                "description": "Fresh organic sweet potato"
+                "description": "Fresh organic sweet potato",
+                "availability": "in stock"
               }
             ]
           },
@@ -47,7 +53,8 @@
                 "name": "Lime",
                 "price": 960.00,
                 "image": "product img/Lime.jpg",
-                "description": "Fresh lime"
+                "description": "Fresh lime",
+                "availability": "out of stock"
               },
               {
                 "name": "Kekiri",
@@ -101,48 +108,62 @@
         "name": "fruits",
         "subcategories": [
           {
-            "name": "organic",
+            "name": "Organic",
             "products": [
               {
-                "name": "Organic Apple",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "name": "Organic Mango",
+                "price": 1700.00,
+                "image": "product img/Organic Mango.jpg",
+                "description": "Fresh organic mango"
               },
               {
-                "name": "Organic Banana",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "name": "Organic Papaya",
+                "price": 570.00,
+                "image": "product img/Organic Papaya.jpg",
+                "description": "Fresh organic papaya",
+                "availability": "out of stock"
               },
               {
-                "name": "Organic Orange",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "name": "Organic Pineapple",
+                "price": 1248.00,
+                "image": "product img/Organic Pineapple.jpg",
+                "description": "Fresh organic pineapple"
+              },
+              {
+                "name": "Organic Watermelon",
+                "price": 330.00,
+                "image": "product img/Organic Watermelon.jpg",
+                "description": "Fresh organic watermelon"
               }
             ]
           },
           {
-            "name": "inorganic",
+            "name": "Inorganic",
             "products": [
               {
                 "name": "Apple",
-                "price": 0.99,
-                "image": "product img/Almond.jpg",
+                "price": 2290.00,
+                "image": "product img/apple.jpg",
                 "description": "Fresh apples"
               },
               {
-                "name": "Banana",
-                "price": 0.49,
-                "image": "product img/Almond.jpg",
+                "name": "Banana-Ambul",
+                "price": 310.00,
+                "image": "product img/Banana.jpg",
                 "description": "Fresh bananas"
               },
               {
                 "name": "Orange",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
+                "price": 1720.00,
+                "image": "product img/Orange.jpg",
                 "description": "Fresh oranges"
+              },
+              {
+                "name": "Strawberry",
+                "price": 1250.00,
+                "image": "product img/Strawberry.jpg",
+                "description": "Fresh strawberry",
+                "availability": "out of stock"
               }
             ]
           }

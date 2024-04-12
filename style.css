@@ -898,13 +898,15 @@ cursor: pointer;
 .row-body{
     margin-top: 40px;
     margin-bottom: 10px;
-    margin-right: 50px;
+    margin-right: 65px;
     margin-left: 50px;
+    width: 90%;
+    justify-content: center;
 }
 .row-body ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* Gap between cards */
 }
 .row-card{
     width: 254px;
@@ -958,25 +960,25 @@ cursor: pointer;
     background-color: #51ac37;
     padding: 6px 18px 6px 18px;
     border-radius: 6px;
-     border: none;
+    border: none;
     color: #fff;
     margin-top: 30px;
     margin-left: 22%;
     margin-right: auto;
     cursor: pointer;
 }
-/* .btn-addtocart:active{
+.btn-addtocart:active{
     transform: scale(1.05);
     transition-timing-function: ease-out;
-} */
+}
 
-/* .btn-addtocart:hover{
+.btn-addtocart:hover{
     background-color: transparent;
     color: #51ac37;
     font-weight: bold;
     border: 2px solid #51ac37;
-    border-radius: 19px 4px 18px 4px;
-} */
+    border-radius: 6px;
+}
 
 
 
@@ -1453,6 +1455,42 @@ cursor: pointer;
     width: 92%;
     height: auto;
 }
+#searchResults {
+    display: none;
+    border: 1px solid #ccc;
+    border-top: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+}
+#searchResults li {
+    padding: 10px;
+    cursor: pointer;
+    width: 250px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 15px;
+}
+#searchResults li:hover {
+    background-color: #f0f0f0;
+}
+.search-result{
+    color: black;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    max-height: 18.75rem;
+    list-style-type: none;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+    width: 45%;
+}
 
 
 
@@ -1463,7 +1501,7 @@ cursor: pointer;
     border-radius: 10px;
     margin-left: 30px;
     margin-top: 15px;
-    width: 95%;
+    width: 91%;
     height: 50px;
 }
 
@@ -1655,6 +1693,14 @@ cursor: pointer;
   .p-next-btn {
     right: 0;
   }
+  .no-result-message{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 20px;
+  }
   
   
 
@@ -1700,6 +1746,81 @@ cursor: pointer;
     font-weight: 500;
     font-style: normal;
     font-size: 18px;
+}
+
+
+
+
+/* ________________PRODUCTDETAIL PAGE_________________________ */
+
+/* Styling for product detail section */
+.productDetail-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 150px;
+    margin-left: 30px;
+}
+
+/* Styling for product image */
+.productDetail-image img {
+    /* max-width: 100%; */
+    border: 3px solid rgb(100, 191, 71);
+    width: 500px;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Styling for product info */
+.productDetail-info {
+    flex: 0 0 60%; /* 60% width of the container */
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.productDetail-name {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 25px;
+}
+
+.productDetail-description {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.productDetail-price {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 23px;
+    color: #1C570A;
+    margin-top: 20px;
+}
+
+.productDetail-stores{
+    margin-top: 30px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 15px;
+}
+.productDetail-stores span{
+    color: #1C570A;
 }
 
   
