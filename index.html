@@ -5,28 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrocGo</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .carousel-container {
-        margin-left: 10px;
-        width: 100%;
-        overflow: hidden;
-        }
-        .carousel {
-        display: flex;
-        width: fit-content; /* Change to fit-content for automatic looping */
-        transition: transform 0.5s ease;
-        padding-top: 40px;
-        padding-bottom: 10px;
-        }
-        .row-card {
-        width: 254px;
-        height: 340px;
-        margin-right: 40px;
-        box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.10);
-        border-radius: 20px;
-        cursor: auto;
-        }
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
@@ -73,7 +51,7 @@
                             <input type="text" placeholder="Search for any product" value="" id="searchInput" oninput="suggestProducts()" >
                             <ul id="searchResults" class="search-result"></ul>
                         </div>
-                        <button class="product-search-button" onclick="document.location='search.html'" onclick="searchProducts()">
+                        <button class="product-search-button" onclick="passDataAndRedirect()">
                             <span>SEARCH PRODUCTS </span>
                             <i class="fa fa-search" style="padding-left: 0.625rem;"></i>
                         </button>
@@ -92,18 +70,18 @@
                                     </span>
                                 </li>
                                 <ul id="sub_dep_id_1" style="display: none;">
-                                    <a>
+                                    <a onclick="handleItemClick('sub_dep_1_all')">
                                         <li class="cat_item_" data-cat-id="all">
                                             <strong>All Vegetables</strong>
                                         </li>
                                     </a>
-                                    <a>
+                                    <a onclick="handleItemClick('sub_dep_1_organic')">
                                         <li>Organic</li>
                                     </a>
-                                    <a>
+                                    <a onclick="handleItemClick('sub_dep_1_inorganic')">
                                         <li>Inorganic</li>
                                     </a>
-                                    <a>
+                                    <a onclick="handleItemClick('sub_dep_1_packets')">
                                         <li>Packets</li>
                                     </a>
                                 </ul>
@@ -114,15 +92,15 @@
                                     </span>
                                 </li>
                                     <ul id="sub_dep_id_2" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_2_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Fruits</strong>
                                             </li>
                                         </a>
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_2_organic')">
                                             <li>Organic</li>
                                         </a>
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_2_inorganic')">
                                             <li>Inorganic</li>
                                         </a>
                                     </ul>
@@ -340,6 +318,9 @@
         </div>
     </div>
 </header>
+
+
+
     <!-- Main container -->
     <main>
         <div class="main-container">
@@ -403,10 +384,21 @@
     </div>
 
     <!-- Card Row -->
-    <div class="carousel-container">
+    <!-- <div class="carousel-container">
         <div class="carousel" id="rowBody">
         </div>
-    </div>
+    </div> -->
+
+    <div class="a-row-body">
+        <div class="a-slider-container">
+            <div class="a-slider" style="transform: translateX(0%);">
+                <!-- Product rows will be dynamically inserted here -->
+              </div>
+        </div>
+        <i class="fa fa-arrow-circle-left a-prev-btn fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-arrow-circle-right a-next-btn fa-2x" aria-hidden="true"></i>
+      </div>
+
     <!-- <div class="row-body" >
         <ul class="row-body-ul" id="rowBody"> -->
 
@@ -472,8 +464,208 @@
     </footer>
     </div>
 
+<script>
 
+
+    //------------------Top products carousel------------------
+    document.querySelectorAll('.a-row-body').forEach(container => {
+    const slide = container.querySelector('.a-slider');
+    const prevButton = container.querySelector('.a-prev-btn');
+    const nextButton = container.querySelector('.a-next-btn');
+
+    let currentTranslateX = 0;
+    const slideWidth = 100; // Assuming each slide moves by 100%
+    let autoLoopInterval;
+
+    // Function to advance to the next slide
+    const nextSlide = () => {
+      const nextTranslateX = currentTranslateX - slideWidth;
+      if (nextTranslateX >= -(slide.children.length - 1) * slideWidth) {
+        currentTranslateX = nextTranslateX;
+      } else {
+        // Reset to the first slide if reached the end
+        currentTranslateX = 0;
+      }
+      slide.style.transition = 'transform 1s ease'; // Adjust duration for smoother transition
+      slide.style.transform = `translateX(${currentTranslateX}%)`;
+    };
+
+    // Function to move to the previous slide
+    const prevSlide = () => {
+      const prevTranslateX = currentTranslateX + slideWidth;
+      if (prevTranslateX <= 0) {
+        currentTranslateX = prevTranslateX;
+        slide.style.transition = 'transform 1s ease'; // Adjust duration for smoother transition
+        slide.style.transform = `translateX(${currentTranslateX}%)`;
+      }
+    };
+
+    // Start auto-looping
+    const startAutoLoop = () => {
+      autoLoopInterval = setInterval(() => {
+        nextSlide();
+      }, 5000); // Adjust the interval as needed (e.g., every 3 seconds)
+    };
+
+    // Stop auto-looping
+    const stopAutoLoop = () => {
+      clearInterval(autoLoopInterval);
+    };
+
+    // Event listeners for prev and next buttons
+    nextButton.addEventListener('click', () => {
+      stopAutoLoop(); // Stop auto-looping when manual navigation occurs
+      nextSlide();
+    });
+
+    prevButton.addEventListener('click', () => {
+      stopAutoLoop(); // Stop auto-looping when manual navigation occurs
+      prevSlide();
+    });
+
+    // Start auto-looping when the page loads
+    startAutoLoop();
+
+    // Pause auto-looping when hovering over the slider
+    slide.addEventListener('mouseover', stopAutoLoop);
+
+    // Resume auto-looping when mouse leaves the slider
+    slide.addEventListener('mouseleave', startAutoLoop);
+  });
+
+
+
+
+
+
+
+//--------------fetch data from json------------
+  fetch('category.json')
+  .then(response => response.json())
+  .then(data => {
+    // Filter out the top products
+    const topProducts = data.categories.flatMap(category =>
+      category.subcategories.flatMap(subcategory =>
+        subcategory.products.filter(product => product.top)
+      )
+    );
+
+    // Calculate the number of rows needed
+    const numRows = Math.ceil(topProducts.length / 4);
+
+    // Insert products into HTML structure
+    const sliderContainer = document.querySelector('.a-slider');
+    for (let i = 0; i < numRows; i++) {
+      const row = document.createElement('div');
+      row.classList.add('a-slider-row');
+
+      const ul = document.createElement('ul');
+
+      for (let j = i * 4; j < Math.min((i + 1) * 4, topProducts.length); j++) {
+        const product = topProducts[j];
+
+        const li = document.createElement('div');
+        li.classList.add('row-card');
+        li.dataset.id=product.id;
+        li.classList.add('a-slider-item');
+
+        const rowcardimg =document.createElement('div');
+        rowcardimg.classList.add('row-card-img');
+        li.appendChild(rowcardimg);
+
+        const rowcardtxt =document.createElement('div');
+        rowcardtxt.classList.add('row-txt');
+        li.appendChild(rowcardtxt);
+        
+        // Apply availability check and styling to the button
+        const button = document.createElement('button');
+        button.classList.add('btn-addtocart');
+        button.textContent = 'Add to Cart';
+        button.addEventListener('click', () => {
+          // Add functionality for adding to cart here
+        });
+
+        if (product.availability === 'out of stock') {
+          button.style.backgroundColor = '#DE3163';
+          button.style.color = 'white';
+          button.textContent = "Out of Stock";
+          button.style.pointerEvents = 'none';
+          button.disabled = true;
+        } else {
+          button.style.backgroundColor = ''; // Use default stylesheet color
+          button.disabled = false;
+        }
+
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product.name;
+
+        const productName = document.createElement('h3');
+        productName.textContent = product.name;
+
+        const productPrice = document.createElement('h4');
+        productPrice.textContent = `Rs.${product.price}`;
+
+        rowcardimg.appendChild(img);
+        rowcardtxt.appendChild(productName);
+        rowcardtxt.appendChild(productPrice);
+        rowcardtxt.appendChild(button);
+
+        ul.appendChild(li);
+      }
+
+      row.appendChild(ul);
+      sliderContainer.appendChild(row);
+    }
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+
+
+
+
+
+
+    //-------------Function to handle click on list items-------------
+    function handleItemClick(itemId) {
+        localStorage.setItem('selectedItemId', itemId);
+        // Redirect to product.html
+        window.location.href = 'product.html';
+    }
+
+
+
+
+    // //--------------pass data from search input field to search page---------------
+    // function passDataAndRedirect() {
+    //         const searchData = document.getElementById("searchInput").value;
+    //         // Encode search input to handle special characters
+    //         const encodedSearchData = encodeURIComponent(searchData);
+    //         // Redirect to search.html with search input as a query parameter
+    //         window.location.href = "search.html?searchInput=" + encodedSearchData;
+    // }
+
+    
+    //--------------pass data from search input field to search page---------------
+    function passDataAndRedirect() {
+        const searchData = document.getElementById("searchInput").value.trim(); // Trim any whitespace
+        if (searchData !== "") { // Check if search input is not empty
+            // Encode search input to handle special characters
+            const encodedSearchData = encodeURIComponent(searchData);
+            // Redirect to search.html with search input as a query parameter
+            window.location.href = "search.html?searchInput=" + encodedSearchData;
+        } else {
+            console.log("Search input is empty. Redirect aborted.");
+        }
+    }
+
+
+
+</script>
 <script src="script.js"></script>
 <script src="product.js"></script>
+<script src="shopping-cart.js"></script>
 </body>
 </html>

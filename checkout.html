@@ -22,13 +22,13 @@
                             <h3><a href="/product.html">Products</a></h3>
                             <h3><a href="/services.html">Services</a></h3>
                             <h3><a href="/about.html">About Us</a></h3>
-                            <div class="navbar-cart">
+                            <!-- <div class="navbar-cart">
                                 <small>Add to Cart</small>
                                 <i class="fa fa-shopping-cart" aria-hidden="true">
                                     <span id="smart-checkout-count" class="badge">0</span>
                                 </i>
-                            </div>
-                            <div class="navbar-signin">
+                            </div> -->
+                            <div class="navbar-signin nav-sign-icon">
                                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                             </div>
                         </ul>
@@ -65,12 +65,13 @@
                             <div class="form-field-wrapper flex">
                                 <div class="form-field-wrapper">
                                   <input type="text" id="city" placeholder="City*"/>
+                                  <ul id="cityList">
+                                  </ul>
                                 </div>
                                 <div class="form-field-wrapper">
                                   <input type="text" id="postal-code" placeholder="Postal Code"/>
                                 </div>
                               </div>
-                            
                           </form>
                     </div>
                     <div class="checkout-shipping">
@@ -100,48 +101,17 @@
                     <div class="checkout-order-summery">
                         <h4>Order Summary</h4>
 
-                        <div class="order-details">
-                            <div class="order-details-img">
-                                <img src="product img/apple.jpg" alt="">
-                            </div>
-                            <div class="order-details-texts">
-                                <div class="order-detail-txt">
-                                    <p>Fresh Apple <Span>Rs.180.00</Span></p>
-                                </div>
-                                <div class="order-detail-icons">
-                                    <div class="order-add-items">
-                                        <button class="add-items-btn-minus items-btn">-</button>
-                                        <span class="add-no-of-items">1</span>
-                                        <button class="add-items-btn-plus items-btn">+</button>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="order-detail-box" id="orderDetail-Box">
+
                         </div>
-                        <div class="order-details">
-                            <div class="order-details-img">
-                                <img src="product img/Almond.jpg" alt="">
-                            </div>
-                            <div class="order-details-texts">
-                                <div class="order-detail-txt">
-                                    <p>Almonds <Span>Rs.230.00</Span></p>
-                                </div>
-                                <div class="order-detail-icons">
-                                    <div class="order-add-items">
-                                        <button class="add-items-btn-minus items-btn">-</button>
-                                        <span class="add-no-of-items">1</span>
-                                        <button class="add-items-btn-plus items-btn">+</button>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
                         <h5>Stock available Near to you : <Span>Dehiwala</Span></h5>
                         <div class="order-price-calculations">
-                            <p>Sub Total : <span>Rs.360.00</span></p>
-                            <p>Shipping Charge : <span>Rs.500.00</span></p>
+                            <p>Sub Total : <span id="sub-total"></span></p>
+                            <p>Shipping Charge : <span id="shipping-cost">Rs.500.00</span></p>
                         </div>
-                        <h6>Total : <span>Rs.860.00</span></h6>
+                        <h6>Total : <span id="full-total">Rs.1000.00</span></h6>
                         <div class="btn-place-your-order">
                             <button>Place Your Order</button>
                         </div>
@@ -167,7 +137,7 @@
                     <div class="footer-content-sec2">
                         <div class="footer-sec footer-sec2">
                             <h3>Customer Care</h3><br>
-                            <p><a href="/aboutus.html">About US</a></p>
+                            <p><a href="/about.html">About US</a></p>
                             <p><a href="/services.html">Services</a></p>
                             <p><a href="">Privacy Policy</a></p>
                         </div>
@@ -182,5 +152,103 @@
             </div>
         </footer> 
 
+    <script>
+
+
+    //---------------------Add Cart Items to Checkout----------------------------
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Reference the container element where cart items are displayed
+    const cartContainer = document.getElementById('orderDetail-Box');
+
+    // Retrieve cart data from local storage
+    const cartData = JSON.parse(localStorage.getItem('cart'));
+    console.log('Cart Data:', cartData);
+
+    // Fetch products data from category.json
+    fetch('category.json')
+        .then(response => response.json())
+        .then(data => {
+            // Extract only the "products" array
+            const productsArray = data.categories.flatMap(category => category.subcategories.flatMap(subcategory => subcategory.products));
+            console.log('Products Array:', productsArray);
+
+            let totalPrice = 0; // Initialize total price variable
+
+            // Iterate over each item in the cart data
+            cartData.forEach(cartItem => {
+                // Find the product in the products array with the matching ID
+                const product = productsArray.find(product => product.id === cartItem.product_id);
+
+                // Check if the product was found
+                if (product) {
+                    console.log(product.name);
+
+                    // Calculate subtotal for the current cart item
+                    const subtotal = product.price * cartItem.quantity;
+                    totalPrice += subtotal; // Add subtotal to total price
+
+                    // Create a cart item element
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.classList.add('order-details');
+                    cartItemElement.innerHTML = `
+                        <div class="order-details-img">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="order-details-texts">
+                            <div class="order-detail-txt">
+                                <p>${product.name}<span>Rs.${product.price*cartItem.quantity}</span></p>
+                            </div>
+                            <div class="order-detail-icons">
+                                <div class="order-add-items">
+                                    <button class="add-items-btn-minus items-btn">-</button>
+                                    <span class="add-no-of-items">${cartItem.quantity}</span>
+                                    <button class="add-items-btn-plus items-btn">+</button>
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Append the cart item element to the container
+                    cartContainer.appendChild(cartItemElement);
+                } else {
+                    console.log(`Product with ID ${cartItem.product_id} not found.`);
+                }
+            });
+
+            // Display the total price
+            const totalPriceElement = document.getElementById('sub-total');
+            totalPriceElement.textContent = `Rs.${totalPrice.toFixed(2)}`;
+            // document.body.appendChild(totalPriceElement);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    });
+
+
+
+    function fetchCityData() {
+        fetch('city.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Process the fetched JSON data here
+                console.log(data); // You can replace this with your processing logic
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    // Call the function to fetch city data
+    fetchCityData();
+
+
+    </script>
+    <script src="shopping-cart.js"></script>
 </body>
 </html>

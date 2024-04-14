@@ -6,6 +6,7 @@
     <title>GrocGo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -33,6 +34,18 @@
                         </div>
                     </ul>
                 </div>
+            </div>
+        </div>
+
+        <!-- Cart-Tab -->
+        <div class="cartTab">
+            <h1>Shopping Cart</h1>
+            <div class="listCart">
+
+            </div>
+            <div class="cartTab-btn">
+                <button class="cartTab-close">Close</button>
+                <button class="cartTab-checkOut" onclick="document.location='checkout.html'">Check Out</button>
             </div>
         </div>
     </header>
@@ -115,194 +128,13 @@
                 </div>
             </div>
         </div>
+        
         <!-- <div class="search-right-section" id="searchRightSection"> -->
             <div class="search-right-section" id="catalog">
             <div class="product-searching-result">
                 
             </div>
 
-
-            <!-- Card Row -->
-            <!-- <div class="row-body">
-                <h5>Low Country Vegitables</h5>
-                <div class="p-slider-container">
-                    <div class="p-slider">
-                        <div class="p-slider-row">
-                            <ul>
-                                <div class="row-card p-slider-item">
-                                    <div class="row-card-img">
-                                        <img src="product img/apple.jpg" alt="Product 1">
-                                    </div>
-                                    <div class="row-txt">
-                                        <h3>Fresh Apple</h3>
-                                        <h4>In Stock</h4>
-                                        <button class="btn-addtocart">
-                                            Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row-card p-slider-item">
-                                    <div class="row-card-img">
-                                        <img src="product img/snickers.jpg" alt="Product 2">
-                                    </div>
-                                    <div class="row-txt">
-                                        <h3>Snickers</h3>
-                                        <h4>In Stock</h4>
-                                        <button class="btn-addtocart">
-                                            Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row-card p-slider-item">
-                                    <div class="row-card-img">
-                                        <img src="product img/Orange juice.jpg" alt="Product 4">
-                                    </div>
-                                    <div class="row-txt">
-                                        <h3>Fresh Orange juice</h3>
-                                        <h4>In Stock</h4>
-                                        <button class="btn-addtocart">
-                                            Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    <div class="p-slider-row">
-                        <ul>
-                            <div class="row-card p-slider-item">
-                                <div class="row-card-img">
-                                    <img src="product img/apple.jpg" alt="Product 1">
-                                </div>
-                                <div class="row-txt">
-                                    <h3>Fresh Apple</h3>
-                                    <h4>In Stock</h4>
-                                    <button class="btn-addtocart">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="row-card p-slider-item">
-                                <div class="row-card-img">
-                                    <img src="product img/snickers.jpg" alt="Product 2">
-                                </div>
-                                <div class="row-txt">
-                                    <h3>Snickers</h3>
-                                    <h4>In Stock</h4>
-                                    <button class="btn-addtocart">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="row-card p-slider-item">
-                                <div class="row-card-img">
-                                    <img src="product img/Orange juice.jpg" alt="Product 4">
-                                </div>
-                                <div class="row-txt">
-                                    <h3>Fresh Orange juice</h3>
-                                    <h4>In Stock</h4>
-                                    <button class="btn-addtocart">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-                    <i class="fa fa-arrow-circle-left p-prev-btn fa-2x" aria-hidden="true"></i>
-                    <i class="fa fa-arrow-circle-right p-next-btn fa-2x" aria-hidden="true"></i>
-                </div>
-            </div> -->
-
-            <!-- Card Row -->
-            <!-- <div class="row-body">
-                <h5>Low Country Vegitables</h5>
-                <div class="p-slider-container">
-                    <div class="p-slider">
-                        <div class="p-slider-row">
-                            <ul>
-                                <div class="row-card p-slider-item">
-                                    <div class="row-card-img">
-                                        <img src="product img/apple.jpg" alt="Product 1">
-                                    </div>
-                                    <div class="row-txt">
-                                        <h3>Fresh Apple</h3>
-                                        <h4>In Stock</h4>
-                                        <button class="btn-addtocart">
-                                            Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row-card p-slider-item">
-                                    <div class="row-card-img">
-                                        <img src="product img/snickers.jpg" alt="Product 2">
-                                    </div>
-                                    <div class="row-txt">
-                                        <h3>Snickers</h3>
-                                        <h4>In Stock</h4>
-                                        <button class="btn-addtocart">
-                                            Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row-card p-slider-item">
-                                    <div class="row-card-img">
-                                        <img src="product img/Orange juice.jpg" alt="Product 4">
-                                    </div>
-                                    <div class="row-txt">
-                                        <h3>Fresh Orange juice</h3>
-                                        <h4>In Stock</h4>
-                                        <button class="btn-addtocart">
-                                            Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    <div class="p-slider-row">
-                        <ul>
-                            <div class="row-card p-slider-item">
-                                <div class="row-card-img">
-                                    <img src="product img/apple.jpg" alt="Product 1">
-                                </div>
-                                <div class="row-txt">
-                                    <h3>Fresh Apple</h3>
-                                    <h4>In Stock</h4>
-                                    <button class="btn-addtocart">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="row-card p-slider-item">
-                                <div class="row-card-img">
-                                    <img src="product img/snickers.jpg" alt="Product 2">
-                                </div>
-                                <div class="row-txt">
-                                    <h3>Snickers</h3>
-                                    <h4>In Stock</h4>
-                                    <button class="btn-addtocart">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="row-card p-slider-item">
-                                <div class="row-card-img">
-                                    <img src="product img/Orange juice.jpg" alt="Product 4">
-                                </div>
-                                <div class="row-txt">
-                                    <h3>Fresh Orange juice</h3>
-                                    <h4>In Stock</h4>
-                                    <button class="btn-addtocart">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-                    <i class="fa fa-arrow-circle-left p-prev-btn fa-2x" aria-hidden="true"></i>
-                    <i class="fa fa-arrow-circle-right p-next-btn fa-2x" aria-hidden="true"></i>
-                </div>
-                </div> -->
             </div>
 
         </div>
@@ -328,7 +160,7 @@
                 <div class="footer-content-sec2">
                     <div class="footer-sec footer-sec2">
                         <h3>Customer Care</h3><br>
-                        <p><a href="/aboutus.html">About US</a></p>
+                        <p><a href="/about.html">About US</a></p>
                         <p><a href="/services.html">Services</a></p>
                         <p><a href="">Privacy Policy</a></p>
                     </div>
@@ -342,11 +174,132 @@
             </div>
         </div>
     </footer> 
-         
+
+
+    
+        
+    <script src="script.js"></script>
+    <script src="product.js"></script>
     <script>
 
-    </script>
+        // Read the selected item from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectedItemId = localStorage.getItem('selectedItemId');
+            if (selectedItemId) {
+                // Perform action based on selected item
+                switch (selectedItemId) {
+                    case 'sub_dep_1_all':
+                        // Perform action for 'All Vegetables'
+                        document.getElementById('vegitable-btn').click();
+                        break;
+                    case 'sub_dep_1_organic':
+                        // Perform action for 'Organic'
+                        break;
+                    case 'sub_dep_1_inorganic':
+                        // Perform action for 'Inorganic'
+                        break;
+                    case 'sub_dep_1_packets':
+                        // Perform action for 'Packets'
+                        break;
+                    case 'sub_dep_2_all':
+                        document.getElementById('fruit-btn').click();
+                        // Perform action for 'All Fruits'
+                        break;
+                    case 'sub_dep_2_organic':
+                        // Perform action for 'Organic'
+                        break;
+                    case 'sub_dep_2_inorganic':
+                        // Perform action for 'Inorganic'
+                        break;
+                    case 'sub_dep_2_packets':
+                        // Perform action for 'Packets'
+                        break;
+                    // Add cases for other sub-departments as needed
+                    default:
+                        // Handle other cases if needed
+                }
+                // Clear the selected item from localStorage
+                localStorage.removeItem('selectedItemId');
+            }
+        });
 
-    <script src="product.js"></script>
+
+
+        //------------Cart window---------------
+        let navCart = document.querySelector('.navbar-cart');
+        let bodyContain = document.querySelector('body');
+        let closeTheCart = document.querySelector('.cartTab-close');
+        // Show Cart
+        navCart.addEventListener('click', () => {
+            bodyContain.classList.toggle('showCart');
+        })
+
+        // Close Cart
+        closeTheCart.addEventListener('click', () => {
+            bodyContain.classList.toggle('showCart');
+        })
+
+
+
+
+
+        //_______________________Cart for each pages_________________________
+
+        //---------------Retrieve cart data from local storage on page load----------------
+        let list_Cart = document.querySelector('.listCart');
+        let navbar_cartSpan = document.querySelector('.navbar-cart span');
+
+        window.addEventListener('load', () => {
+            // Get cart data from local storage
+            const cartData = JSON.parse(localStorage.getItem('cart'));
+            // If cart data exists, assign it to cartBox array
+            if (cartData && Array.isArray(cartData)) {
+                cartBox = cartData;
+            }
+            console.log(cartBox);
+            // Render cart items from local storage
+            renderCartItemsFromLocalStorage();
+        });
+
+        // Function to render the cart items from local storage
+        const renderCartItemsFromLocalStorage = () => {
+            console.log("Rendering cart items from local storage...");
+            console.log("Cart data from local storage:", cartBox);
+
+            // Get outerArray data from local storage
+            const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+            
+            list_Cart.innerHTML = '';
+            let totalQuantity = 0;
+            if (cartBox.length > 0) {
+                cartBox.forEach(cartss => {
+                    totalQuantity += cartss.quantity;
+                    let newCart = document.createElement('div');
+                    newCart.classList.add('listCart-items');
+                    newCart.dataset.id = cartss.product_id;
+                    let positionProduct = outerItems.findIndex((value) => value.id == cartss.product_id);
+                    let info = outerItems[positionProduct];
+                    newCart.innerHTML = `
+                        <div class="listCart-image">
+                            <img src="${info.image}">
+                        </div>
+                        <div class="listCart-name">
+                            ${info.name}
+                        </div>
+                        <div class="listCart-totalPrice">Rs.${info.price * cartss.quantity}</div>
+                        <div class="listCart-quantity">
+                            <span class="listCart-minus"><</span>
+                            <span>${cartss.quantity}</span>
+                            <span class="listCart-plus">></span>
+                        </div>
+                    `;
+                    list_Cart.appendChild(newCart);
+                });
+            }
+            navbar_cartSpan.innerText = totalQuantity;
+            console.log("Cart items rendered successfully.");
+        };
+
+    </script>
 </body>
 </html>

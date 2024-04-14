@@ -1,14 +1,14 @@
-// Fetch data from category.json
-fetch('category.json')
-.then(response => response.json())
-.then(jsonData => {
-    // Assign data to the variable
-    const data = jsonData;
+    //------------Fetch data from category.json-------
+    fetch('category.json')
+    .then(response => response.json())
+    .then(jsonData => {
+        // Assign data to the variable
+        const data = jsonData;
     
 
 
 
-    //_________Insert products to page___________
+    //_________Insert products to PRODUCT page___________
     function createHTML(selectedCategory) {
         let html = '';
         const category = data.categories.find(cat => cat.name === selectedCategory);
@@ -105,38 +105,41 @@ fetch('category.json')
 
 
     // Function to move the slider right
-function moveSliderRight() {
-    const sliderContainer = document.querySelector('.p-slider-container');
-    const sliderRows = document.querySelectorAll('.p-slider-row');
-    const rowWidth = sliderRows[0].offsetWidth; // Assuming all rows have the same width
+    function moveSliderRight() {
+        const sliderContainer = document.querySelector('.p-slider-container');
+        const sliderRows = document.querySelectorAll('.p-slider-row');
+        const rowWidth = sliderRows[0].offsetWidth; // Assuming all rows have the same width
 
-    // Calculate how much to translate based on the width of one row
-    const translateAmount = rowWidth;
+        // Calculate how much to translate based on the width of one row
+        const translateAmount = rowWidth;
 
-    // Apply transform to each row
-    sliderRows.forEach(row => {
-        const currentTransform = getComputedStyle(row).getPropertyValue('transform');
-        const currentTranslateX = parseFloat(currentTransform.split(',')[4]); // Extract current translateX value
-        row.style.transform = `translateX(${currentTranslateX + translateAmount}px)`;
-    });
-}
+        // Apply transform to each row
+        sliderRows.forEach(row => {
+            const currentTransform = getComputedStyle(row).getPropertyValue('transform');
+            const currentTranslateX = parseFloat(currentTransform.split(',')[4]); // Extract current translateX value
+            row.style.transform = `translateX(${currentTranslateX + translateAmount}px)`;
+        });
+    }
 
-// Function to move the slider left
-function moveSliderLeft() {
-    const sliderContainer = document.querySelector('.p-slider-container');
-    const sliderRows = document.querySelectorAll('.p-slider-row');
-    const rowWidth = sliderRows[0].offsetWidth; // Assuming all rows have the same width
+    // Function to move the slider left
+    function moveSliderLeft() {
+        const sliderContainer = document.querySelector('.p-slider-container');
+        const sliderRows = document.querySelectorAll('.p-slider-row');
+        const rowWidth = sliderRows[0].offsetWidth; // Assuming all rows have the same width
 
-    // Calculate how much to translate based on the width of one row
-    const translateAmount = rowWidth;
+        // Calculate how much to translate based on the width of one row
+        const translateAmount = rowWidth;
 
-    // Apply transform to each row
-    sliderRows.forEach(row => {
-        const currentTransform = getComputedStyle(row).getPropertyValue('transform');
-        const currentTranslateX = parseFloat(currentTransform.split(',')[4]); // Extract current translateX value
-        row.style.transform = `translateX(${currentTranslateX - translateAmount}px)`;
-    });
-}
+        // Apply transform to each row
+        sliderRows.forEach(row => {
+            const currentTransform = getComputedStyle(row).getPropertyValue('transform');
+            const currentTranslateX = parseFloat(currentTransform.split(',')[4]); // Extract current translateX value
+            row.style.transform = `translateX(${currentTranslateX - translateAmount}px)`;
+        });
+    }
+
+
+
 
 
 
@@ -144,94 +147,94 @@ function moveSliderLeft() {
 
 
 
-//-----------search products------------
-function searchProducts() {
-    // Get the input text from the search box
-    var searchText = document.getElementById('searchInput').value.toLowerCase();
+    //-----------search products------------
+    function searchProducts() {
+        // Get the input text from the search box
+        var searchText = document.getElementById('searchInput').value.toLowerCase();
 
-    // Fetch the JSON data
-    fetch('category.json')
-    .then(response => response.json())
-    .then(data => {
-        var results = [];
-        // Loop through categories
-        data.categories.forEach(category => {
-            // Loop through subcategories
-            category.subcategories.forEach(subcategory => {
-                // Loop through products
-                subcategory.products.forEach(product => {
-                    // Check if the product name contains the search text
-                    if (product.name.toLowerCase().includes(searchText)) {
-                        // Add the matching product to results
-                        results.push(product);
-                    }
+        // Fetch the JSON data
+        fetch('category.json')
+        .then(response => response.json())
+        .then(data => {
+            var results = [];
+            // Loop through categories
+            data.categories.forEach(category => {
+                // Loop through subcategories
+                category.subcategories.forEach(subcategory => {
+                    // Loop through products
+                    subcategory.products.forEach(product => {
+                        // Check if the product name contains the search text
+                        if (product.name.toLowerCase().includes(searchText)) {
+                            // Add the matching product to results
+                            results.push(product);
+                        }
+                    });
                 });
             });
-        });
 
-        // Display search results
-        displayResults(results);
-    })
-    .catch(error => console.error('Error fetching data:', error));
-}
-
-
-
-
-//-------------Display search result----------
-function displayResults(results) {
-var resultsContainer = document.getElementById('results');
-// Clear previous results
-resultsContainer.innerHTML = '';
-
-let productCounter = 0;
-var ul = document.createElement('ul');
-resultsContainer.appendChild(ul);
-// Display each result
-results.forEach(product => {
-    if (productCounter % 3 === 0) {
-        // Create a new row every 3 products
-        var newRow = document.createElement('div');
-        newRow.classList.add('search-row');
-        resultsContainer.appendChild(newRow);
-        var newUl = document.createElement('ul');
-        newRow.appendChild(newUl);
-        ul = newUl; // Update ul to the newly created ul
+            // Display search results
+            displayResults(results);
+        })
+        .catch(error => console.error('Error fetching data:', error));
     }
 
-    var rowCard = document.createElement('div');
-    rowCard.classList.add('row-card');
 
-    var rowCardImg = document.createElement('div');
-    rowCardImg.classList.add('row-card-img');
-    rowCard.appendChild(rowCardImg);
 
-    var image = document.createElement('img');
-    image.src = product.image;
-    image.alt = product.name;
-    rowCardImg.appendChild(image);
 
-    var rowTxt = document.createElement('div');
-    rowTxt.classList.add('row-txt');
-    rowCard.appendChild(rowTxt);
+    //-------------Display search result----------
+    function displayResults(results) {
+    var resultsContainer = document.getElementById('results');
+    // Clear previous results
+    resultsContainer.innerHTML = '';
 
-    var name = document.createElement('h3');
-    name.textContent = product.name;
-    rowTxt.appendChild(name);
+    let productCounter = 0;
+    var ul = document.createElement('ul');
+    resultsContainer.appendChild(ul);
+    // Display each result
+    results.forEach(product => {
+        if (productCounter % 3 === 0) {
+            // Create a new row every 3 products
+            var newRow = document.createElement('div');
+            newRow.classList.add('search-row');
+            resultsContainer.appendChild(newRow);
+            var newUl = document.createElement('ul');
+            newRow.appendChild(newUl);
+            ul = newUl; // Update ul to the newly created ul
+        }
 
-    var head4 = document.createElement('h4');
-    head4.textContent = 'Rs.'+ product.price;
-    rowTxt.appendChild(head4);
+        var rowCard = document.createElement('div');
+        rowCard.classList.add('row-card');
 
-    var button = document.createElement('button');
-    button.classList.add('btn-addtocart');
-    button.textContent = 'Add to Cart';
-    rowTxt.appendChild(button);
+        var rowCardImg = document.createElement('div');
+        rowCardImg.classList.add('row-card-img');
+        rowCard.appendChild(rowCardImg);
 
-    ul.appendChild(rowCard);
+        var image = document.createElement('img');
+        image.src = product.image;
+        image.alt = product.name;
+        rowCardImg.appendChild(image);
 
-    productCounter++;
-});
+        var rowTxt = document.createElement('div');
+        rowTxt.classList.add('row-txt');
+        rowCard.appendChild(rowTxt);
+
+        var name = document.createElement('h3');
+        name.textContent = product.name;
+        rowTxt.appendChild(name);
+
+        var head4 = document.createElement('h4');
+        head4.textContent = 'Rs.'+ product.price;
+        rowTxt.appendChild(head4);
+
+        var button = document.createElement('button');
+        button.classList.add('btn-addtocart');
+        button.textContent = 'Add to Cart';
+        rowTxt.appendChild(button);
+
+        ul.appendChild(rowCard);
+
+        productCounter++;
+    });
 
     //If no results found
     if (results.length === 0) {
@@ -303,3 +306,15 @@ document.body.addEventListener('click', function(event) {
         searchResults.style.display = 'none';
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+

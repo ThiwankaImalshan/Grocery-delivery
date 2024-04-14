@@ -6,6 +6,7 @@
     <title>GrocGo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -33,6 +34,18 @@
                         </div>
                     </ul>
                 </div>
+            </div>
+        </div>
+
+        <!-- Cart-Tab -->
+        <div class="cartTab">
+            <h1>Shopping Cart</h1>
+            <div class="listCart">
+
+            </div>
+            <div class="cartTab-btn">
+                <button class="cartTab-close">Close</button>
+                <button class="cartTab-checkOut" onclick="document.location='checkout.html'">Check Out</button>
             </div>
         </div>
     </header>
@@ -183,7 +196,7 @@
                 <div class="footer-content-sec2">
                     <div class="footer-sec footer-sec2">
                         <h3>Customer Care</h3><br>
-                        <p><a href="/aboutus.html">About US</a></p>
+                        <p><a href="/about.html">About US</a></p>
                         <p><a href="/services.html">Services</a></p>
                         <p><a href="">Privacy Policy</a></p>
                     </div>
@@ -199,17 +212,98 @@
     </footer> 
 
 <script>
+    //-----------range bar price changement display---------
     function updatePrice(val) {
         document.getElementById('price-display').textContent = 'Rs.' + val;
     }
 
 
+    //-----------range-input level up to maximum------------
+    const rangeInput = document.getElementById('price');
+    rangeInput.value = rangeInput.max;
+
+    
+
+    //--------------display product result----------------
+    function displayProducts(results) {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const resultsContainer = document.getElementById('results');
+    // Clear previous results
+    resultsContainer.innerHTML = '';
+    // Filter products based on search input
+    const filteredResults = results.filter(product => product.name.toLowerCase().includes(searchInput));
+    
+    let productCounter = 0;
+    let ul; // Initialize ul variable
+    resultsContainer.appendChild(document.createElement('div')); // Create a wrapper for rows
+    // Display each result
+    filteredResults.forEach(product => {
+        if (productCounter % 3 === 0) {
+            // Create a new row every 3 products
+            ul = document.createElement('ul');
+            ul.classList.add('search-row');
+            resultsContainer.lastElementChild.appendChild(ul);
+        }
+
+        const rowCard = document.createElement('div');
+        rowCard.classList.add('row-card');
+
+        const rowCardImg = document.createElement('div');
+        rowCardImg.classList.add('row-card-img');
+        rowCard.appendChild(rowCardImg);
+
+        const image = document.createElement('img');
+        image.src = product.image;
+        image.alt = product.name;
+        rowCardImg.appendChild(image);
+
+        const rowTxt = document.createElement('div');
+        rowTxt.classList.add('row-txt');
+        rowCard.appendChild(rowTxt);
+
+        const name = document.createElement('h3');
+        name.textContent = product.name;
+        rowTxt.appendChild(name);
+
+        const head4 = document.createElement('h4');
+        head4.textContent = 'Rs.' + product.price;
+        rowTxt.appendChild(head4);
+
+        const button = document.createElement('button');
+        button.classList.add('btn-addtocart');
+        button.textContent = 'Add to Cart';
+        rowTxt.appendChild(button);
+
+        ul.appendChild(rowCard);
+
+        // Apply availability check and styling to the buttons
+        if (product.availability === 'out of stock') {
+            button.style.backgroundColor = '#DE3163';
+            button.style.color = 'white';
+            button.textContent = "Out of Stock";
+            button.style.pointerEvents = 'none';
+            button.disabled = true;
+        } else {
+            button.style.backgroundColor = ''; // Use default stylesheet color
+            button.disabled = false;
+        }
+
+        productCounter++;
+        
+    });
+
+    // If no results found
+    if (filteredResults.length === 0) {
+        const noResultsMessage = document.createElement('p');
+        noResultsMessage.textContent = 'No products found matching your search...';
+        noResultsMessage.classList.add('no-result-message');
+        resultsContainer.appendChild(noResultsMessage);
+    }
+
+}
 
 
-
-
-
-
+    //----------fetch data---------
     let searchData; // Variable to store fetched data
 
         function fetchProducts() {
@@ -228,6 +322,7 @@
                 });
         }
 
+        //---------------search products-----------
         function searchProducts() {
             const searchInput = document.getElementById('searchInput').value.toLowerCase();
             const filteredData = searchData.categories.flatMap(category =>
@@ -240,6 +335,7 @@
             displayProducts(filteredData);
         }
 
+        //----------------filter by price------------------
         function filterByPrice() {
             const maxPrice = document.getElementById('price').value;
             const filteredData = searchData.categories.flatMap(category =>
@@ -252,96 +348,9 @@
             displayProducts(filteredData);
         }
 
-        // function displayProducts(products) {
-        //     const searchResultsContainer = document.getElementById('results');
-        //     searchResultsContainer.innerHTML = ''; // Clear previous results
-
-        //     products.forEach(product => {
-        //         const productDiv = document.createElement('div');
-        //         productDiv.classList.add('product');
-        //         productDiv.innerHTML = `
-        //             <img src="${product.image}" alt="${product.name}">
-        //             <h3>${product.name}</h3>
-        //             <p>${product.description}</p>
-        //             <p>Price: $${product.price.toFixed(2)}</p>
-        //         `;
-        //         searchResultsContainer.appendChild(productDiv);
-        //     });
-        // }
 
 
-        function displayProducts(results) {
-        const searchInput = document.getElementById('searchInput').value.toLowerCase();
-        var resultsContainer = document.getElementById('results');
-        // Clear previous results
-        resultsContainer.innerHTML = '';
-
-        // Filter products based on search input
-        const filteredResults = results.filter(product => product.name.toLowerCase().includes(searchInput));
-
-
-        let productCounter = 0;
-        var ul = document.createElement('ul');
-        resultsContainer.appendChild(ul);
-        // Display each result
-        filteredResults.forEach(product => {
-            if (productCounter % 3 === 0) {
-                // Create a new row every 3 products
-                var newRow = document.createElement('div');
-                newRow.classList.add('search-row');
-                resultsContainer.appendChild(newRow);
-                var newUl = document.createElement('ul');
-                newRow.appendChild(newUl);
-                ul = newUl; // Update ul to the newly created ul
-            }
-
-            var rowCard = document.createElement('div');
-            rowCard.classList.add('row-card');
-
-            var rowCardImg = document.createElement('div');
-            rowCardImg.classList.add('row-card-img');
-            rowCard.appendChild(rowCardImg);
-
-            var image = document.createElement('img');
-            image.src = product.image;
-            image.alt = product.name;
-            rowCardImg.appendChild(image);
-
-            var rowTxt = document.createElement('div');
-            rowTxt.classList.add('row-txt');
-            rowCard.appendChild(rowTxt);
-
-            var name = document.createElement('h3');
-            name.textContent = product.name;
-            rowTxt.appendChild(name);
-
-            var head4 = document.createElement('h4');
-            head4.textContent = 'Rs.' + product.price;
-            rowTxt.appendChild(head4);
-
-            var button = document.createElement('button');
-            button.classList.add('btn-addtocart');
-            button.textContent = 'Add to Cart';
-            rowTxt.appendChild(button);
-
-            ul.appendChild(rowCard);
-
-            productCounter++;
-        });
-
-        // If no results found
-        if (filteredResults.length === 0) {
-            var noResultsMessage = document.createElement('p');
-            noResultsMessage.textContent = 'No products found matching your search...';
-            noResultsMessage.classList.add('no-result-message');
-            resultsContainer.appendChild(noResultsMessage);
-        }
-    }
-
-
-
-
-        // Fetch products data when the page loads
+        //------------Fetch products data when the page loads------------
         fetchProducts().then(() => {
             // Display all products initially
             displayProducts(searchData.categories.flatMap(category =>
@@ -352,83 +361,19 @@
 
 
 
+        //------------------Cart window--------------------
+        let naviCart = document.querySelector('.navbar-cart');
+        let bodyCon = document.querySelector('body');
+        let closetheCart = document.querySelector('.cartTab-close');
+        // Show Cart
+        naviCart.addEventListener('click', () => {
+            bodyCon.classList.toggle('showCart');
+        })
 
-
-
-        
-
-
-
-
-
-
-
-        
-
-
-    //     function displayProducts(results) {
-    //     var resultsContainer = document.getElementById('results');
-    //     // Clear previous results
-    //     resultsContainer.innerHTML = '';
-
-    //     let productCounter = 0;
-    //     var ul = document.createElement('ul');
-    //     resultsContainer.appendChild(ul);
-    //     // Display each result
-    //     results.forEach(product => {
-    //         if (productCounter % 3 === 0) {
-    //             // Create a new row every 3 products
-    //             var newRow = document.createElement('div');
-    //             newRow.classList.add('search-row');
-    //             resultsContainer.appendChild(newRow);
-    //             var newUl = document.createElement('ul');
-    //             newRow.appendChild(newUl);
-    //             ul = newUl; // Update ul to the newly created ul
-    //         }
-
-    //         var rowCard = document.createElement('div');
-    //         rowCard.classList.add('row-card');
-
-    //         var rowCardImg = document.createElement('div');
-    //         rowCardImg.classList.add('row-card-img');
-    //         rowCard.appendChild(rowCardImg);
-
-    //         var image = document.createElement('img');
-    //         image.src = product.image;
-    //         image.alt = product.name;
-    //         rowCardImg.appendChild(image);
-
-    //         var rowTxt = document.createElement('div');
-    //         rowTxt.classList.add('row-txt');
-    //         rowCard.appendChild(rowTxt);
-
-    //         var name = document.createElement('h3');
-    //         name.textContent = product.name;
-    //         rowTxt.appendChild(name);
-
-    //         var head4 = document.createElement('h4');
-    //         head4.textContent = 'Rs.' + product.price;
-    //         rowTxt.appendChild(head4);
-
-    //         var button = document.createElement('button');
-    //         button.classList.add('btn-addtocart');
-    //         button.textContent = 'Add to Cart';
-    //         rowTxt.appendChild(button);
-
-    //         ul.appendChild(rowCard);
-
-    //         productCounter++;
-    //     });
-
-    //     // If no results found
-    //     if (results.length === 0) {
-    //         var noResultsMessage = document.createElement('p');
-    //         noResultsMessage.textContent = 'No products found matching your search...';
-    //         noResultsMessage.classList.add('no-result-message');
-    //         resultsContainer.appendChild(noResultsMessage);
-    //     }
-
-    // }
+        // Close Cart
+        closetheCart.addEventListener('click', () => {
+            bodyCon.classList.toggle('showCart');
+        })
 
 
 
@@ -438,9 +383,105 @@
 
 
 
-    
+        //-------------Display search get from index.html--------------
+        window.onload = function() {
+            // Retrieve search input from query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchInput = urlParams.get('searchInput');
+
+            // Call performSearch() function after 3 seconds
+            setTimeout(function() {
+                if (searchInput) {
+                    performSearch(searchInput);
+                } else {
+                    console.log("No search input provided.");
+                }
+            }, 0.01); // 3000 milliseconds = 3 seconds
+
+        };
+
+        function performSearch(searchInput) {
+            // Convert search input to lowercase
+            console.log(searchInput);
+            searchInput = searchInput.toLowerCase();
+            
+            const filteredData = searchData.categories.flatMap(category =>
+                category.subcategories.flatMap(subcategory =>
+                    subcategory.products.filter(product =>
+                        product.name.toLowerCase().includes(searchInput)
+                    )
+                )
+            );
+
+            // Assuming you have a function displayProducts() to display the filtered data
+            displayProducts(filteredData);
+        }
+
+
+
+
+
+
+
+        //_______________________Cart for each pages_________________________
+
+        //---------------Retrieve cart data from local storage on page load----------------
+        let list__Cart = document.querySelector('.listCart');
+        let navbar__cartSpan = document.querySelector('.navbar-cart span');
+
+        window.addEventListener('load', () => {
+            // Get cart data from local storage
+            const cartData = JSON.parse(localStorage.getItem('cart'));
+            // If cart data exists, assign it to cartBox array
+            if (cartData && Array.isArray(cartData)) {
+                cartBox = cartData;
+            }
+            console.log(cartBox);
+            // Render cart items from local storage
+            renderCartItemsFromLocalStorage();
+        });
+
+        // Function to render the cart items from local storage
+        const renderCartItemsFromLocalStorage = () => {
+            console.log("Rendering cart items from local storage...");
+            console.log("Cart data from local storage:", cartBox);
+
+            // Get outerArray data from local storage
+            const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+            
+            list__Cart.innerHTML = '';
+            let totalQuantity = 0;
+            if (cartBox.length > 0) {
+                cartBox.forEach(cartss => {
+                    totalQuantity += cartss.quantity;
+                    let newCart = document.createElement('div');
+                    newCart.classList.add('listCart-items');
+                    newCart.dataset.id = cartss.product_id;
+                    let positionProduct = outerItems.findIndex((value) => value.id == cartss.product_id);
+                    let info = outerItems[positionProduct];
+                    newCart.innerHTML = `
+                        <div class="listCart-image">
+                            <img src="${info.image}">
+                        </div>
+                        <div class="listCart-name">
+                            ${info.name}
+                        </div>
+                        <div class="listCart-totalPrice">Rs.${info.price * cartss.quantity}</div>
+                        <div class="listCart-quantity">
+                            <span class="listCart-minus"><</span>
+                            <span>${cartss.quantity}</span>
+                            <span class="listCart-plus">></span>
+                        </div>
+                    `;
+                    list__Cart.appendChild(newCart);
+                });
+            }
+            navbar__cartSpan.innerText = totalQuantity;
+            console.log("Cart items rendered successfully.");
+        };
 
 </script>
+<script src="script.js"></script>
 <script src="product.js"></script>
 </body>
 </html>

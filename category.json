@@ -9,15 +9,16 @@
             "name": "Organic",
             "products": [
               {
-                "id":"veg001",
+                "id":"veg1001",
                 "name": "Organic Carrot",
                 "price": 900.00,
                 "image": "product img/Organic Carrot.jpg",
                 "description": "Fresh organic carrot",
-                "availability": "out of stock"
+                "availability": "in stock",
+                "top": true
               },
               {
-                "id":"veg002",
+                "id":"veg1002",
                 "name": "Organic Green Beans",
                 "price": 460.00,
                 "image": "product img/Organic Green Beans.jpg",
@@ -25,7 +26,7 @@
                 "availability": "out of stock"
               },
               {
-                "id":"veg003",
+                "id":"veg1003",
                 "name": "Organic Sweet Potato",
                 "price": 570.00,
                 "image": "product img/Organic Sweet Potato.jpg",
@@ -38,18 +39,22 @@
             "name": "Inorganic",
             "products": [
               {
+                "id":"veg2001",
                 "name": "Potato",
                 "price": 410.00,
                 "image": "product img/Potato.png",
                 "description": "Fresh potato"
               },
               {
+                "id":"veg2002",
                 "name": "Salad Leaves",
                 "price": 170.00,
                 "image": "product img/Salad Leaves.jpeg",
-                "description": "Fresh salad leaves"
+                "description": "Fresh salad leaves",
+                "top": true
               },
               {
+                "id":"veg2003",
                 "name": "Lime",
                 "price": 960.00,
                 "image": "product img/Lime.jpg",
@@ -57,18 +62,22 @@
                 "availability": "out of stock"
               },
               {
+                "id":"veg2004",
                 "name": "Kekiri",
                 "price": 90.00,
                 "image": "product img/Kekiri.jpg",
                 "description": "Fresh kekiri"
               },
               {
+                "id":"veg2005",
                 "name": "Bringles",
                 "price": 320.00,
                 "image": "product img/Bringles.png",
-                "description": "Fresh bringles"
+                "description": "Fresh bringles",
+                "top": true
               },
               {
+                "id":"veg2006",
                 "name": "Cabbage",
                 "price": 230.00,
                 "image": "product img/Cabbage.jpg",
@@ -80,18 +89,22 @@
             "name": "Packets",
             "products": [
               {
+                "id":"veg3001",
                 "name": "Gotukola Packet",
                 "price": 130.00,
                 "image": "product img/Gotukola Packet.jpeg",
                 "description": "Fresh gotukola packet"
               },
               {
+                "id":"veg3002",
                 "name": "Kankun Packet",
                 "price": 130.00,
                 "image": "product img/Kankun Packet.jpg",
-                "description": "Fresh kankun packet"
+                "description": "Fresh kankun packet",
+                "top": true
               },
               {
+                "id":"veg3003",
                 "name": "Mukunuwenna Packet",
                 "price": 130.00,
                 "image": "product img/Mukunuwenna Packet.jpeg",
@@ -111,25 +124,30 @@
             "name": "Organic",
             "products": [
               {
+                "id":"fru1001",
                 "name": "Organic Mango",
                 "price": 1700.00,
                 "image": "product img/Organic Mango.jpg",
                 "description": "Fresh organic mango"
               },
               {
+                "id":"fru1002",
                 "name": "Organic Papaya",
                 "price": 570.00,
                 "image": "product img/Organic Papaya.jpg",
                 "description": "Fresh organic papaya",
-                "availability": "out of stock"
+                "availability": "out of stock",
+                "top": true
               },
               {
+                "id":"fru1003",
                 "name": "Organic Pineapple",
                 "price": 1248.00,
                 "image": "product img/Organic Pineapple.jpg",
                 "description": "Fresh organic pineapple"
               },
               {
+                "id":"fru1004",
                 "name": "Organic Watermelon",
                 "price": 330.00,
                 "image": "product img/Organic Watermelon.jpg",
@@ -141,24 +159,29 @@
             "name": "Inorganic",
             "products": [
               {
+                "id":"fru2001",
                 "name": "Apple",
                 "price": 2290.00,
                 "image": "product img/apple.jpg",
-                "description": "Fresh apples"
+                "description": "Fresh apples",
+                "top": true
               },
               {
+                "id":"fru2002",
                 "name": "Banana-Ambul",
                 "price": 310.00,
                 "image": "product img/Banana.jpg",
                 "description": "Fresh bananas"
               },
               {
+                "id":"fru2003",
                 "name": "Orange",
                 "price": 1720.00,
                 "image": "product img/Orange.jpg",
                 "description": "Fresh oranges"
               },
               {
+                "id":"fru2004",
                 "name": "Strawberry",
                 "price": 1250.00,
                 "image": "product img/Strawberry.jpg",
@@ -178,22 +201,27 @@
             "name": "Fresh Meat",
             "products": [
               {
+                "id":"meat1001",
                 "name": "Chicken",
                 "price": 1.49,
                 "image": "product img/Almond.jpg",
                 "description": "Fresh organic apples"
               },
               {
+                "id":"meat1002",
                 "name": "Pork",
                 "price": 0.79,
                 "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "description": "Fresh organic bananas",
+                "top": true
               },
               {
+                "id":"meat1003",
                 "name": "Sasauges",
                 "price": 1.99,
                 "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "description": "Fresh organic oranges",
+                "top": true
               }
             ]
           }
