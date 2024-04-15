@@ -247,6 +247,7 @@
 
         const rowCard = document.createElement('div');
         rowCard.classList.add('row-card');
+        rowCard.setAttribute('data-id', product.id);
 
         const rowCardImg = document.createElement('div');
         rowCardImg.classList.add('row-card-img');
@@ -396,7 +397,8 @@
                 } else {
                     console.log("No search input provided.");
                 }
-            }, 0.01); // 3000 milliseconds = 3 seconds
+            });
+            // }, 0.01); // 3000 milliseconds = 3 seconds
 
         };
 
@@ -479,6 +481,131 @@
             navbar__cartSpan.innerText = totalQuantity;
             console.log("Cart items rendered successfully.");
         };
+
+
+
+
+
+        //-----------------capture the product position click in cart and minus or plus click----------
+        list__Cart.addEventListener('click',(event)=>{
+            let positionClick=event.target;
+            if(positionClick.classList.contains('listCart-minus')||positionClick.classList.contains('listCart-plus')){
+                let product_id =positionClick.parentElement.parentElement.dataset.id;
+                let type='listCart-minus';
+                if(positionClick.classList.contains('listCart-plus')){
+                    type='listCart-plus';
+                }
+                changequantity(product_id,type);
+                console.log(product_id,type);
+            }
+        })
+
+
+        //--------------adjust quantity and price when plus or minus click------------
+        const changequantity=(product_id,type)=>{
+            let positionItemInCart=cartBox.findIndex((value)=>value.product_id==product_id);
+            if(positionItemInCart>=0){
+                switch (type) {
+                    case 'listCart-plus':
+                        cartBox[positionItemInCart].quantity=cartBox[positionItemInCart].quantity+1;
+                        break;
+                
+                    default:
+                        let valueChange=cartBox[positionItemInCart].quantity-1;
+                        if(valueChange>0){
+                            cartBox[positionItemInCart].quantity=valueChange;
+                        }else{
+                            cartBox.splice(positionItemInCart,1);
+                        }
+                        break;
+                }
+            }
+            saveCartToLocalStorage();
+            addcarttoHTML();
+        }
+
+        //-----------Function to save the cart data to local storage--------
+        const saveCartToLocalStorage = () => {
+            localStorage.setItem('cart', JSON.stringify(cartBox));
+        };
+
+        //---------------add cart to html file--------------
+        const addcarttoHTML=()=>{
+            list__Cart.innerHTML='';
+            const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+            let totalQuantity=0;
+            if(cartBox.length>0){
+                cartBox.forEach(cartss=>{
+                    totalQuantity=totalQuantity+cartss.quantity;
+                    let newCart=document.createElement('div');
+                    newCart.classList.add('listCart-items');
+                    newCart.dataset.id=cartss.product_id;
+                    let positionProduct=outerItems.findIndex((value)=>value.id==cartss.product_id);
+                    let info=outerItems[positionProduct];
+                    newCart.innerHTML=`
+                    <div class="listCart-image">
+                        <img src="${info.image}">
+                    </div>
+                    <div class="listCart-name">
+                    ${info.name}
+                    </div>
+                    <div class="listCart-totalPrice">Rs.${info.price*cartss.quantity}</div>
+                    <div class="listCart-quantity">
+                        <span class="listCart-minus"><</span>
+                        <span>${cartss.quantity}</span>
+                        <span class="listCart-plus">></span>
+                    </div>
+                    `;
+                    list__Cart.appendChild(newCart);
+                })
+            }
+            navbar__cartSpan.innerText=totalQuantity;
+        }
+
+
+
+
+        //------------Add a click event listener to the parent element of all btn-addtocart buttons-----------
+        document.getElementById('results').addEventListener('click', function(event) {
+            let product_id;
+            // Check if the clicked element is a btn-addtocart
+            if (event.target.classList.contains('btn-addtocart')) {
+                // Retrieve the parent row-card element of the clicked button
+                const parentRowCard = event.target.closest('.row-card');
+                // Retrieve the dataset-id attribute value of the parent row-card
+                const productId = parentRowCard.getAttribute('data-id');
+                // Assign the dataset-id to the product_id variable
+                product_id = productId;
+                // Print the dataset-id to the console
+                console.log(product_id);
+                addtoCart(product_id);
+            }
+        });
+
+
+
+
+        // Function to add product to cart
+        const addtoCart = (product_id) => {
+            let positionThisProductInCart = cartBox.findIndex((value) => value.product_id == product_id);
+            if (cartBox.length <= 0) {
+                cartBox = [{
+                    product_id: product_id,
+                    quantity: 1
+                }];
+            } else if (positionThisProductInCart < 0) {
+                cartBox.push({
+                    product_id: product_id,
+                    quantity: 1
+                });
+            } else {
+                cartBox[positionThisProductInCart].quantity += 1;
+            }
+            console.log(cartBox);
+            addcarttoHTML(); // Update HTML representation of cart
+            saveCartToLocalStorage(); // Save cart data to local storage
+        };
+
 
 </script>
 <script src="script.js"></script>

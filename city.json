@@ -1,244 +1,485 @@
-{
-    "Colombo": [
-        "Aluthmawatha",
-        "Bambalapitiya - Colombo",
-        "Borella",
-        "Cinnamon Gardens",
-        "Colombo 01",
-        "Colombo 02",
-        "Colombo 03",
-        "Colombo 04",
-        "Colombo 05",
-        "Colombo 06",
-        "Colombo 07",
-        "Colombo 08",
-        "Colombo 09",
-        "Colombo 10",
-        "Colombo 11",
-        "Colombo 12",
-        "Colombo 13",
-        "Colombo 14",
-        "Colombo 15",
-        "Dematagoda",
-        "Fort - Colombo",
-        "Gajabapura",
-        "Galle Face",
-        "Gothamipura",
-        "Havelock Town",
-        "Hunupitiya - Colombo",
-        "Ibbanwala",
-        "Jawatte",
-        "Keselwatta - Colombo",
-        "Kollupitiya",
-        "Kolpity",
-        "Kompanyaweediya",
-        "Kuppiyawatta",
-        "Kurunduwatta",
-        "Lunupokuna",
-        "Madmpitiya",
-        "Mahawatta",
-        "Maligakanda",
-        "Maradana",
-        "Mattakuliya",
-        "Milagiriya",
-        "Modara",
-        "Narahenpita",
-        "Nawagampura",
-        "Nawam Mawatha",
-        "Obesekarapura",
-        "Orugodawatta",
-        "Panchikawatta",
-        "Pettah",
-        "Polhengoda",
-        "Sedawatta",
-        "Slave Island",
-        "Suduwella",
-        "Thimbirigasyaya",
-        "Thummulla",
-        "Torrington Avenue",
-        "Union Place",
-        "Wadulla",
-        "Wanathamulla",
-        "Wekanda",
-        "Wellawatta",
-        "Wijayapura"
-    ],
-    "Dehiwala": [
-        "Dehiwala",
-        "Galwala",
-        "Jayathilaka",
-        "Kalubowila",
-        "Karagampitiya",
-        "Kawdana",
-        "Nedimala",
-        "Sri Saranankara",
-        "Udyanaya"
-    ],
-    "Kelaniya": [
-        "Dalugama",
-        "Dalugamgoda",
-        "Dippitigoda",
-        "Galborella",
-        "Himbutuwelgoda",
-        "Kelaniya",
-        "Mewella",
-        "Nungamugoda",
-        "Pattiya - Kelaniya",
-        "Peliyagoda",
-        "Pethiyagoda - Kelaniya",
-        "Pilapitiya",
-        "Polhena - Kelaniya",
-        "Sinharamulla",
-        "Wanawasala",
-        "Waragoda",
-        "Wedamulla",
-        "Weweldoowa"
-    ],
-    "Gamapaha - Miriswatta": [
-        "Boraliyawatha",
-        "Galloluwa",
-        "Galthotumulla",
-        "Ihala Yagoda",
-        "Imbulgoda",
-        "Kimbulgoda",
-        "Kinigama",
-        "Kirikittamulla",
-        "Nedungamuwa",
-        "Pepolgahadeniya",
-        "Pituwalgoda",
-        "Rathupaswala",
-        "Siwaralumulla",
-        "Weediyawatta",
-        "Weliweriya"
-      ],
-      "Kadawatha": [
-        "Amunugoda",
-        "Biyanvila",
-        "Dangahawela",
-        "Eldeniya",
-        "Embaraluwa",
-        "Gonahena",
-        "Kadawatha",
-        "Karagahamuna",
-        "Katuwalamulla",
-        "Kirillawala",
-        "Kossinna",
-        "Mahena - Gampaha",
-        "Parakandeniya",
-        "Puwakwetiya",
-        "Ranmuthugala",
-        "Sooriyapaluwa",
-        "Webada"
-      ],
-      "Panadura": [
-        "Alubomulla",
-        "Ambalanduwa",
-        "Aruggoda",
-        "Attambagoda",
-        "Bazaar",
-        "Bekkegama",
-        "Dibbedda",
-        "Diganathuduwa",
-        "Diggala",
-        "Egoda",
-        "Egodauyana",
-        "Eluwila",
-        "Etambagoda",
-        "Fonseka Rd",
-        "Galthude",
-        "Gorakana",
-        "Gorakapola",
-        "Imbullina",
-        "Indigaha",
-        "Kaludewala - Panadura",
-        "Katukurunda - Moratuwa",
-        "Kaviraja mawatha",
-        "Keselwatta - Panadura",
-        "Kiriberiya",
-        "Koralawella",
-        "Kosgas handiya",
-        "Kuruppumulla",
-        "Kurusa junction",
-        "Madupitiya",
-        "Mahavila",
-        "Malamulla",
-        "Miriswatta",
-        "Miriyawatta",
-        "Modarawila",
-        "Moravinna",
-        "Nalluruwa",
-        "Narampitiya",
-        "Pallimulla",
-        "Pamunugama",
-        "Panadura",
-        "Paratta",
-        "Pinwala",
-        "Pinwaththa",
-        "Punchideniya",
-        "Sagara Place",
-        "Sarikkamulla",
-        "Thantirimulla",
-        "Thotawatta",
-        "Uyankele",
-        "Walana",
-        "Walapala",
-        "Walapala Pattiya",
-        "Wanduramulla",
-        "Watabage",
-        "Wattalpola",
-        "Wekada",
-        "Werawatta"
-      ],
-      "Malabe": [
-        "Arangala",
-        "Evarihena",
-        "Hokandara",
-        "Malabe",
-        "Pothuarawa"
-      ],
-      "Gampaha": [
-        "Abagahalanda",
-        "Akaravita - Gampaha",
-        "Asgiriwalpola - Gampaha",
-        "Bandaranayaka Pura - Gampaha",
-        "Bandarawatta - Gampaha",
-        "Belummahara",
-        "Bendiyamulla",
-        "Church Road",
-        "Daraluwa",
-        "Dombawala",
-        "Doranagoda",
-        "Gampaha Aluthgama",
-        "Godagedara",
-        "Hansagiri Mawatha",
-        "Henarathgoda",
-        "Idigolla",
-        "Ihalagama",
-        "Karanayakamulla",
-        "Keppetipola",
-        "Keselwathugoda",
-        "Kidagammulla",
-        "Kirindivita",
-        "Kosovita",
-        "Malwatta Road",
-        "Medagama",
-        "Moragoda",
-        "Morupola",
-        "Mudungoda",
-        "Oruthota",
-        "Pahala Yagoda",
-        "Pahalagama",
-        "Pedipola",
-        "Pitiyegedara",
-        "Rafflewatta",
-        "Rathmalvita",
-        "Scheeme",
-        "Siyane uyana Housing",
-        "Thammita",
-        "Udugampola",
-        "Vishaka Road",
-        "Wijaya Road",
-        "Yakkala"
-      ]
+[
+  {
+    "city": "Colombo",
+    "details": {},
+    "subCities": [
+      {
+        "name": "Aluthmawatha",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Bambalapitiya - Colombo",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Borella",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Cinnamon Gardens",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Colombo 01",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Colombo 02",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Colombo 03",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Colombo 04",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Colombo 05",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Colombo 06",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Colombo 07",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Colombo 08",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Colombo 09",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Colombo 10",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Colombo 11",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Colombo 12",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Colombo 13",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Colombo 14",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Colombo 15",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Dematagoda",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Fort - Colombo",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Gajabapura",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Galle Face",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Gothamipura",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Havelock Town",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Hunupitiya - Colombo",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Ibbanwala",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Jawatte",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Keselwatta - Colombo",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Kollupitiya",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Kompanyaweediya",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Kuppiyawatta",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Kurunduwatta",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Lunupokuna",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Madmpitiya",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Mahawatta",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Maligakanda",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Maradana",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Mattakuliya",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Milagiriya",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Modara",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Narahenpita",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Nawagampura",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Nawam Mawatha",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Obesekarapura",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Orugodawatta",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Panchikawatta",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Pettah",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Polhengoda",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Sedawatta",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Slave Island",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Suduwella",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Thimbirigasyaya",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Thummulla",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Torrington Avenue",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Union Place",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Wadulla",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Wanathamulla",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Wekanda",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Wellawatta",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Wijayapura",
+        "deliveryCharge": 100
+      }
+    ]
+  },
+  {
+    "city": "Dehiwala",
+    "details": {},
+    "subCities": [
+      {
+        "name": "Dehiwala",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Galwala",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Jayathilaka",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Kalubowila",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Karagampitiya",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Kawdana",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Nedimala",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Sri Saranankara",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Udyanaya",
+        "deliveryCharge": 150
+      }
+    ]
   }
-  
+  ,
+  {
+    "city": "Kelaniya",
+    "details": {},
+    "subCities": [
+      "Dalugama",
+      "Dalugamgoda",
+      "Dippitigoda",
+      "Galborella",
+      "Himbutuwelgoda",
+      "Kelaniya",
+      "Mewella",
+      "Nungamugoda",
+      "Pattiya - Kelaniya",
+      "Peliyagoda",
+      "Pethiyagoda - Kelaniya",
+      "Pilapitiya",
+      "Polhena - Kelaniya",
+      "Sinharamulla",
+      "Wanawasala",
+      "Waragoda",
+      "Wedamulla",
+      "Weweldoowa"
+    ]
+  },
+  {
+    "city": "Gamapaha - Miriswatta",
+    "details": {},
+    "subCities": [
+      "Boraliyawatha",
+      "Galloluwa",
+      "Galthotumulla",
+      "Ihala Yagoda",
+      "Imbulgoda",
+      "Kimbulgoda",
+      "Kinigama",
+      "Kirikittamulla",
+      "Nedungamuwa",
+      "Pepolgahadeniya",
+      "Pituwalgoda",
+      "Rathupaswala",
+      "Siwaralumulla",
+      "Weediyawatta",
+      "Weliweriya"
+    ]
+  },
+  {
+    "city": "Kadawatha",
+    "details": {},
+    "subCities": [
+      "Amunugoda",
+      "Biyanvila",
+      "Dangahawela",
+      "Eldeniya",
+      "Embaraluwa",
+      "Gonahena",
+      "Kadawatha",
+      "Karagahamuna",
+      "Katuwalamulla",
+      "Kirillawala",
+      "Kossinna",
+      "Mahena - Gampaha",
+      "Parakandeniya",
+      "Puwakwetiya",
+      "Ranmuthugala",
+      "Sooriyapaluwa",
+      "Webada"
+    ]
+  },
+  {
+    "city": "Panadura",
+    "details": {},
+    "subCities": [
+      "Alubomulla",
+      "Ambalanduwa",
+      "Aruggoda",
+      "Attambagoda",
+      "Bazaar",
+      "Bekkegama",
+      "Dibbedda",
+      "Diganathuduwa",
+      "Diggala",
+      "Egoda",
+      "Egodauyana",
+      "Eluwila",
+      "Etambagoda",
+      "Fonseka Rd",
+      "Galthude",
+      "Gorakana",
+      "Gorakapola",
+      "Imbullina",
+      "Indigaha",
+      "Kaludewala - Panadura",
+      "Katukurunda - Moratuwa",
+      "Kaviraja mawatha",
+      "Keselwatta - Panadura",
+      "Kiriberiya",
+      "Koralawella",
+      "Kosgas handiya",
+      "Kuruppumulla",
+      "Kurusa junction",
+      "Madupitiya",
+      "Mahavila",
+      "Malamulla",
+      "Miriswatta",
+      "Miriyawatta",
+      "Modarawila",
+      "Moravinna",
+      "Nalluruwa",
+      "Narampitiya",
+      "Pallimulla",
+      "Pamunugama",
+      "Panadura",
+      "Paratta",
+      "Pinwala",
+      "Pinwaththa",
+      "Punchideniya",
+      "Sagara Place",
+      "Sarikkamulla",
+      "Thantirimulla",
+      "Thotawatta",
+      "Uyankele",
+      "Walana",
+      "Walapala",
+      "Walapala Pattiya",
+      "Wanduramulla",
+      "Watabage",
+      "Wattalpola",
+      "Wekada",
+      "Werawatta"
+    ]
+  },
+  {
+    "city": "Malabe",
+    "details": {},
+    "subCities": [
+      "Arangala",
+      "Evarihena",
+      "Hokandara",
+      "Malabe",
+      "Pothuarawa"
+    ]
+  },
+  {
+    "city": "Gampaha",
+    "details": {},
+    "subCities": [
+      "Abagahalanda",
+      "Akaravita - Gampaha",
+      "Asgiriwalpola - Gampaha",
+      "Bandaranayaka Pura - Gampaha",
+      "Bandarawatta - Gampaha",
+      "Belummahara",
+      "Bendiyamulla",
+      "Church Road",
+      "Daraluwa",
+      "Dombawala",
+      "Doranagoda",
+      "Gampaha Aluthgama",
+      "Godagedara",
+      "Hansagiri Mawatha",
+      "Henarathgoda",
+      "Idigolla",
+      "Ihalagama",
+      "Karanayakamulla",
+      "Keppetipola",
+      "Keselwathugoda",
+      "Kidagammulla",
+      "Kirindivita",
+      "Kosovita",
+      "Malwatta Road",
+      "Medagama",
+      "Moragoda",
+      "Morupola",
+      "Mudungoda",
+      "Oruthota",
+      "Pahala Yagoda",
+      "Pahalagama",
+      "Pedipola",
+      "Pitiyegedara",
+      "Rafflewatta",
+      "Rathmalvita",
+      "Scheeme",
+      "Siyane uyana Housing",
+      "Thammita",
+      "Udugampola",
+      "Vishaka Road",
+      "Wijaya Road",
+      "Yakkala"
+    ]
+  }
+]

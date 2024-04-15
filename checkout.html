@@ -63,9 +63,9 @@
                               <input type="text" id="address" placeholder="Street Address*" />
                             </div>
                             <div class="form-field-wrapper flex">
-                                <div class="form-field-wrapper">
+                                <div class="form-field-wrapper city-container">
                                   <input type="text" id="city" placeholder="City*"/>
-                                  <ul id="cityList">
+                                  <ul id="subCityList">
                                   </ul>
                                 </div>
                                 <div class="form-field-wrapper">
@@ -78,11 +78,11 @@
                         <h4>Shipping Information</h4>
                             <div class="checkout-selection-bar">
                                 <input type="radio" name="radio-cat1" id="radio1">
-                                <label for="radio1">Pickup from nearby outlet: <span>Dehiwala</span></label>
+                                <label for="radio1">Pickup from nearby outlet: <span id="cityNameSpan"></span></label>
                             </div>
                             <div class="checkout-selection-bar">
                                 <input type="radio" name="radio-cat1" id="radio2">
-                                <label for="radio2">Delivary through courier service: <span>Rs.500.00</span></label>
+                                <label for="radio2">Delivary through courier service: <span id="deliveryChargeSpan"></span></label>
                             </div>
                     </div>
                     <div class="checkout-payment">
@@ -106,10 +106,10 @@
                         </div>
 
 
-                        <h5>Stock available Near to you : <Span>Dehiwala</Span></h5>
+                        <h5>Stock available Near to you : <Span id="shipping-city"></Span></h5>
                         <div class="order-price-calculations">
                             <p>Sub Total : <span id="sub-total"></span></p>
-                            <p>Shipping Charge : <span id="shipping-cost">Rs.500.00</span></p>
+                            <p>Shipping Charge : <span id="shipping-cost"></span></p>
                         </div>
                         <h6>Total : <span id="full-total">Rs.1000.00</span></h6>
                         <div class="btn-place-your-order">
@@ -155,97 +155,332 @@
     <script>
 
 
-    //---------------------Add Cart Items to Checkout----------------------------
+//_______________________Cart for each pages_________________________
 
-    document.addEventListener('DOMContentLoaded', function() {
-    // Reference the container element where cart items are displayed
-    const cartContainer = document.getElementById('orderDetail-Box');
+        //---------------Retrieve cart data from local storage on page load----------------
+        let order_Detail_Box = document.querySelector('.order-detail-box');
 
-    // Retrieve cart data from local storage
-    const cartData = JSON.parse(localStorage.getItem('cart'));
-    console.log('Cart Data:', cartData);
+        window.addEventListener('load', () => {
+            // Get cart data from local storage
+            const cartData = JSON.parse(localStorage.getItem('cart'));
+            // If cart data exists, assign it to cartBox array
+            if (cartData && Array.isArray(cartData)) {
+                cartBox = cartData;
+            }
+            console.log(cartBox);
+            // Render cart items from local storage
+            renderCartItemsFromLocalStorage();
+        });
 
-    // Fetch products data from category.json
-    fetch('category.json')
-        .then(response => response.json())
-        .then(data => {
-            // Extract only the "products" array
-            const productsArray = data.categories.flatMap(category => category.subcategories.flatMap(subcategory => subcategory.products));
-            console.log('Products Array:', productsArray);
+        // Function to render the cart items from local storage
+        const renderCartItemsFromLocalStorage = () => {
+            console.log("Rendering cart items from local storage...");
+            console.log("Cart data from local storage:", cartBox);
 
-            let totalPrice = 0; // Initialize total price variable
-
-            // Iterate over each item in the cart data
-            cartData.forEach(cartItem => {
-                // Find the product in the products array with the matching ID
-                const product = productsArray.find(product => product.id === cartItem.product_id);
-
-                // Check if the product was found
-                if (product) {
-                    console.log(product.name);
-
-                    // Calculate subtotal for the current cart item
-                    const subtotal = product.price * cartItem.quantity;
-                    totalPrice += subtotal; // Add subtotal to total price
-
-                    // Create a cart item element
-                    const cartItemElement = document.createElement('div');
-                    cartItemElement.classList.add('order-details');
-                    cartItemElement.innerHTML = `
+            // Get outerArray data from local storage
+            const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+            
+            order_Detail_Box.innerHTML = '';
+            let totalQuantity = 0;
+            if (cartBox.length > 0) {
+                cartBox.forEach(cartss => {
+                    totalQuantity += cartss.quantity;
+                    let newCart = document.createElement('div');
+                    newCart.classList.add('order-details');
+                    newCart.dataset.id = cartss.product_id;
+                    let positionProduct = outerItems.findIndex((value) => value.id == cartss.product_id);
+                    let info = outerItems[positionProduct];
+                    newCart.innerHTML = `
                         <div class="order-details-img">
-                            <img src="${product.image}" alt="${product.name}">
-                        </div>
-                        <div class="order-details-texts">
-                            <div class="order-detail-txt">
-                                <p>${product.name}<span>Rs.${product.price*cartItem.quantity}</span></p>
+                                <img src="${info.image}" alt="${info.name}">
                             </div>
-                            <div class="order-detail-icons">
-                                <div class="order-add-items">
-                                    <button class="add-items-btn-minus items-btn">-</button>
-                                    <span class="add-no-of-items">${cartItem.quantity}</span>
-                                    <button class="add-items-btn-plus items-btn">+</button>
-                                    <i class="fa fa-times" aria-hidden="true"></i>
+                            <div class="order-details-texts">
+                                <div class="order-detail-txt">
+                                    <p>${info.name}<span>Rs.${info.price * cartss.quantity}</span></p>
+                                </div>
+                                <div class="order-detail-icons">
+                                    <div class="order-add-items">
+                                        <button class="add-items-btn-minus items-btn">-</button>
+                                        <span class="add-no-of-items">${cartss.quantity}</span>
+                                        <button class="add-items-btn-plus items-btn">+</button>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     `;
+                    order_Detail_Box.appendChild(newCart);
+                });
+            }
+            console.log("Cart items rendered successfully.");
+        };
 
-                    // Append the cart item element to the container
-                    cartContainer.appendChild(cartItemElement);
-                } else {
-                    console.log(`Product with ID ${cartItem.product_id} not found.`);
+
+
+
+        //-----------------capture the product position click in cart and minus or plus click----------
+        order_Detail_Box.addEventListener('click',(event)=>{
+            let positionClick=event.target;
+            if(positionClick.classList.contains('add-items-btn-minus')||positionClick.classList.contains('add-items-btn-plus')){
+                let product_id =positionClick.parentElement.parentElement.parentElement.parentElement.dataset.id;
+                let type='add-items-btn-minus';
+                if(positionClick.classList.contains('add-items-btn-plus')){
+                    type='add-items-btn-plus';
                 }
-            });
-
-            // Display the total price
-            const totalPriceElement = document.getElementById('sub-total');
-            totalPriceElement.textContent = `Rs.${totalPrice.toFixed(2)}`;
-            // document.body.appendChild(totalPriceElement);
+                changequantity(product_id,type);
+                console.log(product_id,type);
+            }
         })
-        .catch(error => console.error('Error fetching data:', error));
-    });
+
+
+        //--------------adjust quantity and price when plus or minus click------------
+        const changequantity=(product_id,type)=>{
+            let positionItemInCart=cartBox.findIndex((value)=>value.product_id==product_id);
+            if(positionItemInCart>=0){
+                switch (type) {
+                    case 'add-items-btn-plus':
+                        cartBox[positionItemInCart].quantity=cartBox[positionItemInCart].quantity+1;
+                        break;
+                
+                    default:
+                        let valueChange=cartBox[positionItemInCart].quantity-1;
+                        if(valueChange>0){
+                            cartBox[positionItemInCart].quantity=valueChange;
+                        }else{
+                            cartBox.splice(positionItemInCart,1);
+                        }
+                        break;
+                }
+            }
+            saveCartToLocalStorage();
+            addcarttoHTML();
+        }
+
+        //-----------Function to save the cart data to local storage--------
+        const saveCartToLocalStorage = () => {
+            localStorage.setItem('cart', JSON.stringify(cartBox));
+        };
+
+        //---------------add cart to html file--------------
+        const addcarttoHTML=()=>{
+            order_Detail_Box.innerHTML='';
+            const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+            let totalQuantity=0;
+            if(cartBox.length>0){
+                cartBox.forEach(cartss=>{
+                    totalQuantity=totalQuantity+cartss.quantity;
+                    let newCart=document.createElement('div');
+                    newCart.classList.add('order-details');
+                    newCart.dataset.id=cartss.product_id;
+                    let positionProduct=outerItems.findIndex((value)=>value.id==cartss.product_id);
+                    let info=outerItems[positionProduct];
+                    newCart.innerHTML=`
+                            <div class="order-details-img">
+                                <img src="${info.image}" alt="${info.name}">
+                            </div>
+                            <div class="order-details-texts">
+                                <div class="order-detail-txt">
+                                    <p>${info.name}<span>Rs.${info.price * cartss.quantity}</span></p>
+                                </div>
+                                <div class="order-detail-icons">
+                                    <div class="order-add-items">
+                                        <button class="add-items-btn-minus items-btn">-</button>
+                                        <span class="add-no-of-items">${cartss.quantity}</span>
+                                        <button class="add-items-btn-plus items-btn">+</button>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                    `;
+                    order_Detail_Box.appendChild(newCart);
+                })
+            }
+        }
 
 
 
-    function fetchCityData() {
+
+
+        // Function to add product to cart
+        const addtoCart = (product_id) => {
+            let positionThisProductInCart = cartBox.findIndex((value) => value.product_id == product_id);
+            if (cartBox.length <= 0) {
+                cartBox = [{
+                    product_id: product_id,
+                    quantity: 1
+                }];
+            } else if (positionThisProductInCart < 0) {
+                cartBox.push({
+                    product_id: product_id,
+                    quantity: 1
+                });
+            } else {
+                cartBox[positionThisProductInCart].quantity += 1;
+            }
+            console.log(cartBox);
+            addcarttoHTML(); // Update HTML representation of cart
+            saveCartToLocalStorage(); // Save cart data to local storage
+        };
+
+
+
+
+
+
+
+
+
+
+        //-------------display nearby city branch and delivery charge---------------
+        // Function to fetch and display data based on input value
+        function fetchDataAndDisplay(cityInput) {
+        // Fetch data from city.json
         fetch('city.json')
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
             })
             .then(data => {
-                // Process the fetched JSON data here
-                console.log(data); // You can replace this with your processing logic
+            console.log('Fetched data:', data); // Debug: Check if data is fetched correctly
+
+            // Flag to check if any subcity matches the input
+            let matchFound = false;
+
+            // Iterate over each city
+            data.forEach(cityData => {
+                const cityName = cityData.city;
+
+                // Iterate over subcities for each city
+                cityData.subCities.forEach(subCity => {
+                console.log('Subcity:', subCity); // Debug: Check the current subcity
+                // Check if subCity is defined and if the input city matches it
+                if (subCity && subCity.name && subCity.name.toLowerCase() === cityInput) {
+                    console.log('Match found:', subCity); // Debug: Confirm a match is found
+                    document.getElementById('cityNameSpan').textContent = `${cityName}`;
+                    document.getElementById('shipping-city').textContent=`${cityName}`;
+                    document.getElementById('shipping-cost').textContent=`Rs.${subCity.deliveryCharge}`;
+                    document.getElementById('deliveryChargeSpan').textContent = `Rs.${subCity.deliveryCharge}`;
+                    matchFound = true;
+                }
+                });
+            });
+
+            // If no match found, clear the spans
+            if (!matchFound) {
+                console.log('No matching subcity found'); // Debug: Confirm no match is found
+                document.getElementById('cityNameSpan').textContent = '';
+                document.getElementById('shipping-city').textContent='';
+                document.getElementById('shipping-cost').textContent='';
+                document.getElementById('deliveryChargeSpan').textContent = '';
+            }
             })
             .catch(error => {
-                console.error('Error fetching data:', error);
+            console.error('Error fetching data:', error);
             });
-    }
+        }
 
-    // Call the function to fetch city data
-    fetchCityData();
+        // Add event listener to input field
+        document.getElementById('city').addEventListener('input', function() {
+        const cityInput = this.value.toLowerCase(); // Get input value and convert to lowercase
+        fetchDataAndDisplay(cityInput); // Fetch data and display based on input value
+        });
+
+        // Add event listener to suggested subcities (inside <li> tags)
+        document.getElementById('subCityList').addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            const subCityName = event.target.textContent.trim().toLowerCase(); // Get subcity name from clicked li
+            document.getElementById('city').value = subCityName; // Fill input field with clicked subcity name
+            fetchDataAndDisplay(subCityName); // Fetch data and display based on clicked subcity name
+        }
+        });
+
+
+
+
+
+
+        //-------------------suggest city-------------------
+        // Add event listener to input field
+        document.getElementById('city').addEventListener('input', function() {
+        const cityInput = this.value.toLowerCase().trim(); // Get trimmed input value and convert to lowercase
+        const subCityList = document.getElementById('subCityList');
+
+        // Fetch data from city.json
+        fetch('city.json')
+            .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+            })
+            .then(data => {
+            console.log('Fetched data:', data); // Debug: Check if data is fetched correctly
+
+            // Flag to check if any subcity matches the input
+            let matchFound = false;
+
+            // Clear the subcity list
+            subCityList.innerHTML = '';
+
+            // Hide the subCityList if the input field is empty
+            if (cityInput === '') {
+                subCityList.style.display = 'none';
+                return; // Exit the function if the input field is empty
+            }
+
+            // Iterate over each city
+            data.forEach(cityData => {
+                const cityName = cityData.city;
+
+                // Iterate over subcities for each city
+                cityData.subCities.forEach(subCity => {
+                console.log('Subcity:', subCity); // Debug: Check the current subcity
+                // Check if subCity is defined and if the input city matches it
+                if (subCity && subCity.name && subCity.name.toLowerCase().includes(cityInput)) {
+                    console.log('Match found:', subCity); // Debug: Confirm a match is found
+                    matchFound = true;
+
+                    // Create li element for the subcity and add to subCityList
+                    const li = document.createElement('li');
+                    li.textContent = subCity.name;
+                    li.addEventListener('click', function() {
+                    // Set the input value to the selected subcity
+                    document.getElementById('city').value = subCity.name;
+                    // Hide the subCityList
+                    subCityList.style.display = 'none';
+                    });
+                    subCityList.appendChild(li);
+                }
+                });
+            });
+
+            // If no match found, hide the subCityList
+            if (!matchFound) {
+                console.log('No matching subcity found'); // Debug: Confirm no match is found
+                subCityList.style.display = 'none';
+            } else {
+                // Show the subCityList only if there are matches and the input field is not empty
+                if (cityInput !== '') {
+                subCityList.style.display = 'block';
+                }
+            }
+            })
+            .catch(error => {
+            console.error('Error fetching data:', error);
+            });
+        });
+
+        // Add event listener to document body to hide subCityList when clicking outside of it or the input field
+        document.body.addEventListener('click', function(event) {
+        const subCityList = document.getElementById('subCityList');
+        const cityInput = document.getElementById('city');
+
+        // Check if the click target is not within the subCityList or the input field
+        if (!event.target.closest('#subCityList') && event.target !== cityInput) {
+            subCityList.style.display = 'none'; // Hide the subCityList
+        }
+        });
 
 
     </script>

@@ -182,49 +182,6 @@
     <script src="product.js"></script>
     <script>
 
-        // Read the selected item from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const selectedItemId = localStorage.getItem('selectedItemId');
-            if (selectedItemId) {
-                // Perform action based on selected item
-                switch (selectedItemId) {
-                    case 'sub_dep_1_all':
-                        // Perform action for 'All Vegetables'
-                        document.getElementById('vegitable-btn').click();
-                        break;
-                    case 'sub_dep_1_organic':
-                        // Perform action for 'Organic'
-                        break;
-                    case 'sub_dep_1_inorganic':
-                        // Perform action for 'Inorganic'
-                        break;
-                    case 'sub_dep_1_packets':
-                        // Perform action for 'Packets'
-                        break;
-                    case 'sub_dep_2_all':
-                        document.getElementById('fruit-btn').click();
-                        // Perform action for 'All Fruits'
-                        break;
-                    case 'sub_dep_2_organic':
-                        // Perform action for 'Organic'
-                        break;
-                    case 'sub_dep_2_inorganic':
-                        // Perform action for 'Inorganic'
-                        break;
-                    case 'sub_dep_2_packets':
-                        // Perform action for 'Packets'
-                        break;
-                    // Add cases for other sub-departments as needed
-                    default:
-                        // Handle other cases if needed
-                }
-                // Clear the selected item from localStorage
-                localStorage.removeItem('selectedItemId');
-            }
-        });
-
-
-
         //------------Cart window---------------
         let navCart = document.querySelector('.navbar-cart');
         let bodyContain = document.querySelector('body');
@@ -298,6 +255,134 @@
             }
             navbar_cartSpan.innerText = totalQuantity;
             console.log("Cart items rendered successfully.");
+        };
+
+
+
+
+        //-----------------capture the product position click in cart and minus or plus click----------
+        list_Cart.addEventListener('click',(event)=>{
+            let positionClick=event.target;
+            if(positionClick.classList.contains('listCart-minus')||positionClick.classList.contains('listCart-plus')){
+                let product_id =positionClick.parentElement.parentElement.dataset.id;
+                let type='listCart-minus';
+                if(positionClick.classList.contains('listCart-plus')){
+                    type='listCart-plus';
+                }
+                changequantity(product_id,type);
+                console.log(product_id,type);
+            }
+        })
+
+
+        //--------------adjust quantity and price when plus or minus click------------
+        const changequantity=(product_id,type)=>{
+            let positionItemInCart=cartBox.findIndex((value)=>value.product_id==product_id);
+            if(positionItemInCart>=0){
+                switch (type) {
+                    case 'listCart-plus':
+                        cartBox[positionItemInCart].quantity=cartBox[positionItemInCart].quantity+1;
+                        break;
+                
+                    default:
+                        let valueChange=cartBox[positionItemInCart].quantity-1;
+                        if(valueChange>0){
+                            cartBox[positionItemInCart].quantity=valueChange;
+                        }else{
+                            cartBox.splice(positionItemInCart,1);
+                        }
+                        break;
+                }
+            }
+            saveCartToLocalStorage();
+            addcarttoHTML();
+        }
+
+        //-----------Function to save the cart data to local storage--------
+        const saveCartToLocalStorage = () => {
+            localStorage.setItem('cart', JSON.stringify(cartBox));
+        };
+
+        //---------------add cart to html file--------------
+        const addcarttoHTML=()=>{
+            list_Cart.innerHTML='';
+            const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+            let totalQuantity=0;
+            if(cartBox.length>0){
+                cartBox.forEach(cartss=>{
+                    totalQuantity=totalQuantity+cartss.quantity;
+                    let newCart=document.createElement('div');
+                    newCart.classList.add('listCart-items');
+                    newCart.dataset.id=cartss.product_id;
+                    let positionProduct=outerItems.findIndex((value)=>value.id==cartss.product_id);
+                    let info=outerItems[positionProduct];
+                    newCart.innerHTML=`
+                    <div class="listCart-image">
+                        <img src="${info.image}">
+                    </div>
+                    <div class="listCart-name">
+                    ${info.name}
+                    </div>
+                    <div class="listCart-totalPrice">Rs.${info.price*cartss.quantity}</div>
+                    <div class="listCart-quantity">
+                        <span class="listCart-minus"><</span>
+                        <span>${cartss.quantity}</span>
+                        <span class="listCart-plus">></span>
+                    </div>
+                    `;
+                    list_Cart.appendChild(newCart);
+                })
+            }
+            navbar_cartSpan.innerText=totalQuantity;
+        }
+
+
+
+
+
+
+
+
+        
+
+        //------------Add a click event listener to the parent element of all btn-addtocart buttons-----------
+        document.getElementById('catalog').addEventListener('click', function(event) {
+            let product_id;
+            // Check if the clicked element is a btn-addtocart
+            if (event.target.classList.contains('btn-addtocart')) {
+                // Retrieve the parent row-card element of the clicked button
+                const parentRowCard = event.target.closest('.row-card');
+                // Retrieve the dataset-id attribute value of the parent row-card
+                const productId = parentRowCard.getAttribute('data-id');
+                // Assign the dataset-id to the product_id variable
+                product_id = productId;
+                // Print the dataset-id to the console
+                console.log(product_id);
+                addtoCart(product_id);
+            }
+        });
+
+
+
+        // Function to add product to cart
+        const addtoCart = (product_id) => {
+            let positionThisProductInCart = cartBox.findIndex((value) => value.product_id == product_id);
+            if (cartBox.length <= 0) {
+                cartBox = [{
+                    product_id: product_id,
+                    quantity: 1
+                }];
+            } else if (positionThisProductInCart < 0) {
+                cartBox.push({
+                    product_id: product_id,
+                    quantity: 1
+                });
+            } else {
+                cartBox[positionThisProductInCart].quantity += 1;
+            }
+            console.log(cartBox);
+            addcarttoHTML(); // Update HTML representation of cart
+            saveCartToLocalStorage(); // Save cart data to local storage
         };
 
     </script>

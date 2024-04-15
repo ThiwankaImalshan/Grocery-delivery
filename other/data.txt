@@ -1040,3 +1040,651 @@ cursor: pointer;
                     <i class="fa fa-arrow-circle-right p-next-btn fa-2x" aria-hidden="true"></i>
                 </div>
                 </div> -->
+
+
+
+
+
+
+
+
+
+
+
+    // //-------------Redirect to productDetail.html with data-Id-------------
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     const rowCards = document.querySelectorAll(".row-card");
+        
+    //     rowCards.forEach(function(card) {
+    //         card.addEventListener("click", function() {
+    //             const dataId = this.getAttribute("data-id");
+    //             if (dataId) {
+    //                 // Redirect to productDetail.html with data ID as query parameter
+    //                 window.location.href = "productDetail.html?id=" + dataId;
+    //             }
+    //         });
+    //     });
+    // });
+
+
+
+
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     console.log("DOM content loaded");
+    //     const rowCards = document.querySelectorAll(".row-card");
+        
+    //     rowCards.forEach(function(card) {
+    //         card.addEventListener("click", function() {
+    //             console.log("Row card clicked");
+    //             const dataId = this.getAttribute("data-id");
+    //             if (dataId) {
+    //                 // Redirect to productDetail.html with data ID as query parameter
+    //                 window.location.href = "productDetail.html?id=" + dataId;
+    //             }
+    //         });
+    //     });
+    // });
+
+
+
+    // // Event listener setup
+    // function setupRowCardEventListeners() {
+    //     const rowCards = document.querySelectorAll(".row-card");
+        
+    //     rowCards.forEach(function(card) {
+    //         card.addEventListener("click", function() {
+    //             const dataId = this.getAttribute("data-id");
+    //             if (dataId) {
+    //                 // Redirect to productDetail.html with data ID as query parameter
+    //                 window.location.href = "productDetail.html?id=" + dataId;
+    //             }
+    //         });
+    //     });
+    // }
+
+    // // Attach event listeners when the page is loaded
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     setupRowCardEventListeners();
+    // });
+
+    // // Attach event listeners even when the page is revisited (e.g., from productDetail.html)
+    // setupRowCardEventListeners();
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // //--------------pass data from search input field to search page---------------
+    // function passDataAndRedirect() {
+    //         const searchData = document.getElementById("searchInput").value;
+    //         // Encode search input to handle special characters
+    //         const encodedSearchData = encodeURIComponent(searchData);
+    //         // Redirect to search.html with search input as a query parameter
+    //         window.location.href = "search.html?searchInput=" + encodedSearchData;
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+// // Function to get the value of a query parameter by its name
+    // function getQueryParam(name) {
+    //         const urlParams = new URLSearchParams(window.location.search);
+    //         return urlParams.get(name);
+    //     }
+
+    //     // Function to initialize the product detail page
+    //     function init() {
+    //         const dataId = getQueryParam('id');
+    //         if (dataId) {
+    //             // If dataId is available, you can use it for further processing
+    //             console.log("Data ID:", dataId);
+    //         } else {
+    //             console.log("No data ID found in the URL.");
+    //         }
+    //     }
+
+    //     // Call init() when the page loads
+    //     window.onload = init;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // // Read the selected item from localStorage
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const selectedItemId = localStorage.getItem('selectedItemId');
+        //     if (selectedItemId) {
+        //         // Perform action based on selected item
+        //         switch (selectedItemId) {
+        //             case 'sub_dep_1_all':
+        //                 // Perform action for 'All Vegetables'
+        //                 document.getElementById('vegitable-btn').click();
+        //                 break;
+        //             case 'sub_dep_1_organic':
+        //                 // Perform action for 'Organic'
+        //                 break;
+        //             case 'sub_dep_1_inorganic':
+        //                 // Perform action for 'Inorganic'
+        //                 break;
+        //             case 'sub_dep_1_packets':
+        //                 // Perform action for 'Packets'
+        //                 break;
+        //             case 'sub_dep_2_all':
+        //                 document.getElementById('fruit-btn').click();
+        //                 // Perform action for 'All Fruits'
+        //                 break;
+        //             case 'sub_dep_2_organic':
+        //                 // Perform action for 'Organic'
+        //                 break;
+        //             case 'sub_dep_2_inorganic':
+        //                 // Perform action for 'Inorganic'
+        //                 break;
+        //             case 'sub_dep_2_packets':
+        //                 // Perform action for 'Packets'
+        //                 break;
+        //             // Add cases for other sub-departments as needed
+        //             default:
+        //                 // Handle other cases if needed
+        //         }
+        //         // Clear the selected item from localStorage
+        //         localStorage.removeItem('selectedItemId');
+        //     }
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //---------------------Add Cart Items to Checkout----------------------------
+
+    // document.addEventListener('DOMContentLoaded', function() {
+    // // Reference the container element where cart items are displayed
+    // const cartContainer = document.getElementById('orderDetail-Box');
+
+    // // Retrieve cart data from local storage
+    // const cartData = JSON.parse(localStorage.getItem('cart'));
+    // console.log('Cart Data:', cartData);
+
+    // // Fetch products data from category.json
+    // fetch('category.json')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // Extract only the "products" array
+    //         const productsArray = data.categories.flatMap(category => category.subcategories.flatMap(subcategory => subcategory.products));
+    //         console.log('Products Array:', productsArray);
+
+    //         let totalPrice = 0; // Initialize total price variable
+
+    //         // Iterate over each item in the cart data
+    //         cartData.forEach(cartItem => {
+    //             // Find the product in the products array with the matching ID
+    //             const product = productsArray.find(product => product.id === cartItem.product_id);
+
+    //             // Check if the product was found
+    //             if (product) {
+    //                 console.log(product.name);
+
+    //                 // Calculate subtotal for the current cart item
+    //                 const subtotal = product.price * cartItem.quantity;
+    //                 totalPrice += subtotal; // Add subtotal to total price
+
+    //                 // Create a cart item element
+    //                 const cartItemElement = document.createElement('div');
+    //                 cartItemElement.classList.add('order-details');
+    //                 cartItemElement.setAttribute('data-id', product.id);
+    //                 cartItemElement.innerHTML = `
+    //                     <div class="order-details-img">
+    //                         <img src="${product.image}" alt="${product.name}">
+    //                     </div>
+    //                     <div class="order-details-texts">
+    //                         <div class="order-detail-txt">
+    //                             <p>${product.name}<span>Rs.${product.price*cartItem.quantity}</span></p>
+    //                         </div>
+    //                         <div class="order-detail-icons">
+    //                             <div class="order-add-items">
+    //                                 <button class="add-items-btn-minus items-btn">-</button>
+    //                                 <span class="add-no-of-items">${cartItem.quantity}</span>
+    //                                 <button class="add-items-btn-plus items-btn">+</button>
+    //                                 <i class="fa fa-times" aria-hidden="true"></i>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                 `;
+
+    //                 // Append the cart item element to the container
+    //                 cartContainer.appendChild(cartItemElement);
+    //             } else {
+    //                 console.log(`Product with ID ${cartItem.product_id} not found.`);
+    //             }
+    //         });
+
+    //         // Display the total price
+    //         const totalPriceElement = document.getElementById('sub-total');
+    //         totalPriceElement.textContent = `Rs.${totalPrice.toFixed(2)}`;
+    //         // document.body.appendChild(totalPriceElement);
+    //     })
+    //     .catch(error => console.error('Error fetching data:', error));
+    // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // // Define the changequantity function
+    // const changequantity = (product_id, type) => {
+    //     const cartData = JSON.parse(localStorage.getItem('cart'));
+    //     let positionItemInCart = cartData.findIndex((value) => value.product_id == product_id);
+    //     if (positionItemInCart >= 0) {
+    //         switch (type) {
+    //             case 'listCart-plus':
+    //             cartData[positionItemInCart].quantity = cartData[positionItemInCart].quantity + 1;
+    //                 break;
+    //             default:
+    //                 let valueChange = cartData[positionItemInCart].quantity - 1;
+    //                 if (valueChange > 0) {
+    //                     cartData[positionItemInCart].quantity = valueChange;
+    //                 } else {
+    //                     cartData.splice(positionItemInCart, 1);
+    //                 }
+    //                 break;
+    //         }
+    //     }
+    //     localStorage.setItem('cart', JSON.stringify(cartData));
+    //     // addcarttoHTML(); // Update the HTML display after changing quantity
+    // };
+
+    
+
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     // Reference the container element where cart items are displayed
+    //     const cartContainer = document.getElementById('orderDetail-Box');
+
+    //     // Retrieve cart data from local storage
+    //     const cartData = JSON.parse(localStorage.getItem('cart'));
+    //     console.log('Cart Data:', cartData);
+
+    //     // Fetch products data from category.json
+    //     fetch('category.json')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             // Extract only the "products" array
+    //             const productsArray = data.categories.flatMap(category => category.subcategories.flatMap(subcategory => subcategory.products));
+    //             console.log('Products Array:', productsArray);
+
+    //             let totalPrice = 0; // Initialize total price variable
+
+    //             // Iterate over each item in the cart data
+    //             cartData.forEach(cartItem => {
+    //                 // Find the product in the products array with the matching ID
+    //                 const product = productsArray.find(product => product.id === cartItem.product_id);
+
+    //                 // Check if the product was found
+    //                 if (product) {
+    //                     console.log(product.name);
+
+    //                     // Calculate subtotal for the current cart item
+    //                     const subtotal = product.price * cartItem.quantity;
+    //                     totalPrice += subtotal; // Add subtotal to total price
+
+    //                     // Create a cart item element
+    //                     const cartItemElement = document.createElement('div');
+    //                     cartItemElement.classList.add('order-details');
+    //                     cartItemElement.setAttribute('data-id', product.id);
+    //                     cartItemElement.innerHTML = `
+    //                         <div class="order-details-img">
+    //                             <img src="${product.image}" alt="${product.name}">
+    //                         </div>
+    //                         <div class="order-details-texts">
+    //                             <div class="order-detail-txt">
+    //                                 <p>${product.name}<span>Rs.${subtotal}</span></p>
+    //                             </div>
+    //                             <div class="order-detail-icons">
+    //                                 <div class="order-add-items">
+    //                                     <button class="add-items-btn-minus items-btn">-</button>
+    //                                     <span class="add-no-of-items">${cartItem.quantity}</span>
+    //                                     <button class="add-items-btn-plus items-btn">+</button>
+    //                                     <i class="fa fa-times" aria-hidden="true"></i>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     `;
+
+    //                     // Add event listeners to plus and minus buttons
+    //                     const plusButton = cartItemElement.querySelector('.add-items-btn-plus');
+    //                     const minusButton = cartItemElement.querySelector('.add-items-btn-minus');
+                        
+    //                     plusButton.addEventListener('click', () => changequantity(product.id, 'listCart-plus'));
+    //                     minusButton.addEventListener('click', () => changequantity(product.id, 'listCart-minus'));
+
+    //                     // Append the cart item element to the container
+    //                     cartContainer.appendChild(cartItemElement);
+    //                 } else {
+    //                     console.log(`Product with ID ${cartItem.product_id} not found.`);
+    //                 }
+    //             });
+
+    //             // Display the total price
+    //             console.log('Total Price:', totalPrice);
+    //         });
+    // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // // Add event listener to input field
+        // document.getElementById('city').addEventListener('input', function() {
+        // const cityInput = this.value.toLowerCase(); // Get input value and convert to lowercase
+
+        // // Fetch data from city.json
+        // fetch('city.json')
+        //     .then(response => {
+        //     if (!response.ok) {
+        //         throw new Error('Network response was not ok');
+        //     }
+        //     return response.json();
+        //     })
+        //     .then(data => {
+        //     console.log('Fetched data:', data); // Debug: Check if data is fetched correctly
+
+        //     // Flag to check if any subcity matches the input
+        //     let matchFound = false;
+
+        //     // Iterate over each city
+        //     data.forEach(cityData => {
+        //         const cityName = cityData.city;
+
+        //         // Iterate over subcities for each city
+        //         cityData.subCities.forEach(subCity => {
+        //         // Check if subCity is defined and if the input city matches it
+        //         if (subCity && subCity.name && subCity.name.toLowerCase() === cityInput) {
+        //             document.getElementById('cityNameSpan').textContent = `${cityName}`;
+        //             // document.getElementById('subCityNameSpan').textContent = `Subcity: ${subCity.name}`;
+        //             document.getElementById('deliveryChargeSpan').textContent = `Rs.${subCity.deliveryCharge}`;
+        //             matchFound = true;
+        //         }
+        //         });
+        //     });
+
+        //     // If no match found, clear the spans
+        //     if (!matchFound) {
+        //         document.getElementById('cityNameSpan').textContent = '';
+        //         // document.getElementById('subCityNameSpan').textContent = '';
+        //         document.getElementById('deliveryChargeSpan').textContent = '';
+        //     }
+        //     })
+        //     .catch(error => {
+        //     console.error('Error fetching data:', error);
+        //     });
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //     // Add event listener to input field
+    // document.getElementById('city').addEventListener('input', function() {
+    //   const cityInput = this.value.toLowerCase(); // Get input value and convert to lowercase
+
+    //   // Fetch data from city.json
+    //   fetch('city.json')
+    //     .then(response => {
+    //       if (!response.ok) {
+    //         throw new Error('Network response was not ok');
+    //       }
+    //       return response.json();
+    //     })
+    //     .then(data => {
+    //       console.log('Fetched data:', data); // Debug: Check if data is fetched correctly
+
+    //       // Clear previous suggestions
+    //       const subCityList = document.getElementById('subCityList');
+    //       subCityList.innerHTML = '';
+
+    //       // Iterate over each city
+    //       data.forEach(cityData => {
+    //         // Iterate over subcities for each city
+    //         cityData.subCities.forEach(subCity => {
+    //           // Check if subCity is defined and if the input city matches it
+    //           if (subCity && subCity.name.toLowerCase().includes(cityInput)) {
+    //             // Create list item for the matching sub-city
+    //             const li = document.createElement('li');
+    //             li.textContent = subCity.name;
+    //             // Add click event listener to populate input field with selected sub-city
+    //             li.addEventListener('click', function() {
+    //               document.getElementById('city').value = subCity.name;
+    //               subCityList.innerHTML = ''; // Clear suggestions
+    //             });
+    //             // Append list item to the list
+    //             subCityList.appendChild(li);
+    //           }
+    //         });
+    //       });
+    //     })
+    //     .catch(error => {
+    //       console.error('Error fetching data:', error);
+    //     });
+    // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //------------Products sugesstion in search bar---------
+
+        // Fetch data from city.json
+        // fetch('city.json')
+        // .then(response => {
+        //     if (!response.ok) {
+        //     throw new Error('Network response was not ok');
+        //     }
+        //     return response.json();
+        // })
+        // .then(data => {
+        //     console.log('Fetched data:', data); // Debug: Check if data is fetched correctly
+            
+        //     // Iterate over each city
+        //     data.forEach(cityData => {
+        //     const cityName = cityData.city;
+        //     console.log('City:', cityName); // Debug: Check if city name is correct
+            
+        //     // Iterate over subcities for each city
+        //     cityData.subCities.forEach(subCity => {
+        //         console.log(`City: ${cityName}, Subcity: ${subCity.name}, Delivery Charge: ${subCity.deliveryCharge}`);
+        //     });
+        //     });
+        // })
+        // .catch(error => {
+        //     console.error('Error fetching data:', error);
+        // });
+
+
+
+
+
+
+
+
+
+
+
+        // // Add event listener to input field
+        // document.getElementById('city').addEventListener('input', function() {
+        // const cityInput = this.value.toLowerCase(); // Get input value and convert to lowercase
+
+        // // Fetch data from city.json
+        // fetch('city.json')
+        //     .then(response => {
+        //     if (!response.ok) {
+        //         throw new Error('Network response was not ok');
+        //     }
+        //     return response.json();
+        //     })
+        //     .then(data => {
+        //     console.log('Fetched data:', data); // Debug: Check if data is fetched correctly
+
+        //     // Flag to check if any subcity matches the input
+        //     let matchFound = false;
+
+        //     // Iterate over each city
+        //     data.forEach(cityData => {
+        //         const cityName = cityData.city;
+
+        //         // Iterate over subcities for each city
+        //         cityData.subCities.forEach(subCity => {
+        //         // Check if subCity is defined and if the input city matches it
+        //         if (subCity && subCity.name && subCity.name.toLowerCase() === cityInput) {
+        //             console.log(`City: ${cityName}, Subcity: ${subCity.name}, Delivery Charge: ${subCity.deliveryCharge}`);
+        //             matchFound = true;
+        //         }
+        //         });
+        //     });
+
+        //     // If no match found, inform the user
+        //     if (!matchFound) {
+        //         console.log('No matching subcity found for input:', cityInput);
+        //     }
+        //     })
+        //     .catch(error => {
+        //     console.error('Error fetching data:', error);
+        //     });
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+        // //------------Add a click event listener to the parent element of all btn-addtocart buttons-----------
+        // document.getElementById('catalog').addEventListener('click', function(event) {
+        //     let product_id;
+        //     // Check if the clicked element is a btn-addtocart
+        //     if (event.target.classList.contains('btn-addtocart')) {
+        //         // Retrieve the parent row-card element of the clicked button
+        //         const parentRowCard = event.target.closest('.row-card');
+        //         // Retrieve the dataset-id attribute value of the parent row-card
+        //         const productId = parentRowCard.getAttribute('data-id');
+        //         // Assign the dataset-id to the product_id variable
+        //         product_id = productId;
+        //         // Print the dataset-id to the console
+        //         console.log(product_id);
+        //         addtoCart(product_id);
+        //     }
+        // });

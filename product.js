@@ -98,6 +98,32 @@
     document.getElementById('meat-btn').addEventListener('click', function() {
       renderCategory('meats');
     });
+
+
+
+    //------------get clicking id from index.html and display each category--------
+    function getQueryParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+    
+    // Retrieve clicked item ID from URL query parameter
+    const clickedItemId = getQueryParam('id');
+    console.log("Clicked Item ID:", clickedItemId);
+    
+    // Check if the clicked item ID matches a specific value
+    if (clickedItemId === 'sub_dep_1_all') {
+        // Perform a task if the clicked item ID matches the specific value
+        console.log("Performing a task for the sub_dep_1_all...");
+        renderCategory('vegetables');
+    }else if(clickedItemId === 'sub_dep_2_all'){
+    
+        console.log("Performing a task for the sub_dep_2_all...");
+        renderCategory('fruits');
+    }else {
+        // Perform a default task if the clicked item ID does not match the specific value
+        console.log("Performing a default task...");
+    }
 })
 .catch(error => console.error('Error fetching data:', error));
 

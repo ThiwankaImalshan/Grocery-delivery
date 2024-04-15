@@ -565,12 +565,25 @@
         const product = topProducts[j];
 
         const li = document.createElement('div');
-        li.classList.add('row-card');
-        li.dataset.id=product.id;
-        li.classList.add('a-slider-item');
+        li.classList.add('row-card', 'a-slider-item');
+        li.dataset.id = product.id;
+        
 
         const rowcardimg =document.createElement('div');
         rowcardimg.classList.add('row-card-img');
+        rowcardimg.onclick = function() {
+            redirectToProductDetail(product.id);
+        };
+
+        // Append the created element to a container in the document
+        // For example, if you want to append it to an element with id "container"
+        document.getElementById('container').appendChild(rowcardimg);
+
+        // Function to handle redirection to productDetail.html
+        function redirectToProductDetail(productId) {
+            // Redirect to productDetail.html with product ID as query parameter
+            window.location.href = "productDetail.html?id=" + productId;
+        }
         li.appendChild(rowcardimg);
 
         const rowcardtxt =document.createElement('div');
@@ -638,16 +651,6 @@
 
 
 
-    // //--------------pass data from search input field to search page---------------
-    // function passDataAndRedirect() {
-    //         const searchData = document.getElementById("searchInput").value;
-    //         // Encode search input to handle special characters
-    //         const encodedSearchData = encodeURIComponent(searchData);
-    //         // Redirect to search.html with search input as a query parameter
-    //         window.location.href = "search.html?searchInput=" + encodedSearchData;
-    // }
-
-    
     //--------------pass data from search input field to search page---------------
     function passDataAndRedirect() {
         const searchData = document.getElementById("searchInput").value.trim(); // Trim any whitespace
@@ -662,6 +665,14 @@
     }
 
 
+
+
+
+
+    function handleItemClick(itemId) {
+        // Redirect to product.html with clicked item ID as query parameter
+        window.location.href = "product.html?id=" + itemId;
+    }
 
 </script>
 <script src="script.js"></script>

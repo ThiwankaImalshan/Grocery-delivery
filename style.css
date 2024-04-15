@@ -1245,31 +1245,42 @@ body.showCart .cartTab{
     font-size: 20px;
     margin-bottom: 15px;
 }
-#cityList {
-    display: block;
-    border: 1px solid #ccc;
-    border-top: none;
+.city-container {
+    position: relative;
+  }
+  
+  #subCityList {
     list-style-type: none;
     padding: 0;
     margin: 0;
     position: absolute;
-    background-color: #fff;
-    z-index: 1;
-}
-#cityList li {
-    padding: 10px;
+    top: 100%; /* Position the list below the input */
+    left: 0;
+    width: 100%; /* Match the width of the container */
+    background-color: #fff; /* Optional: Add a background color */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    max-height: 200px; /* Set maximum height for scrollable list */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  #subCityList li {
+    padding: 5px 10px;
     cursor: pointer;
-    width: 200px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
-    font-variation-settings: "slnt" 0;
-    font-size: 15px;
-}
-#cityList li:hover {
+    font-variation-settings:"slnt" 0;
+    font-size: 12px;
+  }
+  
+  #subCityList li:hover {
     background-color: #f0f0f0;
-}
+  }
+  
+  
+  
+
 
 
 
