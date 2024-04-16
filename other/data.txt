@@ -1688,3 +1688,153 @@ cursor: pointer;
         //         addtoCart(product_id);
         //     }
         // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //--------------------------google map-------------------
+        // function initMap() {
+        //     const map = new google.maps.Map(document.getElementById("map"), {
+        //         center: { lat: 6.9271, lng: 79.8612 },
+        //         zoom: 15,
+        //     });
+
+        //     const locations = [
+        //         { lat: 6.9645556, lng: 79.90075 }, // Location 1
+        //         { lat: 6.857148165994383, lng: 79.868251402696 } // Location 2
+        //     ];
+
+        //     const markers = [];
+
+        //     // Function to add markers to the map
+        //     function addMarker(location) {
+        //         const marker = new google.maps.Marker({
+        //             position: location,
+        //             map: map,
+        //         });
+        //         markers.push(marker);
+        //     }
+
+        //     // Button click event handlers
+        //     document.getElementById("button1").addEventListener("click", () => {
+        //         markers.forEach(marker => marker.setMap(null)); // Clear previous markers
+        //         addMarker(locations[0]); // Add marker for Location 1
+        //         map.setCenter(locations[0]); // Center map on Location 1
+        //     });
+
+        //     document.getElementById("button2").addEventListener("click", () => {
+        //         markers.forEach(marker => marker.setMap(null)); // Clear previous markers
+        //         addMarker(locations[1]); // Add marker for Location 2
+        //         map.setCenter(locations[1]); // Center map on Location 2
+        //     });
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //------------------ delivery branches detail cards----------------------
+
+        // fetch('city.json')
+        // .then(response => {
+        //     if (!response.ok) {
+        //     throw new Error('Network response was not ok');
+        //     }
+        //     return response.json();
+        // })
+        // .then(data => {
+        //     const locationCardsContainer = document.querySelector('.location-cards');
+            
+        //     // Iterate over each city data
+        //     data.forEach(cityData => {
+        //     const cityName = cityData.city;
+        //     const cityDetails = cityData.details;
+            
+        //     // Create card element
+        //     const card = document.createElement('div');
+        //     card.classList.add('location-card');
+            
+        //     // Add city name to the card
+        //     const cityNameElement = document.createElement('h3');
+        //     cityNameElement.textContent = cityName;
+        //     card.appendChild(cityNameElement);
+            
+        //     // Add address and telephone details to the card
+        //     const detailsList = document.createElement('ul');
+        //     for (const [key, value] of Object.entries(cityDetails)) {
+        //         // Check if the key is address or telephone
+        //         if (key === 'address' || key === 'telephone') {
+        //         // Capitalize first letter of the key
+        //         const capitalizedKey = key.charAt(0).toUpperCase() + key.slice(1);
+                
+        //         // Create detail item element
+        //         const detailItem = document.createElement('li');
+                
+        //         // Bold the key
+        //         detailItem.innerHTML = `<strong>${capitalizedKey}</strong>: ${value}`;
+                
+        //         // Append the detail item to the list
+        //         detailsList.appendChild(detailItem);
+        //         }
+        //     }
+        //     card.appendChild(detailsList);
+            
+        //     // Append the card to the container
+        //     locationCardsContainer.appendChild(card);
+        //     });
+        // })
+        // .catch(error => {
+        //     console.error('Error fetching data:', error);
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

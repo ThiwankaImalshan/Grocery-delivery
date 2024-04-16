@@ -93,6 +93,7 @@ const addcarttoHTML=()=>{
             newCart.dataset.id=cartss.product_id;
             let positionProduct=outerProductsArray.findIndex((value)=>value.id==cartss.product_id);
             let info=outerProductsArray[positionProduct];
+            console.log(info.image);
             newCart.innerHTML=`
             <div class="listCart-image">
                 <img src="${info.image}">

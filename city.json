@@ -1,7 +1,12 @@
 [
   {
     "city": "Colombo",
-    "details": {},
+    "details": {
+      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "telephone":"0115521234",
+      "lat":"6.9645556",
+      "lng":"79.90075"
+    },
     "subCities": [
       {
         "name": "Aluthmawatha",
@@ -251,7 +256,12 @@
   },
   {
     "city": "Dehiwala",
-    "details": {},
+    "details": {
+      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "telephone":"0115521234",
+      "lat":"6.857148165994383",
+      "lng":"79.868251402696"
+    },
     "subCities": [
       {
         "name": "Dehiwala",
@@ -294,7 +304,12 @@
   ,
   {
     "city": "Kelaniya",
-    "details": {},
+    "details": {
+      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "telephone":"0115521234",
+      "lat":"6.9645556",
+      "lng":"79.90075"
+    },
     "subCities": [
       "Dalugama",
       "Dalugamgoda",
@@ -318,7 +333,12 @@
   },
   {
     "city": "Gamapaha - Miriswatta",
-    "details": {},
+    "details": {
+      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "telephone":"0115521234",
+      "lat":"6.9645556",
+      "lng":"79.90075"
+    },
     "subCities": [
       "Boraliyawatha",
       "Galloluwa",
@@ -339,7 +359,12 @@
   },
   {
     "city": "Kadawatha",
-    "details": {},
+    "details": {
+      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "telephone":"0115521234",
+      "lat":"6.9645556",
+      "lng":"79.90075"
+    },
     "subCities": [
       "Amunugoda",
       "Biyanvila",
@@ -362,7 +387,12 @@
   },
   {
     "city": "Panadura",
-    "details": {},
+    "details": {
+      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "telephone":"0115521234",
+      "lat":"6.9645556",
+      "lng":"79.90075"
+    },
     "subCities": [
       "Alubomulla",
       "Ambalanduwa",
@@ -425,7 +455,12 @@
   },
   {
     "city": "Malabe",
-    "details": {},
+    "details": {
+      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "telephone":"0115521234",
+      "lat":"6.9645556",
+      "lng":"79.90075"
+    },
     "subCities": [
       "Arangala",
       "Evarihena",
@@ -436,7 +471,12 @@
   },
   {
     "city": "Gampaha",
-    "details": {},
+    "details": {
+      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "telephone":"0115521234",
+      "lat":"6.9645556",
+      "lng":"79.90075"
+    },
     "subCities": [
       "Abagahalanda",
       "Akaravita - Gampaha",

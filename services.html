@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <style>
+    body{
+        position: absolute;
+        width: 100%;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,10 +25,10 @@
                 </div>
                 <div class="navbar-items">
                     <ul>
-                        <h3><a href="/index.html">Home</a></h3>
-                        <h3><a href="/product.html">Products</a></h3>
-                        <h3><a href="/services.html">Services</a></h3>
-                        <h3><a href="/about.html">About Us</a></h3>
+                        <h3><a href="index.html">Home</a></h3>
+                        <h3><a href="product.html">Products</a></h3>
+                        <h3><a href="services.html">Services</a></h3>
+                        <h3><a href="about.html">About Us</a></h3>
                         <!-- <div class="navbar-cart">
                             <small>Add to Cart</small>
                             <i class="fa fa-shopping-cart" aria-hidden="true">
@@ -38,10 +44,39 @@
         </div>
     </header>
 
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="top-banner-img">
+            <img src="img/Top Banner.jpg" alt="">
+        </div>
+    </div>
+
+    <main>
+        <div class="cityCardContainer">
+            <h3 class="cityCardContainer-Heading">Our Delivery Grid</h3>
+            <div id="cityContainer" class="city-container-box"></div>
+            <ul id="subCityList" class="sub-city-list"></ul>
+        </div>
+    </main>
+
+    <div class="location-main">
+        <h3 class="cityCardContainer-Heading">Our Delivery Branches</h3>
+        <div class="location-container">
+            <div class="location-cards" id="locationCards">
+                <!-- <button id="button1">Location 1</button>
+                <button id="button2">Location 2</button> -->
+            </div>
+            <div class="location-map">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    
+    
 
 
     <!-- Footer Section -->
-    <!-- <footer>
+    <footer>
         <div class="footer-container">
             <img src="img/footer-bg.png" alt="Footer Background">
             <div class="footer-content">
@@ -56,9 +91,9 @@
                 <div class="footer-content-sec2">
                     <div class="footer-sec footer-sec2">
                         <h3>Customer Care</h3><br>
-                        <p><a href="/about.html">About US</a></p>
-                        <p><a href="/services.html">Services</a></p>
-                        <p><a href="">Privacy Policy</a></p>
+                        <p><a href="about.html">About US</a></p>
+                        <p><a href="services.html">Services</a></p>
+                        <p><a href="product.html">Products</a></p>
                     </div>
                     <div class="footer-sec footer-sec3">
                         <h3>Contact Us</h3><br>
@@ -69,7 +104,171 @@
                 </div>
             </div>
         </div>
-    </footer>  -->
+    </footer> 
+
+    <script>
+
+        
+// Function to fetch data from city.json
+function fetchCityData() {
+  return fetch('city.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}
+
+// Function to create a card for each city
+function createCityCard(cityData) {
+  const cityContainer = document.getElementById('cityContainer');
+
+  // Create card element
+  const card = document.createElement('div');
+  card.classList.add('card-city');
   
+  // Create card title (city name)
+  const title = document.createElement('h3');
+  title.textContent = cityData.city;
+  card.appendChild(title);
+  
+  // Create sub-city list
+  const subCityList = document.createElement('ul');
+  subCityList.classList.add('sub-city-list');
+
+  // Add event listener to show sub-cities when clicked
+  card.addEventListener('click', () => {
+    // Clear existing sub-city list
+    subCityList.innerHTML = '';
+
+    // Create li elements for each sub-city
+    cityData.subCities.forEach(subCity => {
+      const li = document.createElement('li');
+      li.textContent = subCity.name;
+      subCityList.appendChild(li);
+    });
+
+    // Toggle visibility of sub-city list
+    subCityList.classList.toggle('show');
+  });
+
+  // Append sub-city list to card
+  card.appendChild(subCityList);
+
+  // Append card to container
+  cityContainer.appendChild(card);
+}
+
+// Fetch city data and create cards
+fetchCityData()
+  .then(data => {
+    data.forEach(cityData => {
+      createCityCard(cityData);
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Function to initialize the map
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 6.9271, lng: 79.8612 }, // Default center
+        zoom: 10,
+      });
+
+      // Function to add marker to the map
+      function addMarker(location) {
+        new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+      }
+
+      // Fetch data from city.json
+      fetch('city.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const locationCardsContainer = document.querySelector('.location-cards');
+          
+          // Iterate over each city data
+          data.forEach(cityData => {
+            const cityName = cityData.city;
+            const cityDetails = cityData.details;
+            
+            // Create card element
+            const card = document.createElement('div');
+            card.classList.add('location-card');
+            
+            // Add city name to the card
+            const cityNameElement = document.createElement('h3');
+            cityNameElement.textContent = cityName;
+            card.appendChild(cityNameElement);
+            
+            // Add address and telephone details to the card
+            const detailsList = document.createElement('ul');
+            for (const [key, value] of Object.entries(cityDetails)) {
+              // Check if the key is address or telephone
+              if (key === 'address' || key === 'telephone') {
+                // Capitalize first letter of the key
+                const capitalizedKey = key.charAt(0).toUpperCase() + key.slice(1);
+                
+                // Create detail item element
+                const detailItem = document.createElement('li');
+                
+                // Bold the key
+                detailItem.innerHTML = `<strong>${capitalizedKey}</strong>: ${value}`;
+                
+                // Append the detail item to the list
+                detailsList.appendChild(detailItem);
+              }
+            }
+            card.appendChild(detailsList);
+            
+            // Add click event listener to show location on map
+            card.addEventListener('click', () => {
+              const lat = parseFloat(cityDetails.lat);
+              const lng = parseFloat(cityDetails.lng);
+              if (!isNaN(lat) && !isNaN(lng)) {
+                map.setCenter({ lat, lng });
+                map.setZoom(15); // Zoom in for better view
+                addMarker({ lat, lng });
+              } else {
+                alert('Latitude and longitude not available for this city.');
+              }
+            });
+            
+            // Append the card to the container
+            locationCardsContainer.appendChild(card);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    }
+
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
 </body>
 </html>

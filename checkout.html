@@ -18,10 +18,10 @@
                     </div>
                     <div class="navbar-items">
                         <ul>
-                            <h3><a href="/index.html">Home</a></h3>
-                            <h3><a href="/product.html">Products</a></h3>
-                            <h3><a href="/services.html">Services</a></h3>
-                            <h3><a href="/about.html">About Us</a></h3>
+                            <h3><a href="index.html">Home</a></h3>
+                            <h3><a href="product.html">Products</a></h3>
+                            <h3><a href="services.html">Services</a></h3>
+                            <h3><a href="about.html">About Us</a></h3>
                             <!-- <div class="navbar-cart">
                                 <small>Add to Cart</small>
                                 <i class="fa fa-shopping-cart" aria-hidden="true">
@@ -46,25 +46,25 @@
                         <h4>Customer Information</h4>
                         <form>
                             <div class="form-field-wrapper">
-                              <input type="text" id="email" placeholder="Email*"/>
+                              <input type="text" id="email" placeholder="Email*" required/>
                             </div>
                             <div class="form-field-wrapper">
-                                <input type="text" id="tel" placeholder="Phone*" />
+                                <input type="text" id="tel" placeholder="Phone*" required />
                             </div>
                             <div class="form-field-wrapper flex">
                               <div class="form-field-wrapper">
-                                <input type="text" id="fname" placeholder="First Name*"/>
+                                <input type="text" id="fname" placeholder="First Name*" required/>
                               </div>
                               <div class="form-field-wrapper">
-                                <input type="text" id="lname" placeholder="Last Name*"/>
+                                <input type="text" id="lname" placeholder="Last Name*" required/>
                               </div>
                             </div>
                             <div class="form-field-wrapper">
-                              <input type="text" id="address" placeholder="Street Address*" />
+                              <input type="text" id="address" placeholder="Street Address*" required/>
                             </div>
                             <div class="form-field-wrapper flex">
                                 <div class="form-field-wrapper city-container">
-                                  <input type="text" id="city" placeholder="City*"/>
+                                  <input type="text" id="city" placeholder="City*" required/>
                                   <ul id="subCityList">
                                   </ul>
                                 </div>
@@ -106,13 +106,13 @@
                         </div>
 
 
-                        <h5>Stock available Near to you : <Span id="shipping-city"></Span></h5>
-                        <div class="order-price-calculations">
+                        <h5 id="price-div-1">Stock available Near to you : <Span id="shipping-city"></Span></h5>
+                        <div class="order-price-calculations" id="price-div-2">
                             <p>Sub Total : <span id="sub-total"></span></p>
-                            <p>Shipping Charge : <span id="shipping-cost"></span></p>
+                            <p id="shipping-charge">Shipping Charge : <span id="shipping-cost"></span></p>
                         </div>
-                        <h6>Total : <span id="full-total">Rs.1000.00</span></h6>
-                        <div class="btn-place-your-order">
+                        <h6 id="price-div-3">Total : <span id="full-total"></span></h6>
+                        <div class="btn-place-your-order" id="price-div-4">
                             <button>Place Your Order</button>
                         </div>
                     </div>
@@ -137,9 +137,9 @@
                     <div class="footer-content-sec2">
                         <div class="footer-sec footer-sec2">
                             <h3>Customer Care</h3><br>
-                            <p><a href="/about.html">About US</a></p>
-                            <p><a href="/services.html">Services</a></p>
-                            <p><a href="">Privacy Policy</a></p>
+                            <p><a href="about.html">About US</a></p>
+                            <p><a href="services.html">Services</a></p>
+                            <p><a href="product.html">Products</a></p>
                         </div>
                         <div class="footer-sec footer-sec3">
                             <h3>Contact Us</h3><br>
@@ -181,7 +181,10 @@
             const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
             
             order_Detail_Box.innerHTML = '';
+
             let totalQuantity = 0;
+            let totalPrice = 0; // Variable to store the total price
+
             if (cartBox.length > 0) {
                 cartBox.forEach(cartss => {
                     totalQuantity += cartss.quantity;
@@ -190,6 +193,10 @@
                     newCart.dataset.id = cartss.product_id;
                     let positionProduct = outerItems.findIndex((value) => value.id == cartss.product_id);
                     let info = outerItems[positionProduct];
+
+                    const itemPrice = info.price * cartss.quantity; // Calculate the total price for this item
+                    totalPrice += itemPrice; // Add the item price to the total price
+
                     newCart.innerHTML = `
                         <div class="order-details-img">
                                 <img src="${info.image}" alt="${info.name}">
@@ -203,7 +210,6 @@
                                         <button class="add-items-btn-minus items-btn">-</button>
                                         <span class="add-no-of-items">${cartss.quantity}</span>
                                         <button class="add-items-btn-plus items-btn">+</button>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
@@ -212,6 +218,9 @@
                 });
             }
             console.log("Cart items rendered successfully.");
+            // Display total price
+            const totalPriceElement = document.getElementById('sub-total');
+            totalPriceElement.textContent = `Rs.${totalPrice}`;
         };
 
 
@@ -264,7 +273,10 @@
         const addcarttoHTML=()=>{
             order_Detail_Box.innerHTML='';
             const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+
             let totalQuantity=0;
+            let totalPrice = 0; // Variable to store the total price
+
             if(cartBox.length>0){
                 cartBox.forEach(cartss=>{
                     totalQuantity=totalQuantity+cartss.quantity;
@@ -273,6 +285,10 @@
                     newCart.dataset.id=cartss.product_id;
                     let positionProduct=outerItems.findIndex((value)=>value.id==cartss.product_id);
                     let info=outerItems[positionProduct];
+
+                    const itemPrice = info.price * cartss.quantity; // Calculate the total price for this item
+                    totalPrice += itemPrice; // Add the item price to the total price
+
                     newCart.innerHTML=`
                             <div class="order-details-img">
                                 <img src="${info.image}" alt="${info.name}">
@@ -286,15 +302,16 @@
                                         <button class="add-items-btn-minus items-btn">-</button>
                                         <span class="add-no-of-items">${cartss.quantity}</span>
                                         <button class="add-items-btn-plus items-btn">+</button>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
                     `;
                     order_Detail_Box.appendChild(newCart);
-                })
+                });
             }
-        }
+            const totalPriceElement = document.getElementById('sub-total');
+            totalPriceElement.textContent = `Rs.${totalPrice}`;
+        };
 
 
 
@@ -481,6 +498,138 @@
             subCityList.style.display = 'none'; // Hide the subCityList
         }
         });
+
+
+
+
+
+
+
+
+        // Check if cartBox is empty
+        const cartData = JSON.parse(localStorage.getItem('cart'));
+        const priceDiv1 = document.getElementById('price-div-1'); // Assuming the ID of the price div is 'price-div'
+        const priceDiv2 = document.getElementById('price-div-2');
+        const priceDiv3 = document.getElementById('price-div-3');
+        const priceDiv4 = document.getElementById('price-div-4');
+
+        if (!cartData || cartData.length === 0) {
+            // If cartData is empty or undefined, or if cartData has no items
+            priceDiv1.style.display = 'none'; // Hide the price div
+            priceDiv2.style.display = 'none';
+            priceDiv3.style.display = 'none';
+            priceDiv4.style.display = 'none';
+        } else {
+            // If cartData is not empty and has items
+            priceDiv1.style.display = 'block'; // Show the price div
+            priceDiv2.style.display = 'block';
+            priceDiv3.style.display = 'block';
+            priceDiv4.style.display = 'flex';
+        }
+
+
+
+
+
+
+
+
+
+
+        //--------------Total calculation with deliver charge or without delivery charge-----------------
+        const radioInput1 = document.getElementById('radio1'); // Replace 'radio-id' with the actual ID of your radio button
+        const radioInput2 = document.getElementById('radio2');
+        const subTotalSpan = document.getElementById('sub-total');
+
+        const input_city = document.getElementById('city'); // Replace 'city' with the actual ID of your input field
+
+        // Function to update total based on radio button state
+        const updateTotal = () => {
+            const fullTotalDiv = document.getElementById('full-total');
+            const shipping_Charge=document.getElementById('shipping-charge');
+            const delivery_charge_span=document.getElementById('deliveryChargeSpan');
+            let shippingCont = 0; // Initialize shipping charge to 0
+
+            if (delivery_charge_span.textContent.trim() !== '') {
+                // If delivery charge is not empty, get the shipping charge
+                shippingCont = parseFloat(delivery_charge_span.textContent.replace('Rs.', '')); // Get shipping charge from span
+            }
+
+            if (radioInput2.checked) {
+                // If radio input 2 is checked
+                if (shippingCont === 0) {
+                    // If delivery charge is empty, set full total to empty
+                    fullTotalDiv.style.display = 'none';
+                } else {
+                    // If radio button is selected, show div and calculate total with shipping charge
+                    shipping_Charge.style.display = 'block';
+                    const subTotal = parseFloat(subTotalSpan.textContent.replace('Rs.', '')); // Remove 'Rs.' and convert to number
+                    console.log(subTotal);
+                    const ship_charge = parseFloat(delivery_charge_span.textContent.replace('Rs.', ''));
+                    fullTotalDiv.textContent='Rs.'+(ship_charge+subTotal);
+                    }
+            }else if(radioInput1.checked){
+                shipping_Charge.style.display = 'none';
+                const subTotal = parseFloat(subTotalSpan.textContent.replace('Rs.', ''));
+                fullTotalDiv.textContent = 'Rs.'+subTotal;
+            }
+            else {
+                // If radio button is not selected, hide div
+                shipping_Charge.style.display = 'none';
+                const subTotal = parseFloat(subTotalSpan.textContent.replace('Rs.', ''));
+                fullTotalDiv.textContent = '';
+            }
+        };
+
+        // Listen for change event on radio button
+        radioInput1.addEventListener('change', updateTotal);
+        radioInput2.addEventListener('change', updateTotal);
+
+        // Function to update total when value in sub-total span changes
+        const updateTotalOnValueChange = () => {
+            updateTotal(); // Call the updateTotal function to recalculate the total
+        };
+
+        // MutationObserver to observe changes in sub-total span
+        const observer = new MutationObserver(updateTotalOnValueChange);
+
+        // Configuration of the observer
+        const config = { attributes: false, childList: true, subtree: false };
+
+        // Start observing the target node (sub-total span) for changes
+        observer.observe(subTotalSpan, config);
+
+
+
+
+
+
+
+        //----------------Disable radio buttons when city input empthy-------------
+        // Function to check if the input field is empty
+        const isCityEmpty = () => {
+            return input_city.value.trim() === '';
+        };
+
+        // Function to update radio buttons based on the input field value
+        const updateRadioButtons = () => {
+            if (isCityEmpty()) {
+                // If the input field is empty, disable radio buttons
+                radioInput1.disabled = true;
+                radioInput2.disabled = true;
+            } else {
+                // If the input field has a value, enable radio buttons
+                radioInput1.disabled = false;
+                radioInput2.disabled = false;
+            }
+        };
+
+        // Listen for input event on the input field
+        input_city.addEventListener('input', updateRadioButtons);
+
+        // Initial update when page loads
+        updateRadioButtons();
+
 
 
     </script>

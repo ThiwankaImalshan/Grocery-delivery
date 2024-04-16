@@ -687,7 +687,7 @@ body.showCart .cartTab{
     position: relative;
     text-align: center;
     /* background-color: #0b2f005a; */
-    background-color: rgba(11, 55, 0, 0.7);
+    background-color: rgba(11, 55, 0, 0.8);
     transition: all 0.5s ease-in;
     font-size: 60px;
     text-transform: capitalize;
@@ -721,8 +721,8 @@ body.showCart .cartTab{
 }
 .gallery__item--1 >.gallery-caption{
    
-    height:80.3vh ;
-   transform: translateY(-522px);  
+    height:80% ;
+   transform: translateY(-530px);  
 }
 .gallery__item--1 >.gallery-caption:hover{
    opacity: 1;
@@ -735,8 +735,8 @@ body.showCart .cartTab{
 }
 .gallery__item--2 >.gallery-caption{
    
-    height:40.9vh ;
-    transform: translateY(-272px); 
+    height:35vh ;
+    transform: translateY(-257px); 
     font-size: 51px; 
 }
 .gallery__item--2 >.gallery-caption:hover{
@@ -750,8 +750,8 @@ body.showCart .cartTab{
 }
 .gallery__item--3 >.gallery-caption{
 
-    height:42.5vh ;
-    transform: translateY(-272px);  
+    height:35vh ;
+    transform: translateY(-257px);  
     font-size: 51px; 
 }
 .gallery__item--3 >.gallery-caption:hover{
@@ -765,8 +765,8 @@ body.showCart .cartTab{
 }
 .gallery__item--4 >.gallery-caption{
    
-    height:80.3vh ;
-    transform: translateY(-522px);  
+    height:80% ;
+    transform: translateY(-530px);  
 }
 .gallery__item--4 >.gallery-caption:hover{
     opacity: 1;
@@ -1165,7 +1165,7 @@ body.showCart .cartTab{
     flex-direction: row;
 }
 .order-add-items span{
-    width: 50px;
+    width: 30px;
     text-align: center;
 }
 .items-btn{
@@ -1230,6 +1230,9 @@ body.showCart .cartTab{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.btn-place-your-order:hover{
+    transform: scale(1.05);
 }
 .btn-place-your-order button{
     padding: 10px 15px;
@@ -1805,6 +1808,132 @@ body.showCart .cartTab{
     color: #1C570A;
 }
 
+
+
+
+
+/* ____________________________SERVICES PAGE__________________________________ */
+.cityCardContainer{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 2%;
+}
+.cityCardContainer-Heading{
+    margin-bottom: 50px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 25px;
+    color: #1C570A;
+}
+.city-container-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .card-city {
+    border: 2px solid #51ac37;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+    width: 300px;
+  }
+  
+  .card-city h3 {
+    margin-top: 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 15px;
+  }
+  .card-city ul{
+    margin-top: 25px;
+  }
+  .card-city li{
+    margin-top: 8px;
+    list-style: none;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 15px;
+  }
+  
+  .sub-city-list {
+    position: absolute;
+    display: none;
+    background-color: white;
+    padding: 10px 30px 20px 30px;
+    border-radius: 10px;
+    border: 2px solid #1C570A;
+    overflow-y: scroll;
+    height: 250px;
+  }
+  
+  .sub-city-list.show {
+    display: block;
+  }
+  #map {
+    margin-top: 30px;
+    height: 600px;
+    width: 600px;
+}
+.location-cards{
+    width: 590px;
+    height: 650px;
+    overflow-y: scroll;
+}
+.location-card {
+    width: 60%;
+    border: 2px solid #51ac37;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #e0f2da;
+  }
+  
+  .location-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 18px;
+  }
+  .location-card li{
+    margin-bottom: 8px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 13px;
+    list-style: none;
+  }
+
+  
+
+/* Google location */
+.location-main{
+    margin-top: 50px;
+    margin-left: 2%;
+}
+.location-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+}
+  
+  
   
 
 
