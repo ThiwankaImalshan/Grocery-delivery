@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrocGo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <style>
         /* Basic styling for main content */
     main {
@@ -21,7 +23,7 @@
                 <div class="navbar-logo">
                     <h2>GrocGo</h2>
                 </div>
-                <!-- <div class="navbar-items">
+                <div class="navbar-items">
                     <ul>
                         <h3><a href="/index.html">Home</a></h3>
                         <h3><a href="/product.html">Products</a></h3>
@@ -33,11 +35,23 @@
                                 <span id="smart-checkout-count" class="badge">0</span>
                             </i>
                         </div>
-                        <div class="navbar-signin">
+                        <!-- <div class="navbar-signin">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                        </div>
+                        </div> -->
                     </ul>
-                </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart-Tab -->
+        <div class="cartTab">
+            <h1>Shopping Cart</h1>
+            <div class="listCart">
+
+            </div>
+            <div class="cartTab-btn">
+                <button class="cartTab-close">Close</button>
+                <button class="cartTab-checkOut" onclick="document.location='checkout.html'">Check Out</button>
             </div>
         </div>
     </header>
@@ -90,7 +104,170 @@
         </div>
     </footer> 
     
+<script src="script.js"></script>
 <script>
+
+    //------------Cart window---------------
+    let nav_Cart = document.querySelector('.navbar-cart');
+        let body_Contain = document.querySelector('body');
+        let close_The_Cart = document.querySelector('.cartTab-close');
+        // Show Cart
+        nav_Cart.addEventListener('click', () => {
+            body_Contain.classList.toggle('showCart');
+        })
+
+        // Close Cart
+        close_The_Cart.addEventListener('click', () => {
+            body_Contain.classList.toggle('showCart');
+        })
+
+        //_______________________Cart for each pages_________________________
+
+        //---------------Retrieve cart data from local storage on page load----------------
+        let list_Cart1 = document.querySelector('.listCart');
+        let navbar_cartSpan1 = document.querySelector('.navbar-cart span');
+
+        window.addEventListener('load', () => {
+            // Get cart data from local storage
+            const cartData = JSON.parse(localStorage.getItem('cart'));
+            // If cart data exists, assign it to cartBox array
+            if (cartData && Array.isArray(cartData)) {
+                cartBox = cartData;
+            }
+            console.log(cartBox);
+            // Render cart items from local storage
+            renderCartItemsFromLocalStorage();
+        });
+
+        // Function to render the cart items from local storage
+        const renderCartItemsFromLocalStorage = () => {
+            console.log("Rendering cart items from local storage...");
+            console.log("Cart data from local storage:", cartBox);
+
+            // Get outerArray data from local storage
+            const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+            
+            list_Cart1.innerHTML = '';
+            let totalQuantity = 0;
+            if (cartBox.length > 0) {
+                cartBox.forEach(cartss => {
+                    totalQuantity += cartss.quantity;
+                    let newCart = document.createElement('div');
+                    newCart.classList.add('listCart-items');
+                    newCart.dataset.id = cartss.product_id;
+                    console.log(cartss.product_id)
+                    let positionProduct = outerItems.findIndex((value) => value.id == cartss.product_id);
+                    console.log(positionProduct);
+                    let info = outerItems[positionProduct];
+                    newCart.innerHTML = `
+                        <div class="listCart-image">
+                            <img src="${info.image}">
+                        </div>
+                        <div class="listCart-name">
+                            ${info.name}
+                        </div>
+                        <div class="listCart-totalPrice">Rs.${info.price * cartss.quantity}</div>
+                        <div class="listCart-quantity">
+                            <span class="listCart-minus"><</span>
+                            <span>${cartss.quantity}</span>
+                            <span class="listCart-plus">></span>
+                        </div>
+                    `;
+                    list_Cart1.appendChild(newCart);
+                });
+            }
+            navbar_cartSpan1.innerText = totalQuantity;
+            console.log("Cart items rendered successfully.");
+        };
+
+
+        //-----------------capture the product position click in cart and minus or plus click----------
+        list_Cart1.addEventListener('click',(event)=>{
+            let positionClick=event.target;
+            if(positionClick.classList.contains('listCart-minus')||positionClick.classList.contains('listCart-plus')){
+                let product_id =positionClick.parentElement.parentElement.dataset.id;
+                let type='listCart-minus';
+                if(positionClick.classList.contains('listCart-plus')){
+                    type='listCart-plus';
+                }
+                changequantity(product_id,type);
+                console.log(product_id,type);
+            }
+        })
+
+
+        //--------------adjust quantity and price when plus or minus click------------
+        const changequantity=(product_id,type)=>{
+            let positionItemInCart=cartBox.findIndex((value)=>value.product_id==product_id);
+            if(positionItemInCart>=0){
+                switch (type) {
+                    case 'listCart-plus':
+                        cartBox[positionItemInCart].quantity=cartBox[positionItemInCart].quantity+1;
+                        break;
+                
+                    default:
+                        let valueChange=cartBox[positionItemInCart].quantity-1;
+                        if(valueChange>0){
+                            cartBox[positionItemInCart].quantity=valueChange;
+                        }else{
+                            cartBox.splice(positionItemInCart,1);
+                        }
+                        break;
+                }
+            }
+            saveCartToLocalStorage();
+            addcarttoHTML();
+        }
+
+        //-----------Function to save the cart data to local storage--------
+        const saveCartToLocalStorage = () => {
+            localStorage.setItem('cart', JSON.stringify(cartBox));
+        };
+
+        //---------------add cart to html file--------------
+        const addcarttoHTML=()=>{
+            list_Cart1.innerHTML='';
+            const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+            let totalQuantity=0;
+            if(cartBox.length>0){
+                cartBox.forEach(cartss=>{
+                    totalQuantity=totalQuantity+cartss.quantity;
+                    let newCart=document.createElement('div');
+                    newCart.classList.add('listCart-items');
+                    newCart.dataset.id=cartss.product_id;
+                    let positionProduct=outerItems.findIndex((value)=>value.id==cartss.product_id);
+                    let info=outerItems[positionProduct];
+                    newCart.innerHTML=`
+                    <div class="listCart-image">
+                        <img src="${info.image}">
+                    </div>
+                    <div class="listCart-name">
+                    ${info.name}
+                    </div>
+                    <div class="listCart-totalPrice">Rs.${info.price*cartss.quantity}</div>
+                    <div class="listCart-quantity">
+                        <span class="listCart-minus"><</span>
+                        <span>${cartss.quantity}</span>
+                        <span class="listCart-plus">></span>
+                    </div>
+                    `;
+                    list_Cart1.appendChild(newCart);
+                })
+            }
+            navbar_cartSpan1.innerText=totalQuantity;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
     
 
     // Function to get the value of a query parameter by its name

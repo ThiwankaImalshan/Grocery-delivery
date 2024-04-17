@@ -143,6 +143,100 @@ body{
 .nav-sign-icon{
     margin-left: 60px;
 }
+.navbar-signin .signin-popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Gray semi-transparent background */
+    z-index: 9999;
+}
+.signin-popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 500px; /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
+    border-radius: 20px;
+}
+.signin-popup-close {
+    font-size: 30px;
+    color: #000;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+.signin-popup-content h3{
+    color: #0b2f00;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 25px;
+}
+.signin-popup-content form{
+    margin-top: 40px;
+    width: 400px;
+    margin-left: 25px;
+}
+.signin-popup-content form input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #888888;
+}
+.signin-popup-content .form-field-wrapper.flex{
+    margin-bottom: 0;
+}
+.signin-popup-content .form-field-bottom{
+    margin-left: 25px;
+}
+.form-field-bottom span{
+    margin-top: 15px;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 15px;
+    width: 400px;
+}
+.form-field-bottom .form-bottom-checkbox{
+    margin-top: 40px;
+}
+.form-bottom-checkbox input{
+    margin-top: 3px;
+}
+.form-bottom-checkbox-label{
+    padding-left: 5px;
+}
+.form-field-bottom button{
+    margin-top: 80px;
+    width: 400px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid #51ac37;
+    background-color: #51ac37;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 18px;
+}
+.form-field-bottom button:hover{
+    background-color: white;
+    color: #51ac37;
+    border-color: #51ac37;
+    cursor: pointer;
+}
 
 
 

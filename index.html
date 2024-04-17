@@ -36,7 +36,73 @@
                                 </i>
                             </div>
                             <div class="navbar-signin">
-                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                <i class="fa fa-user-circle-o" aria-hidden="true" id="signin-popup-icon"></i>
+
+                                <div class="signin-popup" id="signin-popup">
+                                    <div class="signin-popup-content">
+                                        <span class="signin-popup-close" id="signin-popup-close">&times;</span>
+                                        <h3>Sign Up</h3>
+                                        <form action="">
+                                            <div class="form-field-wrapper flex">
+                                                <div class="form-field-wrapper">
+                                                  <input type="text" id="fname" placeholder="First Name*" required/>
+                                                </div>
+                                                <div class="form-field-wrapper">
+                                                  <input type="text" id="lname" placeholder="Last Name*" required/>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-field-wrapper">
+                                                <input type="text" id="email" placeholder="Email*" required/>
+                                            </div>
+
+                                            <div class="form-field-wrapper">
+                                                <input type="text" id="tel" placeholder="Phone*" required />
+                                            </div>
+                                              
+                                            <div class="form-field-wrapper">
+                                                <input type="password" id="password" placeholder="Password*" required/>
+                                            </div>
+
+                                            <div class="form-field-wrapper">
+                                                <input type="password" id="password" placeholder="Confirm Password*" required/>
+                                            </div>
+                                        </form>
+                                        <div class="form-field-bottom">
+                                            <div class="form-bottom-checkbox">
+                                                <input type="checkbox" name="" id=""><span class="form-bottom-checkbox-label">Accept <strong>Terms & Conditions</strong></span><br>
+                                            </div>
+                                            <button>Create Account</button><br><br>
+                                            <span class="form-field-bottom-p">Already have an account? <strong>Sign In</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="signin-popup" id="signup-popup">
+                                    <div class="signin-popup-content">
+                                        <span class="signin-popup-close" id="signin-popup-close">&times;</span>
+                                        <h3>Sign In</h3>
+                                        <form action="">
+
+                                            <div class="form-field-wrapper">
+                                                <input type="text" id="email" placeholder="Email*" required/>
+                                            </div>
+                                              
+                                            <div class="form-field-wrapper">
+                                                <input type="password" id="password" placeholder="Password*" required/>
+                                            </div>
+
+                                        </form>
+                                        <div class="form-field-bottom">
+                                            <div class="form-bottom-checkbox">
+                                                <input type="checkbox" name="" id=""><span class="form-bottom-checkbox-label">Remember me</span><br>
+                                            </div>
+                                            <button>Login</button><br><br>
+                                            <span class="form-field-bottom-p">I don't have an account? <strong>Sign Up</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </ul>
                     </div>
@@ -673,6 +739,22 @@
         // Redirect to product.html with clicked item ID as query parameter
         window.location.href = "product.html?id=" + itemId;
     }
+
+
+
+
+
+
+
+
+    document.getElementById('signin-popup-icon').addEventListener('click', function() {
+        document.getElementById('signin-popup').style.display = 'block';
+    });
+
+    document.getElementById('signin-popup-close').addEventListener('click', function() {
+        document.getElementById('signin-popup').style.display = 'none';
+    });
+
 
 
 
