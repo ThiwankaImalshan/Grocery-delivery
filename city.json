@@ -4,8 +4,8 @@
     "details": {
       "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
       "telephone":"0115521234",
-      "lat":"6.9645556",
-      "lng":"79.90075"
+      "lat":"6.925298382587457",
+      "lng":"79.86183294232882"
     },
     "subCities": [
       {
@@ -257,8 +257,8 @@
   {
     "city": "Dehiwala",
     "details": {
-      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
-      "telephone":"0115521234",
+      "address":"No 100, Waidya Road, Dehiwala",
+      "telephone":"0111231234",
       "lat":"6.857148165994383",
       "lng":"79.868251402696"
     },
@@ -305,8 +305,8 @@
   {
     "city": "Kelaniya",
     "details": {
-      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
-      "telephone":"0115521234",
+      "address":"No 100, Waragoda Road, Kelaniya",
+      "telephone":"0114561234",
       "lat":"6.9645556",
       "lng":"79.90075"
     },
@@ -334,10 +334,10 @@
   {
     "city": "Gamapaha - Miriswatta",
     "details": {
-      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "address":"No 100, Kandy Road, Miriswatte",
       "telephone":"0115521234",
-      "lat":"6.9645556",
-      "lng":"79.90075"
+      "lat":"7.07292312174648",
+      "lng":"80.01553088041004"
     },
     "subCities": [
       "Boraliyawatha",
@@ -360,10 +360,10 @@
   {
     "city": "Kadawatha",
     "details": {
-      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
-      "telephone":"0115521234",
-      "lat":"6.9645556",
-      "lng":"79.90075"
+      "address":"No 100, Kadawatha By Pass Road, Kadawatha",
+      "telephone":"0113521234",
+      "lat":"7.00479193645902",
+      "lng":"79.95477155931185"
     },
     "subCities": [
       "Amunugoda",
@@ -388,10 +388,10 @@
   {
     "city": "Panadura",
     "details": {
-      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "address":"No 100, Horana Road, Panadura",
       "telephone":"0115521234",
-      "lat":"6.9645556",
-      "lng":"79.90075"
+      "lat":"6.712585158284968",
+      "lng":"79.90812942245257"
     },
     "subCities": [
       "Alubomulla",
@@ -456,10 +456,10 @@
   {
     "city": "Malabe",
     "details": {
-      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
+      "address":"No 100, Kaduwela Road, Malabe",
       "telephone":"0115521234",
-      "lat":"6.9645556",
-      "lng":"79.90075"
+      "lat":"6.903650018318617",
+      "lng":"79.95647670449479"
     },
     "subCities": [
       "Arangala",
@@ -472,10 +472,10 @@
   {
     "city": "Gampaha",
     "details": {
-      "address":"No 100, T.B. Jaya Mawatha, Colombo 10",
-      "telephone":"0115521234",
-      "lat":"6.9645556",
-      "lng":"79.90075"
+      "address":"No 100, New Minuwangoda Road, Gampaha",
+      "telephone":"0115421234",
+      "lat":"7.0934806090995535",
+      "lng":"79.99023798426295"
     },
     "subCities": [
       "Abagahalanda",

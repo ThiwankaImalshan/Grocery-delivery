@@ -99,6 +99,38 @@
       renderCategory('meats');
     });
 
+    document.getElementById('fish-btn').addEventListener('click', function() {
+        renderCategory('fish');
+    });
+
+    document.getElementById('rice-btn').addEventListener('click', function() {
+        renderCategory('rice');
+    });
+
+    document.getElementById('beverages-btn').addEventListener('click', function() {
+        renderCategory('beverages');
+    });
+
+    document.getElementById('chilled-btn').addEventListener('click', function() {
+        renderCategory('chilled');
+    });
+
+    document.getElementById('grocery-btn').addEventListener('click', function() {
+        renderCategory('grocery');
+    });
+
+    document.getElementById('pharmacy-btn').addEventListener('click', function() {
+        renderCategory('pharmacy');
+    });
+
+    document.getElementById('bakery-btn').addEventListener('click', function() {
+        renderCategory('bakery production');
+    });
+
+    document.getElementById('homeware-btn').addEventListener('click', function() {
+        renderCategory('homeware');
+    });
+
 
 
     //------------get clicking id from index.html and display each category--------

@@ -195,6 +195,9 @@ body{
 .signin-popup-content .form-field-bottom{
     margin-left: 25px;
 }
+#switchToSignUp, #switchToSignIn{
+    cursor: pointer;
+}
 .form-field-bottom span{
     margin-top: 15px;
     color: #000;
@@ -897,8 +900,10 @@ body.showCart .cartTab{
     transition-timing-function: ease-out;
 }
 .row-card img{
-    width: 254px;
-    height: 191px;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 52px;
     position: absolute;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -914,7 +919,7 @@ body.showCart .cartTab{
     font-weight: 600;
     font-style: normal;
     font-variation-settings:"slnt" 0;
-    font-size: 20px;
+    font-size: 18px;
 }
 .row-txt h4{
     font-family: "Inter", sans-serif;
@@ -922,7 +927,7 @@ body.showCart .cartTab{
     font-weight: 600;
     font-style: normal;
     font-variation-settings:"slnt" 0;
-    font-size: 15px;
+    font-size: 14px;
     color: #1C570A;
     padding-top: 10px;
 }

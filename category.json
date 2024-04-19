@@ -14,8 +14,7 @@
                 "price": 900.00,
                 "image": "product img/Organic Carrot.jpg",
                 "description": "Fresh organic carrot",
-                "availability": "in stock",
-                "top": true
+                "availability": "in stock"
               },
               {
                 "id":"veg1002",
@@ -50,8 +49,7 @@
                 "name": "Salad Leaves",
                 "price": 170.00,
                 "image": "product img/Salad Leaves.jpeg",
-                "description": "Fresh salad leaves",
-                "top": true
+                "description": "Fresh salad leaves"
               },
               {
                 "id":"veg2003",
@@ -66,7 +64,8 @@
                 "name": "Kekiri",
                 "price": 90.00,
                 "image": "product img/Kekiri.jpg",
-                "description": "Fresh kekiri"
+                "description": "Fresh kekiri",
+                "top": true
               },
               {
                 "id":"veg2005",
@@ -81,7 +80,8 @@
                 "name": "Cabbage",
                 "price": 230.00,
                 "image": "product img/Cabbage.jpg",
-                "description": "Fresh cabbage"
+                "description": "Fresh cabbage",
+                "top": true
               }
             ]
           },
@@ -100,8 +100,7 @@
                 "name": "Kankun Packet",
                 "price": 130.00,
                 "image": "product img/Kankun Packet.jpg",
-                "description": "Fresh kankun packet",
-                "top": true
+                "description": "Fresh kankun packet"
               },
               {
                 "id":"veg3003",
@@ -151,7 +150,8 @@
                 "name": "Organic Watermelon",
                 "price": 330.00,
                 "image": "product img/Organic Watermelon.jpg",
-                "description": "Fresh organic watermelon"
+                "description": "Fresh organic watermelon",
+                "top": true
               }
             ]
           },
@@ -163,8 +163,7 @@
                 "name": "Apple",
                 "price": 2290.00,
                 "image": "product img/apple.jpg",
-                "description": "Fresh apples",
-                "top": true
+                "description": "Fresh apples"
               },
               {
                 "id":"fru2002",
@@ -203,6 +202,203 @@
               {
                 "id":"meat1001",
                 "name": "Chicken",
+                "price": 2230,
+                "image": "product img/Chicken Skinless.jpg",
+                "description": "Fresh chicken thigh skinless"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 2460,
+                "image": "product img/Pork Boneless.jpg",
+                "description": "Fresh curry pork rind on boneless"
+              },
+              {
+                "id":"meat1003",
+                "name": "Chicken Wings",
+                "price": 1320,
+                "image": "product img/Chicken Wings.jpg",
+                "description": "Fresh chicken wings",
+                "top": true
+              }
+            ]
+          },
+          {
+            "name": "Processed Meat Serve Over",
+            "products": [
+              {
+                "id":"meat2001",
+                "name": "Pork Boneless",
+                "price": 2100,
+                "image": "product img/Pork Millennium Ham Boneless.jpg",
+                "description": "Fresh Pork Millennium Ham Boneless"
+              },
+              {
+                "id":"meat2002",
+                "name": "Pork Smoked Leg",
+                "price": 1800,
+                "image": "product img/Pork Smoked Leg Of Ham.jpg",
+                "description": "Fresh Pork Smoked Leg Of Ham"
+              },
+              {
+                "id":"meat2003",
+                "name": "Chicken Ham",
+                "price": 2100,
+                "image": "product img/Honey Glazed Chicken Ham.jpg",
+                "description": "Fresh Honey Glazed Chicken Ham"
+              }
+            ]
+          },
+          {
+            "name": "Frozen Chicken",
+            "products": [
+              {
+                "id":"meat3001",
+                "name": "Whole Chicken",
+                "price": 1150,
+                "image": "product img/Bairaha Whole Chicken.jpg",
+                "description": "Fresh Bairaha Whole Chicken"
+              },
+              {
+                "id":"meat3002",
+                "name": "Chicken Skinless",
+                "price": 1540,
+                "image": "product img/Bairaha Pre Cut Chicken Skinless.jpg",
+                "description": "Fresh Bairaha Pre Cut Chicken Skinless"
+              },
+              {
+                "id":"meat3003",
+                "name": "Roasted Turkey",
+                "price": 3990,
+                "image": "product img/Roasted Turkey.jpg",
+                "description": "Fresh Roasted Turkey"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "fish",
+        "subcategories": [
+          {
+            "name": "Fresh Sea Food",
+            "products": [
+              {
+                "id":"fish1001",
+                "name": "Sudaya",
+                "price": 490,
+                "image": "product img/Sudaya.jpg",
+                "description": "Fresh Sudaya"
+              },
+              {
+                "id":"fish1002",
+                "name": "Alagoduwa",
+                "price": 1100,
+                "image": "product img/Alagoduwa.jpg",
+                "description": "Fresh Alagoduwa"
+              },
+              {
+                "id":"fish1003",
+                "name": "Thalapath",
+                "price": 2290,
+                "image": "product img/Thalapath.jpg",
+                "description": "Fresh thalapath small",
+                "top": true
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "rice",
+        "subcategories": [
+          {
+            "name": "Local Rice",
+            "products": [
+              {
+                "id":"rice1001",
+                "name": "Nadu 5Kg",
+                "price": 1100,
+                "image": "product img/Araliya Nadu 5Kg.jpeg",
+                "description": "Araliya nadu rice 5Kg",
+                "top":true
+              },
+              {
+                "id":"rice1002",
+                "name": "Samba 5Kg",
+                "price": 1150,
+                "image": "product img/Araliya Samba 5Kg.jpeg",
+                "description": "Araliya samba rice 5Kg"
+              },
+              {
+                "id":"rice1003",
+                "name": "Nadu 10Kg",
+                "price": 2200,
+                "image": "product img/Araliya Nadu 10Kg.jpeg",
+                "description": "Araliya nadu rice 10Kg"
+              }
+            ]
+          },
+          {
+            "name": "Imported Rice",
+            "products": [
+              {
+                "id":"rice2001",
+                "name": "Basmathi 5Kg",
+                "price": 5500,
+                "image": "product img/Basmathi 5Kg.jpg",
+                "description": "Basmathi rice 5Kg"
+              },
+              {
+                "id":"rice2002",
+                "name": "Basmathi 1Kg",
+                "price": 650,
+                "image": "product img/Basmathi 1Kg.jpg",
+                "description": "Basmathi rice 1Kg"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "beverages",
+        "subcategories": [
+          {
+            "name": "Juices & Carbonates",
+            "products": [
+              {
+                "id":"bev1001",
+                "name": "Coca Cola 1.5L",
+                "price": 400,
+                "image": "product img/Coca Cola Pet 1.5L.jpg",
+                "description": "Coca Cola Pet 1.5L"
+              },
+              {
+                "id":"bev1002",
+                "name": "Orange Crush 1.5L",
+                "price": 380,
+                "image": "product img/Orange Crush 1.5L.jpg",
+                "description": "Orange Crush 1.5L"
+              },
+              {
+                "id":"bev1003",
+                "name": "Necto 1L",
+                "price": 270,
+                "image": "product img/Necto 1L.jpg",
+                "description": "Necto 1L"
+              }
+            ]
+          },
+
+          {
+            "name": "Malt Drink",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
                 "price": 1.49,
                 "image": "product img/Almond.jpg",
                 "description": "Fresh organic apples"
@@ -212,16 +408,703 @@
                 "name": "Pork",
                 "price": 0.79,
                 "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas",
-                "top": true
+                "description": "Fresh organic bananas"
               },
               {
                 "id":"meat1003",
                 "name": "Sasauges",
                 "price": 1.99,
                 "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges",
-                "top": true
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+
+          {
+            "name": "Sports & Energy Drinks",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Milk & Creamers",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Water",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Malt Drink",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "chilled",
+        "subcategories": [
+          {
+            "name": "Desserts",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+
+          {
+            "name": "Cheese",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+
+          {
+            "name": "Yoghurt",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "grocery",
+        "subcategories": [
+          {
+            "name": "Pasta & Noodles",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+
+          {
+            "name": "Snacks",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+
+          {
+            "name": "Cerials",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Oils",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Sauces",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Flour",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Biscuits",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Sugar",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Eggs",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "pharmacy",
+        "subcategories": [
+          {
+            "name": "Skin & Hair Care",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+
+          {
+            "name": "First Aid",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+
+          {
+            "name": "Lifestyle & Wellbeing",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "bakery production",
+        "subcategories": [
+          {
+            "name": "Bakery",
+            "products": [
+              {
+                "id":"bake1001",
+                "name": "Sandwich Bread",
+                "price": 280,
+                "image": "product img/Sandwich Bread 450g.jpg",
+                "description": "Sandwich Bread 450g"
+              },
+              {
+                "id":"bake1002",
+                "name": "Roast Bread",
+                "price": 135,
+                "image": "product img/Roast Bread.jpg",
+                "description": "Roast Bread"
+              },
+              {
+                "id":"bake1003",
+                "name": "Chocolate Muffin",
+                "price": 250,
+                "image": "product img/Chocolate Muffin.jpg",
+                "description": "Chocolate Muffin"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "homeware",
+        "subcategories": [
+          {
+            "name": "Tools",
+            "products": [
+              {
+                "id":"hw1001",
+                "name": "Paint Brush",
+                "price": 550,
+                "image": "product img/Paint Brush 2 Inch.jpg",
+                "description": "Paint Brush 2 Inch"
+              },
+              {
+                "id":"hw1002",
+                "name": "Steel Brush Plastic",
+                "price": 668,
+                "image": "product img/Steel Brush Plastic.jpg",
+                "description": "Steel Brush Plastic"
+              },
+              {
+                "id":"hw1003",
+                "name": "Insulating Tape 2Inch",
+                "price": 195,
+                "image": "product img/Insulating Tape 2Inch.jpg",
+                "description": "Insulating Tape 2Inch"
+              }
+            ]
+          },
+
+          {
+            "name": "Kitchenware",
+            "products": [
+              {
+                "id":"hw2001",
+                "name": "Tea Spoon",
+                "price": 330,
+                "image": "product img/Tea Spoon.jpg",
+                "description": "Tea Spoon"
+              },
+              {
+                "id":"hw2002",
+                "name": "Non Stick Spoon",
+                "price": 1620,
+                "image": "product img/Non Stick Spoon.jpg",
+                "description": "Non Stick Spoon"
+              },
+              {
+                "id":"hw2003",
+                "name": "Serving Fork",
+                "price": 400,
+                "image": "product img/Serving Fork.jpg",
+                "description": "Serving Fork"
+              }
+            ]
+          },
+
+          {
+            "name": "General Needs",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Greeting Cards",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
+              }
+            ]
+          },
+          {
+            "name": "Books & Stationry",
+            "products": [
+              {
+                "id":"meat1001",
+                "name": "Chicken",
+                "price": 1.49,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic apples"
+              },
+              {
+                "id":"meat1002",
+                "name": "Pork",
+                "price": 0.79,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic bananas"
+              },
+              {
+                "id":"meat1003",
+                "name": "Sasauges",
+                "price": 1.99,
+                "image": "product img/Almond.jpg",
+                "description": "Fresh organic oranges"
               }
             ]
           }

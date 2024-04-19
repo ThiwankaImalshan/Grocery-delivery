@@ -38,9 +38,9 @@
                             <div class="navbar-signin">
                                 <i class="fa fa-user-circle-o" aria-hidden="true" id="signin-popup-icon"></i>
 
-                                <div class="signin-popup" id="signin-popup">
+                                <div class="signin-popup" id="signup-popup">
                                     <div class="signin-popup-content">
-                                        <span class="signin-popup-close" id="signin-popup-close">&times;</span>
+                                        <span class="signin-popup-close" id="signin-popup-close1">&times;</span>
                                         <h3>Sign Up</h3>
                                         <form action="">
                                             <div class="form-field-wrapper flex">
@@ -73,14 +73,14 @@
                                                 <input type="checkbox" name="" id=""><span class="form-bottom-checkbox-label">Accept <strong>Terms & Conditions</strong></span><br>
                                             </div>
                                             <button>Create Account</button><br><br>
-                                            <span class="form-field-bottom-p">Already have an account? <strong>Sign In</strong></span>
+                                            <span class="form-field-bottom-p">Already have an account? <span id="switchToSignIn"><b>Sign In</b></span></span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="signin-popup" id="signup-popup">
+                                <div class="signin-popup" id="signin-popup" style="display: none;">
                                     <div class="signin-popup-content">
-                                        <span class="signin-popup-close" id="signin-popup-close">&times;</span>
+                                        <span class="signin-popup-close" id="signin-popup-close2">&times;</span>
                                         <h3>Sign In</h3>
                                         <form action="">
 
@@ -98,7 +98,7 @@
                                                 <input type="checkbox" name="" id=""><span class="form-bottom-checkbox-label">Remember me</span><br>
                                             </div>
                                             <button>Login</button><br><br>
-                                            <span class="form-field-bottom-p">I don't have an account? <strong>Sign Up</strong></span>
+                                            <span class="form-field-bottom-p">I don't have an account? <span id="switchToSignUp"><b>Sign Up</b></span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -208,13 +208,32 @@
                                             <li>Fresh Sea Food</li>
                                         </a>
                                     </ul>
-                                    
-                                    <li id="dep_id_5">Beverages 
+
+                                    <li id="dep_id_5">Rice 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_5" style="display: none;">
+                                        <a>
+                                            <li class="cat_item_" data-cat-id="all">
+                                                <strong>All Rice</strong>
+                                            </li>
+                                        </a>
+                                        <a>
+                                            <li>Local Rice</li>
+                                        </a>
+                                        <a>
+                                            <li>Imported Rice</li>
+                                        </a>
+                                    </ul>
+                                    
+                                    <li id="dep_id_6">Beverages 
+                                        <span>
+                                            <i class="fa fa-angle-right"></i>
+                                        </span>
+                                    </li>
+                                    <ul id="sub_dep_id_6" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Beverages</strong>
@@ -240,12 +259,12 @@
                                         </a>
                                     </ul>
 
-                                    <li id="dep_id_6">Chilled 
+                                    <li id="dep_id_7">Chilled 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
-                                    <ul id="sub_dep_id_6" style="display: none;">
+                                    <ul id="sub_dep_id_7" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Chilled</strong>
@@ -262,12 +281,12 @@
                                         </a>
                                     </ul>
 
-                                    <li id="dep_id_7">Grocery 
+                                    <li id="dep_id_8">Grocery 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
-                                    <ul id="sub_dep_id_7" style="display: none;">
+                                    <ul id="sub_dep_id_8" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Grocery</strong>
@@ -301,12 +320,12 @@
                                             <li>Eggs</li>
                                         </a>
                                     </ul>
-                                    <li id="dep_id_8">Pharmacy 
+                                    <li id="dep_id_9">Pharmacy 
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
-                                    <ul id="sub_dep_id_8" style="display: none;">
+                                    <ul id="sub_dep_id_9" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Pharmacy</strong>
@@ -322,12 +341,12 @@
                                             <li>Lifestyle &amp; Wellbeing</li>
                                         </a>
                                     </ul>
-                                    <li id="dep_id_9">Bakery Production
+                                    <li id="dep_id_10">Bakery Production
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
-                                    <ul id="sub_dep_id_9" style="display: none;">
+                                    <ul id="sub_dep_id_10" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Bakery Production</strong>
@@ -337,12 +356,12 @@
                                             <li>Bakery</li>
                                         </a>
                                     </ul>
-                                    <li id="dep_id_10">Homeware
+                                    <li id="dep_id_11">Homeware
                                         <span>
                                             <i class="fa fa-angle-right"></i>
                                         </span>
                                     </li>
-                                    <ul id="sub_dep_id_10" style="display: none;">
+                                    <ul id="sub_dep_id_11" style="display: none;">
                                         <a>
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Homeware</strong>
@@ -747,14 +766,57 @@
 
 
 
-    document.getElementById('signin-popup-icon').addEventListener('click', function() {
+    // document.getElementById('signin-popup-icon').addEventListener('click', function() {
+    //     document.getElementById('signup-popup').style.display = 'block';
+    // });
+
+    // document.getElementById('signin-popup-close').addEventListener('click', function() {
+    //     document.getElementById('signup-popup').style.display = 'none';
+    // });
+
+
+    // function switchSignIn(){
+    //     document.getElementById('switchToSignin').addEventListener('click', function(){
+    //     document.getElementById('signin-popup').style.display = 'block';
+    //     document.getElementById('signup-popup').style.display = 'none';
+    // });
+    // }
+
+    // function switchSignUp(){
+    //     document.getElementById('switchToSignUp').addEventListener('click', function(){
+    //     document.getElementById('signup-popup').style.display = 'block';
+    //     document.getElementById('signin-popup').style.display = 'none';
+    // });
+    // }
+
+
+
+
+
+    document.getElementById('switchToSignIn').addEventListener('click', function() {
         document.getElementById('signin-popup').style.display = 'block';
+        document.getElementById('signup-popup').style.display = 'none';
     });
 
-    document.getElementById('signin-popup-close').addEventListener('click', function() {
+    document.getElementById('switchToSignUp').addEventListener('click', function() {
+        document.getElementById('signup-popup').style.display = 'block';
         document.getElementById('signin-popup').style.display = 'none';
     });
 
+    document.getElementById('signin-popup-icon').addEventListener('click', function() {
+        document.getElementById('signup-popup').style.display = 'block';
+        document.getElementById('signin-popup').style.display = 'none';
+    });
+
+    document.getElementById('signin-popup-close1').addEventListener('click', function() {
+        document.getElementById('signup-popup').style.display = 'none';
+        document.getElementById('signin-popup').style.display = 'none';
+    });
+
+    document.getElementById('signin-popup-close2').addEventListener('click', function() {
+        document.getElementById('signup-popup').style.display = 'none';
+        document.getElementById('signin-popup').style.display = 'none';
+    });
 
 
 
