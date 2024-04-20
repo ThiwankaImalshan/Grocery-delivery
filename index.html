@@ -177,7 +177,7 @@
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_3" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_3_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Meat</strong>
                                             </li>
@@ -199,7 +199,7 @@
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_4" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_4_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Fish</strong>
                                             </li>
@@ -215,7 +215,7 @@
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_5" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_5_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Rice</strong>
                                             </li>
@@ -234,7 +234,7 @@
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_6" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_6_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Beverages</strong>
                                             </li>
@@ -265,7 +265,7 @@
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_7" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_7_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Chilled</strong>
                                             </li>
@@ -287,7 +287,7 @@
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_8" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_8_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Grocery</strong>
                                             </li>
@@ -326,7 +326,7 @@
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_9" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_9_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Pharmacy</strong>
                                             </li>
@@ -347,7 +347,7 @@
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_10" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_10_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Bakery Production</strong>
                                             </li>
@@ -362,7 +362,7 @@
                                         </span>
                                     </li>
                                     <ul id="sub_dep_id_11" style="display: none;">
-                                        <a>
+                                        <a onclick="handleItemClick('sub_dep_11_all')">
                                             <li class="cat_item_" data-cat-id="all">
                                                 <strong>All Homeware</strong>
                                             </li>
@@ -443,19 +443,19 @@
 
     <!-- Categorie Gallery -->
     <div class="gallery">
-          <figure class="gallery__item gallery__item--1">
+          <figure class="gallery__item gallery__item--1" data-task="task1">
             <img src="category img/Veg Banner.jpg" class="gallery__img" alt="Image 1">
             <figcaption class="gallery-caption"><p>Vegetables</p></figcaption>
           </figure>
-          <figure class="gallery__item gallery__item--2">
+          <figure class="gallery__item gallery__item--2" data-task="task2">
             <img src="category img/Rice Banner.jpg" class="gallery__img" alt="Image 2">
             <figcaption class="gallery-caption"><p>Rice & Cereals</p> </figcaption>
           </figure>
-          <figure class="gallery__item gallery__item--3">
+          <figure class="gallery__item gallery__item--3" data-task="task3">
             <img src="category img/Meat Banner.jpg" class="gallery__img" alt="Image 3">
             <figcaption class="gallery-caption"><p>Meat & Fish</p></figcaption>
           </figure>
-          <figure class="gallery__item gallery__item--4">
+          <figure class="gallery__item gallery__item--4" data-task="task4">
             <img src="category img/Milk Banner.jpg" class="gallery__img" alt="Image 4">
             <figcaption class="gallery-caption"><p>Dairy Products</p></figcaption>
           </figure>
@@ -818,6 +818,24 @@
         document.getElementById('signin-popup').style.display = 'none';
     });
 
+
+
+
+    // Add click event listeners to gallery links
+    const galleryLinks = document.querySelectorAll('.gallery__item');
+    galleryLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const task = this.getAttribute('data-task'); // Get the task associated with the clicked link
+            
+            // Redirect to the product.html page with the task parameter
+            window.location.href = `product.html?task=${task}`;
+        });
+    });
+
+
+
+    
 
 
 

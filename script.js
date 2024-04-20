@@ -13,7 +13,7 @@ let cart = [];
 
 var loading;
 function loadingFunction() {
-  loading = setTimeout(showPage, 0);
+  loading = setTimeout(showPage, 2500);
 }
 function showPage() {
   document.getElementById("loader").style.display = "none";

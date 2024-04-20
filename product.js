@@ -133,6 +133,45 @@
 
 
 
+
+
+
+    //-----------------Show each category when click on category cards in index.html------------
+    // Function to parse query parameters from URL
+    function getQueryparams() {
+        const params = {};
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        for (const [key, value] of urlParams.entries()) {
+            params[key] = value;
+        }
+        return params;
+    }
+
+    // Parse query parameters and log task
+    const queryParams = getQueryparams();
+    const task = queryParams.task;
+
+    console.log('Task:', task);
+
+    if (task === 'task1') {
+        console.log("Perform task 1...");
+        renderCategory('vegetables');
+    }else if(task === 'task2'){
+        console.log("Perform task 2...");
+        renderCategory('rice');
+    }else if(task === 'task3'){
+        console.log("Perform task 3...");
+        renderCategory('meats');
+    }else if(task === 'task4'){
+        console.log("Perform task 4...");
+        renderCategory('chilled');
+    }
+
+
+
+
+
     //------------get clicking id from index.html and display each category--------
     function getQueryParam(name) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -152,12 +191,52 @@
     
         console.log("Performing a task for the sub_dep_2_all...");
         renderCategory('fruits');
+    }else if(clickedItemId === 'sub_dep_3_all'){
+    
+        console.log("Performing a task for the sub_dep_3_all...");
+        renderCategory('meats');
+    }else if(clickedItemId === 'sub_dep_4_all'){
+    
+        console.log("Performing a task for the sub_dep_4_all...");
+        renderCategory('fish');
+    }else if(clickedItemId === 'sub_dep_5_all'){
+    
+        console.log("Performing a task for the sub_dep_5_all...");
+        renderCategory('rice');
+    }else if(clickedItemId === 'sub_dep_6_all'){
+    
+        console.log("Performing a task for the sub_dep_6_all...");
+        renderCategory('beverages');
+    }else if(clickedItemId === 'sub_dep_7_all'){
+    
+        console.log("Performing a task for the sub_dep_7_all...");
+        renderCategory('chilled');
+    }else if(clickedItemId === 'sub_dep_8_all'){
+    
+        console.log("Performing a task for the sub_dep_8_all...");
+        renderCategory('grocery');
+    }else if(clickedItemId === 'sub_dep_9_all'){
+    
+        console.log("Performing a task for the sub_dep_9_all...");
+        renderCategory('pharmacy');
+    }else if(clickedItemId === 'sub_dep_10_all'){
+    
+        console.log("Performing a task for the sub_dep_10_all...");
+        renderCategory('bakery production');
+    }else if(clickedItemId === 'sub_dep_11_all'){
+    
+        console.log("Performing a task for the sub_dep_11_all...");
+        renderCategory('homeware');
     }else {
         // Perform a default task if the clicked item ID does not match the specific value
         console.log("Performing a default task...");
     }
 })
 .catch(error => console.error('Error fetching data:', error));
+
+
+
+
 
 
 
@@ -232,6 +311,12 @@
 
             // Display search results
             displayResults(results);
+            displayProducts(results);
+
+            const filterBar = document.querySelector('.filter-bar');
+            if (filterBar) {
+                filterBar.style.display = 'block';
+            }
         })
         .catch(error => console.error('Error fetching data:', error));
     }
@@ -364,15 +449,5 @@ document.body.addEventListener('click', function(event) {
         searchResults.style.display = 'none';
     }
 });
-
-
-
-
-
-
-
-
-
-
 
 

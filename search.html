@@ -334,6 +334,11 @@
                 )
             );
             displayProducts(filteredData);
+            
+            const filterBar = document.querySelector('.filter-bar');
+            if (filterBar) {
+                filterBar.style.display = 'block';
+            }
         }
 
         //----------------filter by price------------------
@@ -417,11 +422,12 @@
 
             // Assuming you have a function displayProducts() to display the filtered data
             displayProducts(filteredData);
+
+            const filterBar = document.querySelector('.filter-bar');
+            if (filterBar) {
+                filterBar.style.display = 'none';
+            }
         }
-
-
-
-
 
 
 

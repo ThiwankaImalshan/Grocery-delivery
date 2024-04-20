@@ -311,24 +311,78 @@
       "lng":"79.90075"
     },
     "subCities": [
-      "Dalugama",
-      "Dalugamgoda",
-      "Dippitigoda",
-      "Galborella",
-      "Himbutuwelgoda",
-      "Kelaniya",
-      "Mewella",
-      "Nungamugoda",
-      "Pattiya - Kelaniya",
-      "Peliyagoda",
-      "Pethiyagoda - Kelaniya",
-      "Pilapitiya",
-      "Polhena - Kelaniya",
-      "Sinharamulla",
-      "Wanawasala",
-      "Waragoda",
-      "Wedamulla",
-      "Weweldoowa"
+      {
+        "name": "Dalugama",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Dalugamgoda",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Dippitigoda",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Galborella",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Himbutuwelgoda",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Kelaniya",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Mewella",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Nungamugoda",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Pattiya - Kelaniya",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Peliyagoda",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Pethiyagoda - Kelaniya",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Pilapitiya",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Polhena - Kelaniya",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Sinharamulla",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Wanawasala",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Waragoda",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Wedamulla",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Weweldoowa",
+        "deliveryCharge": 150
+      }
     ]
   },
   {

@@ -1973,6 +1973,7 @@ body.showCart .cartTab{
     border: 2px solid #1C570A;
     overflow-y: scroll;
     height: 250px;
+    z-index: 1000;
   }
   
   .sub-city-list.show {

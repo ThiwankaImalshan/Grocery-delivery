@@ -397,25 +397,25 @@
             "name": "Malt Drink",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"bev2001",
+                "name": "Horlicks 175g",
+                "price": 560,
+                "image": "product img/Horlicks Original Pack 175g.jpg",
+                "description": "Horlicks Original Pack 175g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"bev2002",
+                "name": "Milo 400g",
+                "price": 890,
+                "image": "product img/Milo Packet 400g.jpg",
+                "description": "Milo Packet 400g"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"bev2003",
+                "name": "Nestomalt 175g",
+                "price": 390,
+                "image": "product img/Nestomalt Actigen Pkt 175g.jpg",
+                "description": "Nestomalt Actigen Pkt 175g"
               }
             ]
           },
@@ -424,25 +424,11 @@
             "name": "Sports & Energy Drinks",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
-              },
-              {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"bev3001",
+                "name": "Red Bull 250ml",
+                "price": 900,
+                "image": "product img/Red Bull Energy Drink 250ml.jpg",
+                "description": "Red Bull Energy Drink 250ml"
               }
             ]
           },
@@ -450,25 +436,18 @@
             "name": "Milk & Creamers",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"bev4001",
+                "name": "Anchor Milk Powder 200g",
+                "price": 555,
+                "image": "product img/Anchor Full Cream Milk Powder 200g.jpg",
+                "description": "Anchor Full Cream Milk Powder 200g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"bev4002",
+                "name": "Ratthi Milk Powder 200g",
+                "price": 555,
+                "image": "product img/Ratthi Full Cream Milk Powder 200g.jpg",
+                "description": "Ratthi Full Cream Milk Powder 200g"
               }
             ]
           },
@@ -476,51 +455,11 @@
             "name": "Water",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
-              },
-              {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
-              }
-            ]
-          },
-          {
-            "name": "Malt Drink",
-            "products": [
-              {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
-              },
-              {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"bev5001",
+                "name": "Scan Water 500ml",
+                "price": 80,
+                "image": "product img/Scan Mineral Water 500ml.jpg",
+                "description": "Scan Mineral Water 500ml"
               }
             ]
           }
@@ -534,25 +473,18 @@
             "name": "Desserts",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"chil1001",
+                "name": "Richlife Set Kiri 450g",
+                "price": 380,
+                "image": "product img/Richlife Set Kiri 450g.jpg",
+                "description": "Richlife Set Kiri 450g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"chil1002",
+                "name": "Richlife Set Kiri 900ml",
+                "price": 650,
+                "image": "product img/Richlife Set Kiri 900ml.jpg",
+                "description": "Richlife Set Kiri 900ml"
               }
             ]
           },
@@ -561,25 +493,11 @@
             "name": "Cheese",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
-              },
-              {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"chil2001",
+                "name": "Happy Cow Cheese",
+                "price": 1790,
+                "image": "product img/Cheese Portion Regular 200g.jpg",
+                "description": "H/Cow Cheese Portion Regular 200g"
               }
             ]
           },
@@ -588,25 +506,18 @@
             "name": "Yoghurt",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"chil3001",
+                "name": "Richlife Yoghurt",
+                "price": 80,
+                "image": "product img/Richlife Set Yoghurt 80ml.jpg",
+                "description": "Richlife Set Yoghurt 80ml"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"chil3002",
+                "name": "Kotmale Yoghurt Drink",
+                "price": 160,
+                "image": "product img/Kotmale Yoghurt Drink 180ml.jpg",
+                "description": "Kotmale Yoghurt Drink 180ml"
               }
             ]
           }

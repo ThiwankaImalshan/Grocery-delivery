@@ -262,6 +262,50 @@
 
 
 
+        //------------Add a click event listener to the parent element of all btn-addtocart buttons-----------
+        document.getElementById('productDetails').addEventListener('click', function(event) {
+            let product_id;
+            // Check if the clicked element is a btn-addtocart
+            if (event.target.classList.contains('btn-addtocart')) {
+                // Retrieve the parent row-card element of the clicked button
+                const parentRowCard = event.target.closest('.productDetail-info');
+                // Retrieve the dataset-id attribute value of the parent row-card
+                const productId = parentRowCard.getAttribute('dataset-id');
+                // Assign the dataset-id to the product_id variable
+                product_id = productId;
+                // Print the dataset-id to the console
+                console.log(product_id);
+                addtoCart(product_id);
+            }
+        });
+
+
+
+        // Function to add product to cart
+        const addtoCart = (product_id) => {
+            let positionThisProductInCart = cartBox.findIndex((value) => value.product_id == product_id);
+            if (cartBox.length <= 0) {
+                cartBox = [{
+                    product_id: product_id,
+                    quantity: 1
+                }];
+            } else if (positionThisProductInCart < 0) {
+                cartBox.push({
+                    product_id: product_id,
+                    quantity: 1
+                });
+            } else {
+                cartBox[positionThisProductInCart].quantity += 1;
+            }
+            console.log(cartBox);
+            addcarttoHTML(); // Update HTML representation of cart
+            saveCartToLocalStorage(); // Save cart data to local storage
+        };
+
+
+
+
+
 
 
 
@@ -289,7 +333,7 @@
                         <!-- Product image -->
                         <img src="${matchedItem.image}" alt="${matchedItem.name}">
                     </div>
-                    <div class="productDetail-info">
+                    <div class="productDetail-info" dataset-id="${matchedItem.id}">
                         <h1 class="productDetail-name">${matchedItem.name}</h1>
                         <p class="productDetail-description">${matchedItem.description}</p>
                         <p class="productDetail-price">Price: Rs.${matchedItem.price}</p>
@@ -297,12 +341,14 @@
                         <p class="productDetail-stores">Available Stores: <span>GrocGo</span></p>
                     </div>
                     `;
+                    
                 } else {
                     console.log("No matching item found in outerItems.");
                 }
             } else {
                 console.log("No data ID found in the URL.");
             }
+
         }
 
         // Call init() when the page loads
