@@ -531,25 +531,25 @@
             "name": "Pasta & Noodles",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"gro1001",
+                "name": "Kottu Mee Chicken 78g",
+                "price": 117,
+                "image": "product img/Prima Kottu Mee Chicken 78g.jpg",
+                "description": "Prima Kottu Mee Chicken 78g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"gro1002",
+                "name": "Instant Noodles 325g",
+                "price": 351,
+                "image": "product img/Prima Instant Noodles 325g.jpg",
+                "description": "Prima Instant Noodles 325g"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"gro1003",
+                "name": "Plain Noodles 400g",
+                "price": 330,
+                "image": "product img/Harischandra Plain Noodles 400g.jpg",
+                "description": "Harischandra Plain Noodles 400g"
               }
             ]
           },
@@ -558,25 +558,25 @@
             "name": "Snacks",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"gro2001",
+                "name": "Cocktail Mixture 100g",
+                "price": 285,
+                "image": "product img/Cocktail Mixture 100g.jpg",
+                "description": "Cocktail Mixture 100g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"gro2002",
+                "name": "Pop Classic 10g",
+                "price": 60,
+                "image": "product img/Pop Classic 10g.jpg",
+                "description": "Pop Classic 10g"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"gro2003",
+                "name": "Jumbo Peanut 35g",
+                "price": 150,
+                "image": "product img/Scan Jumbo Peanut 35g.jpg",
+                "description": "Scan Jumbo Peanut 35g"
               }
             ]
           },
@@ -585,25 +585,25 @@
             "name": "Cerials",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"gro3001",
+                "name": "Yahaposha 500g",
+                "price": 348,
+                "image": "product img/Yahaposha 500g.jpg",
+                "description": "Yahaposha 500g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"gro3002",
+                "name": "Corn Flakes 250g",
+                "price": 699,
+                "image": "product img/Corn Flakes 250g.jpg",
+                "description": "Corn Flakes 250g"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"gro3003",
+                "name": "Samaposha 200g",
+                "price": 185,
+                "image": "product img/Samaposha 200g.jpg",
+                "description": "Samaposha 200g"
               }
             ]
           },
@@ -611,25 +611,25 @@
             "name": "Oils",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"gro4001",
+                "name": "Coconut Oil 1L",
+                "price": 1390,
+                "image": "product img/Fortune Coconut Oil 1L.jpg",
+                "description": "Fortune Coconut Oil 1L"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"gro4002",
+                "name": "Cooking Oil 1L",
+                "price": 1550,
+                "image": "product img/Marina Cooking Oil 1L.jpg",
+                "description": "Marina Cooking Oil 1L"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"gro4003",
+                "name": "Fortune Vegetable Oil 2L",
+                "price": 3070,
+                "image": "product img/Fortune Vegetable Oil 2L.jpg",
+                "description": "Fortune Vegetable Oil 2L"
               }
             ]
           },
@@ -637,25 +637,25 @@
             "name": "Sauces",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"gro5001",
+                "name": "Chillie Garlic Sauce",
+                "price": 442,
+                "image": "product img/Kist Chillie Garlic Sauce 375g.jpg",
+                "description": "Kist Chillie Garlic Sauce 375g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"gro5002",
+                "name": "Md Tomato Sauce",
+                "price": 426,
+                "image": "product img/Md Tomato Sauce 400g.jpg",
+                "description": "Md Tomato Sauce 400g"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"gro5003",
+                "name": "Oyster Sauce 385g",
+                "price": 510,
+                "image": "product img/Edinborough Oyster Sauce 385g.jpg",
+                "description": "Edinborough Oyster Sauce 385g"
               }
             ]
           },
@@ -663,25 +663,25 @@
             "name": "Flour",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"gro6001",
+                "name": "Hopper Flour 400g",
+                "price": 220,
+                "image": "product img/Mdk Hopper Flour 400g.jpg",
+                "description": "Mdk Hopper Flour 400g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"gro6002",
+                "name": "Atta Flour 1kg",
+                "price": 590,
+                "image": "product img/Mogrills Atta Flour 1kg.jpg",
+                "description": "Mogrills Atta Flour 1kg"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"gro6003",
+                "name": "Undu Flour 200g",
+                "price": 558,
+                "image": "product img/Ruhunu Undu Flour 200g.jpg",
+                "description": "Ruhunu Undu Flour 200g"
               }
             ]
           },
@@ -689,25 +689,39 @@
             "name": "Biscuits",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"gro7001",
+                "name": "Lemon Puff 200g",
+                "price": 250,
+                "image": "product img/Maliban Lemon Puff 200g.jpg",
+                "description": "Maliban Lemon Puff 200g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"gro7002",
+                "name": "Ginger Biscuit 85g",
+                "price": 120,
+                "image": "product img/Munchee Ginger Biscuit 85g.jpg",
+                "description": "Munchee Ginger Biscuit 85g"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"gro7003",
+                "name": "Maliban Cream Cracker",
+                "price": 140,
+                "image": "product img/Maliban Smart Cream Crackers 125g.jpg",
+                "description": "Maliban Smart Cream Crackers 125g"
+              },
+              {
+                "id":"gro7004",
+                "name": "Marie Chocolate",
+                "price": 100,
+                "image": "product img/Munchee Marie Chocolate 90g.jpg",
+                "description": "Munchee Marie Chocolate 90g"
+              },
+              {
+                "id":"gro7005",
+                "name": "Gem Biscuits",
+                "price": 120,
+                "image": "product img/Munchee Gem Biscuits 100g.jpg",
+                "description": "Munchee Gem Biscuits 100g"
               }
             ]
           },
@@ -715,25 +729,18 @@
             "name": "Sugar",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"gro8001",
+                "name": "White Sugar",
+                "price": 265,
+                "image": "product img/White Sugar Bulk.jpg",
+                "description": "White Sugar Bulk"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"gro8002",
+                "name": "Brown Sugar Bulk",
+                "price": 440,
+                "image": "product img/Brown Sugar Bulk.jpg",
+                "description": "Brown Sugar Bulk"
               }
             ]
           },
@@ -741,25 +748,18 @@
             "name": "Eggs",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"gro9001",
+                "name": "Medium Eggs 10S",
+                "price": 643,
+                "image": "product img/Medium Eggs 10S.jpg",
+                "description": "Medium Eggs 10S"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"gro9002",
+                "name": "Brown Egg 10S",
+                "price": 649,
+                "image": "product img/Brown Egg 10S.jpg",
+                "description": "Brown Egg 10S"
               }
             ]
           }
@@ -773,25 +773,11 @@
             "name": "Skin & Hair Care",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
-              },
-              {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"pha1001",
+                "name": "Olive Oil 28ml",
+                "price": 480,
+                "image": "product img/Olive Oil 28ml.jpg",
+                "description": "Olive Oil 28ml"
               }
             ]
           },
@@ -800,25 +786,25 @@
             "name": "First Aid",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"pha2001",
+                "name": "Dettol 60ml",
+                "price": 210,
+                "image": "product img/Dettol Liquid Small 60ml.jpg",
+                "description": "Dettol Liquid Small 60ml"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"pha2002",
+                "name": "Dettol Plaster 10S",
+                "price": 200,
+                "image": "product img/Dettol Plaster 10S.jpg",
+                "description": "Dettol Plaster 10S"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"pha2003",
+                "name": "Cotton Wool 30g",
+                "price": 395,
+                "image": "product img/Cotton Wool 30g.jpg",
+                "description": "Cotton Wool 30g"
               }
             ]
           },
@@ -827,25 +813,18 @@
             "name": "Lifestyle & Wellbeing",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"pha3001",
+                "name": "Five Herbals 100g",
+                "price": 160,
+                "image": "product img/Five Herbals 100g.jpg",
+                "description": "Five Herbals 100g"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"pha3002",
+                "name": "Polpala 50g",
+                "price": 125,
+                "image": "product img/Polpala 50g.jpg",
+                "description": "Polpala 50g"
               }
             ]
           }
@@ -945,25 +924,18 @@
             "name": "General Needs",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"hw3001",
+                "name": "Candle Pack",
+                "price": 305,
+                "image": "product img/Tealight Candle Pack 8S 2H Burn.jpg",
+                "description": "Tealight Candle Pack 8S 2H Burn"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"hw3002",
+                "name": "Panasonic AA Battery",
+                "price": 780,
+                "image": "product img/Panasonic Battery 6T 2B Aa.jpg",
+                "description": "Panasonic Al/Battery 6T/2B-Aa"
               }
             ]
           },
@@ -971,25 +943,11 @@
             "name": "Greeting Cards",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
-              },
-              {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
-              },
-              {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"hw4001",
+                "name": "Greeting Cards",
+                "price": 360,
+                "image": "product img/Tycoon Greeting Cards 60Rp.jpg",
+                "description": "Tycoon Greeting Cards 60Rp"
               }
             ]
           },
@@ -997,25 +955,25 @@
             "name": "Books & Stationry",
             "products": [
               {
-                "id":"meat1001",
-                "name": "Chicken",
-                "price": 1.49,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic apples"
+                "id":"hw5001",
+                "name": "Single Rule Book 120Pgs",
+                "price": 140,
+                "image": "product img/Atlas Single Rule Exe. Book 120Pgs.jpg",
+                "description": "Atlas Single Rule Exe. Book 120Pgs"
               },
               {
-                "id":"meat1002",
-                "name": "Pork",
-                "price": 0.79,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic bananas"
+                "id":"hw5002",
+                "name": "Atlas Blue Pens",
+                "price": 85,
+                "image": "product img/Atlas Chooty 11 3In Pac Blue.jpg",
+                "description": "Atlas Chooty 11 3In Pac Blue"
               },
               {
-                "id":"meat1003",
-                "name": "Sasauges",
-                "price": 1.99,
-                "image": "product img/Almond.jpg",
-                "description": "Fresh organic oranges"
+                "id":"hw5003",
+                "name": "Atlas Glue 50ml",
+                "price": 75,
+                "image": "product img/Atlas Glue Bottle 50ml.jpg",
+                "description": "Atlas Glue Bottle 50ml"
               }
             ]
           }

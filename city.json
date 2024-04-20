@@ -394,21 +394,66 @@
       "lng":"80.01553088041004"
     },
     "subCities": [
-      "Boraliyawatha",
-      "Galloluwa",
-      "Galthotumulla",
-      "Ihala Yagoda",
-      "Imbulgoda",
-      "Kimbulgoda",
-      "Kinigama",
-      "Kirikittamulla",
-      "Nedungamuwa",
-      "Pepolgahadeniya",
-      "Pituwalgoda",
-      "Rathupaswala",
-      "Siwaralumulla",
-      "Weediyawatta",
-      "Weliweriya"
+      {
+        "name": "Boraliyawatha",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Galloluwa",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Galthotumulla",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Ihala Yagoda",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Imbulgoda",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Kimbulgoda",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Kinigama",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Kirikittamulla",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Nedungamuwa",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Pepolgahadeniya",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Pituwalgoda",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Rathupaswala",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Siwaralumulla",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Weediyawatta",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Weliweriya",
+        "deliveryCharge": 200
+      }
     ]
   },
   {
@@ -420,23 +465,74 @@
       "lng":"79.95477155931185"
     },
     "subCities": [
-      "Amunugoda",
-      "Biyanvila",
-      "Dangahawela",
-      "Eldeniya",
-      "Embaraluwa",
-      "Gonahena",
-      "Kadawatha",
-      "Karagahamuna",
-      "Katuwalamulla",
-      "Kirillawala",
-      "Kossinna",
-      "Mahena - Gampaha",
-      "Parakandeniya",
-      "Puwakwetiya",
-      "Ranmuthugala",
-      "Sooriyapaluwa",
-      "Webada"
+      {
+        "name": "Amunugoda",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Biyanvila",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Dangahawela",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Eldeniya",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Embaraluwa",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Gonahena",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Kadawatha",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Karagahamuna",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Katuwalamulla",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Kirillawala",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Kossinna",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Mahena - Gampaha",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Parakandeniya",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Puwakwetiya",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Ranmuthugala",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Sooriyapaluwa",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Webada",
+        "deliveryCharge": 100
+      }
     ]
   },
   {
@@ -448,63 +544,82 @@
       "lng":"79.90812942245257"
     },
     "subCities": [
-      "Alubomulla",
-      "Ambalanduwa",
-      "Aruggoda",
-      "Attambagoda",
-      "Bazaar",
-      "Bekkegama",
-      "Dibbedda",
-      "Diganathuduwa",
-      "Diggala",
-      "Egoda",
-      "Egodauyana",
-      "Eluwila",
-      "Etambagoda",
-      "Fonseka Rd",
-      "Galthude",
-      "Gorakana",
-      "Gorakapola",
-      "Imbullina",
-      "Indigaha",
-      "Kaludewala - Panadura",
-      "Katukurunda - Moratuwa",
-      "Kaviraja mawatha",
-      "Keselwatta - Panadura",
-      "Kiriberiya",
-      "Koralawella",
-      "Kosgas handiya",
-      "Kuruppumulla",
-      "Kurusa junction",
-      "Madupitiya",
-      "Mahavila",
-      "Malamulla",
-      "Miriswatta",
-      "Miriyawatta",
-      "Modarawila",
-      "Moravinna",
-      "Nalluruwa",
-      "Narampitiya",
-      "Pallimulla",
-      "Pamunugama",
-      "Panadura",
-      "Paratta",
-      "Pinwala",
-      "Pinwaththa",
-      "Punchideniya",
-      "Sagara Place",
-      "Sarikkamulla",
-      "Thantirimulla",
-      "Thotawatta",
-      "Uyankele",
-      "Walana",
-      "Walapala",
-      "Walapala Pattiya",
-      "Wanduramulla",
-      "Watabage",
-      "Wattalpola",
-      "Wekada",
-      "Werawatta"
+      {
+        "name": "Alubomulla",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Ambalanduwa",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Aruggoda",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Attambagoda",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Bazaar",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Bekkegama",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Dibbedda",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Diganathuduwa",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Diggala",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Egoda",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Egodauyana",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Eluwila",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Etambagoda",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Fonseka Rd",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Galthude",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Gorakana",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Gorakapola",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Imbullina",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Indigaha",
+        "deliveryCharge": 200
+      }
     ]
   },
   {
@@ -516,11 +631,26 @@
       "lng":"79.95647670449479"
     },
     "subCities": [
-      "Arangala",
-      "Evarihena",
-      "Hokandara",
-      "Malabe",
-      "Pothuarawa"
+      {
+        "name": "Arangala",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Evarihena",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Hokandara",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Malabe",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Pothuarawa",
+        "deliveryCharge": 200
+      }
     ]
   },
   {
@@ -532,48 +662,50 @@
       "lng":"79.99023798426295"
     },
     "subCities": [
-      "Abagahalanda",
-      "Akaravita - Gampaha",
-      "Asgiriwalpola - Gampaha",
-      "Bandaranayaka Pura - Gampaha",
-      "Bandarawatta - Gampaha",
-      "Belummahara",
-      "Bendiyamulla",
-      "Church Road",
-      "Daraluwa",
-      "Dombawala",
-      "Doranagoda",
-      "Gampaha Aluthgama",
-      "Godagedara",
-      "Hansagiri Mawatha",
-      "Henarathgoda",
-      "Idigolla",
-      "Ihalagama",
-      "Karanayakamulla",
-      "Keppetipola",
-      "Keselwathugoda",
-      "Kidagammulla",
-      "Kirindivita",
-      "Kosovita",
-      "Malwatta Road",
-      "Medagama",
-      "Moragoda",
-      "Morupola",
-      "Mudungoda",
-      "Oruthota",
-      "Pahala Yagoda",
-      "Pahalagama",
-      "Pedipola",
-      "Pitiyegedara",
-      "Rafflewatta",
-      "Rathmalvita",
-      "Scheeme",
-      "Siyane uyana Housing",
-      "Thammita",
-      "Udugampola",
-      "Vishaka Road",
-      "Wijaya Road",
-      "Yakkala"
+      {
+        "name": "Abagahalanda",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Akaravita - Gampaha",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Asgiriwalpola - Gampaha",
+        "deliveryCharge": 120
+      },
+      {
+        "name": "Bandaranayaka Pura - Gampaha",
+        "deliveryCharge": 180
+      },
+      {
+        "name": "Bandarawatta - Gampaha",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Belummahara",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Bendiyamulla",
+        "deliveryCharge": 200
+      },
+      {
+        "name": "Church Road",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Daraluwa",
+        "deliveryCharge": 150
+      },
+      {
+        "name": "Dombawala",
+        "deliveryCharge": 100
+      },
+      {
+        "name": "Doranagoda",
+        "deliveryCharge": 150
+      }
     ]
   }
 ]
