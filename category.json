@@ -510,7 +510,8 @@
                 "name": "Richlife Yoghurt",
                 "price": 80,
                 "image": "product img/Richlife Set Yoghurt 80ml.jpg",
-                "description": "Richlife Set Yoghurt 80ml"
+                "description": "Richlife Set Yoghurt 80ml",
+                "top": true
               },
               {
                 "id":"chil3002",

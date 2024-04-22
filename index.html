@@ -478,7 +478,7 @@
         <div class="a-slider-container">
             <div class="a-slider" style="transform: translateX(0%);">
                 <!-- Product rows will be dynamically inserted here -->
-              </div>
+            </div>
         </div>
         <i class="fa fa-arrow-circle-left a-prev-btn fa-2x" aria-hidden="true"></i>
         <i class="fa fa-arrow-circle-right a-next-btn fa-2x" aria-hidden="true"></i>
@@ -636,7 +636,7 @@
     );
 
     // Calculate the number of rows needed
-    const numRows = Math.ceil(topProducts.length / 4);
+    const numRows = Math.ceil(topProducts.length / 5);
 
     // Insert products into HTML structure
     const sliderContainer = document.querySelector('.a-slider');
@@ -646,7 +646,7 @@
 
       const ul = document.createElement('ul');
 
-      for (let j = i * 4; j < Math.min((i + 1) * 4, topProducts.length); j++) {
+      for (let j = i * 4; j < Math.min((i + 1) * 5, topProducts.length); j++) {
         const product = topProducts[j];
 
         const li = document.createElement('div');

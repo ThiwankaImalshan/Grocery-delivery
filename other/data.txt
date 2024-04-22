@@ -1838,3 +1838,33 @@ cursor: pointer;
 
 
 
+        // // Function to initialize the product detail page
+        // function init() {
+        //     const dataId = getQueryParam('id');
+        //     if (dataId) {
+        //         const outerItems = JSON.parse(localStorage.getItem('outerProductsArray'));
+        //         const matchedItem = outerItems.find(item => item.id === dataId);
+        //         if (matchedItem) {
+        //             // If a matching item is found, print its details using innerHTML
+        //             document.getElementById('productDetails').innerHTML = `
+        //             <div class="productDetail-image">
+        //                 <!-- Product image -->
+        //                 <img src="${matchedItem.image}" alt="${matchedItem.name}">
+        //             </div>
+        //             <div class="productDetail-info" dataset-id="${matchedItem.id}">
+        //                 <h1 class="productDetail-name">${matchedItem.name}</h1>
+        //                 <p class="productDetail-description">${matchedItem.description}</p>
+        //                 <p class="productDetail-price">Price: Rs.${matchedItem.price}</p>
+        //                 <button class="btn-addtocart" style="margin-left: 0;">Add to Cart</button>
+        //                 <p class="productDetail-stores">Available Stores: <span>GrocGo</span></p>
+        //             </div>
+        //             `;
+                    
+        //         } else {
+        //             console.log("No matching item found in outerItems.");
+        //         }
+        //     } else {
+        //         console.log("No data ID found in the URL.");
+        //     }
+
+        // }

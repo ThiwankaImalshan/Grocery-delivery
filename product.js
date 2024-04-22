@@ -28,7 +28,7 @@
                 }
     
                 html += `<div data-id="${product.id}" class="row-card p-slider-item">`;
-                html += `<div class="row-card-img">`;
+                html += `<div class="row-card-img" onclick="redirecttoProductDetail('${product.id}')">`;
                 html += `<img src="${product.image}" alt="${product.name}">`;
                 html += `</div>`;
                 html += `<div class="row-txt">`;
@@ -43,6 +43,13 @@
                 if (productCounter % 3 === 0 || productCounter === subcategory.products.length) {
                     html += `</div>`;
                 }
+                
+                window.redirecttoProductDetail = function(productId) {
+                    // Redirect to productDetail.html with product ID as query parameter
+                    window.location.href = "productDetail.html?id=" + productId;
+                }
+                
+                
             });
     
             html += `</div>`;
@@ -350,6 +357,15 @@
 
         var rowCardImg = document.createElement('div');
         rowCardImg.classList.add('row-card-img');
+        rowCardImg.onclick = function() {
+            redirectToProductDetail(product.id);
+        };
+
+        // Function to handle redirection to productDetail.html
+        function redirectToProductDetail(productId) {
+            // Redirect to productDetail.html with product ID as query parameter
+            window.location.href = "productDetail.html?id=" + productId;
+        }
         rowCard.appendChild(rowCardImg);
 
         var image = document.createElement('img');

@@ -251,7 +251,16 @@
 
         const rowCardImg = document.createElement('div');
         rowCardImg.classList.add('row-card-img');
+        rowCardImg.onclick = function() {
+            redirectToProductDetail(product.id);
+        };
         rowCard.appendChild(rowCardImg);
+
+        // Function to handle redirection to productDetail.html
+        function redirectToProductDetail(productId) {
+            // Redirect to productDetail.html with product ID as query parameter
+            window.location.href = "productDetail.html?id=" + productId;
+        }
 
         const image = document.createElement('img');
         image.src = product.image;
